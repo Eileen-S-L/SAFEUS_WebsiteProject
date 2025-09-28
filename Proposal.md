@@ -5,7 +5,7 @@ Investigation of Drug & Substance usage in the United States
 # Dataset(s) summary
 
 The dataset contains information on drug and substance usage, overdose fatalities, and the demographic groups most affected. 
-It highlights how different factors such as age, state, ethnicity, and type of drug—are linked to overdose outcomes.
+It highlights how different types of drugs are linked to overdose outcomes. It also shows how overdose outcomes vary by demographics.
 
 # Dataset(s) Metadata
 
