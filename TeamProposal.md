@@ -21,4 +21,5 @@
 *If you don’t think users will benefit, then why bother developing that user interaction? ¯\_(ツ)_/¯*
    ### (D) Potential Harms: How may interacting with your data harm or exclude users? Why? 
 *If you don’t think users will feel harmed or excluded by interacting with your data, explain why.*
+
 **For questions 4c and 4d, I encourage you to consider (1) the advantages & disadvantages of the dataset and interaction mechanisms, and (2) different types of benefits & harms (e.g. knowledge, emotions).**
