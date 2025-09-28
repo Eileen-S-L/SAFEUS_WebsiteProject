@@ -1,0 +1,19 @@
+In your project proposal, you should include the following:
+
+Working title of your project
+
+A summary of the dataset(s) you will use in this project (e.g. topic, interesting variables, etc)
+
+Metadata for the dataset(s) from the Dataset Records (URL, date downloaded, authorship, exact name and version, terms of use, suggested citation)
+
+If you’re having trouble filling out the following fields for your dataset, it may be a sign that you need to double-check the source of your dataset.
+
+3 interesting or meaningful ways that a user could interact with the data. For each user interaction, include descriptions of:
+   A Potential Users: Who may interact with your data? What are their motivations for interacting with the data?
+ B   Interaction Mechanism: How may they interact with the data? (e.g. Search bar? Different tabs? Which variables in your dataset?)
+  C  Potential Benefits: How may interacting with your data benefit users? Why?
+        If you don’t think users will benefit, then why bother developing that user interaction? ¯\_(ツ)_/¯ 
+  D  Potential Harms: How may interacting with your data harm or exclude users? Why? 
+        If you don’t think users will feel harmed or excluded by interacting with your data, explain why.
+
+For questions 4c and 4d, I encourage you to consider (1) the advantages & disadvantages of the dataset and interaction mechanisms, and (2) different types of benefits & harms (e.g. knowledge, emotions).
