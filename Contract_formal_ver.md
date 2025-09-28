@@ -1,9 +1,10 @@
-# Bigstackz: Eileen Liu, Rachel Punter, Emannuel, Ayobami Bidokwo
+# Bigstackz: Eileen Liu, Rachel Punter, Tume Emannuel Dzelamonyuy, Ayobami Bidokwu
 # Team Contract
 
 ## Team Goals
     ### Academic Goals
-        1. 
+        1. To set up a website that addressed the severe danger of Drug&substance usage
+        2. Try to develop this website not only as a course project but also a helpful website that could be used for wider scenarios.
 
     ### Teamwork Goals
         1. Practice effective communication skills
@@ -15,7 +16,6 @@
 ### Rachel Punter
     - Creative 
     - The OPTIMIST
-    - The GRAMMAR QUEEN
     - Hyper-focused worker 
 ### Emannuel
     - Resistance to pressure
@@ -23,11 +23,10 @@
     - Creative (but a different type)
 ### Eileen Liu
     - Time-keeping 
-    - Diligent workers
-
-### Ayobami Bidokwo
+    - Diligent worker
+### Ayobami Bidokwu
     - Open-minded with changes 
-    - 
+    - Sense of humor
 
 ## Utilizing strength 
     - With members who's open-minded and creative, with efficent communication, our team
