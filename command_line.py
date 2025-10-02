@@ -3,6 +3,8 @@ The eventual location for the command line interface (CLI) for the project.
 This will be the entry point for the project when run from the command line.
 '''
 import argparse 
+# import the python file with the written functions
+# import drug_state_year_search.py 
 
 def main ():
     parser= argparse.ArgumentParser(usage = 'python3 command_line.py --year/state "year"/"state" ')
