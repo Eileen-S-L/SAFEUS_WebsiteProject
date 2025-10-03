@@ -3,6 +3,10 @@ The eventual location for the command line interface (CLI) for the project.
 This will be the entry point for the project when run from the command line.
 '''
 import argparse 
+from ProductionCode.drugshelperfuncs import searchstatename
+from ProductionCode.drugshelperfuncs import searchbyyear
+
+
 # import the python file with the written functions
 # import drug_state_year_search.py 
 
