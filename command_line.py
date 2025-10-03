@@ -8,11 +8,11 @@ import argparse
 
 def main ():
     parser= argparse.ArgumentParser(usage = 'python3 command_line.py --year/state "year"/"state" ')
-    parser.add_argument('--y', '--year')
-    parser.add_argument('--s', '--state')
+    parser.add_argument('--year')
+    parser.add_argument('--state')
     args= parser.parse_args()
 
-    if (args[0]=="--year")or(args[0]=="--y"):
+    if (args[0]=="--year"):
         #function of our team project that nees us to write up from scratch
         #the function could really name as anything, I named it like this here
         # get_drugdata_year(): grabs rows of related data based on the year enters"
@@ -21,7 +21,7 @@ def main ():
         else:
             get_drugdata_year(args[1])
 
-    if (args[0]=="--state")or(args[0]=="--s"):
+    if (args[0]=="--state"):
         if (args.size()==1):
             print(usage)
         else:
