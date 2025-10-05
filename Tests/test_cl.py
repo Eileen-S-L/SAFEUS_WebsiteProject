@@ -19,4 +19,4 @@ class SearchByName(unittest.Testcase):
         '''ensures that function returns appropriate statement for invalid year input'''
         expected = "No records found for year: 2100"
         result = search_by_year("2100")
-      self.assertEqual(result, expected)
+        self.assertEqual(result, expected)
