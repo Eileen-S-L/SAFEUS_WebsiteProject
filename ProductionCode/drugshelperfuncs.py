@@ -27,4 +27,6 @@ def search_by_state(state):
     return results
 
 def search_by_year(year):
+    data = load_drugdata()
+    
     
