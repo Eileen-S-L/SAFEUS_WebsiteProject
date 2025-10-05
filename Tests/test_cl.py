@@ -11,3 +11,12 @@ class SearchByState(unittest.Testcase):
     expected = "Not a US State"
     result = search_by_state('Canada')
     self.asssertEqual(result,expected)
+
+class SearchByName(unittest.Testcase):
+    def setUp(self):
+        load_drugdata()
+    def invalid_year(self):
+        '''ensures that function returns appropriate statement for invalid year input'''
+        expected = "No records found for year: 2100"
+        result = search_by_year("2100")
+      self.assertEqual(result, expected)
