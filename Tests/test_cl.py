@@ -4,9 +4,9 @@ import unittest
 from ProductionCode.drugshelperfuncs import *
 
 class SearchByState(unittest.Testcase):
-  def setUp(self):
+    def setUp(self):
     load_drugdata() #load data for each test case
-  def invalid_state_name(self):
+    def invalid_state_name(self):
     '''ensures that the function returns statement for invalid US state input'''
     expected = "Not a US State"
     result = search_by_state('Canada')
