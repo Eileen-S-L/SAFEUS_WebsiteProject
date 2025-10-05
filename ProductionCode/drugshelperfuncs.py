@@ -1,6 +1,6 @@
 import csv
 
-data_file = "minidrugs2.csv"
+data_file = "Minidrugdataset.csv"
 
 def load_drugdata():
     data_list = []
