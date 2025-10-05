@@ -22,13 +22,14 @@ def main ():
         if (args.size()==1 or args.size()>2):
             print(usage)
         else:
-            search_by_year(args[1])
+            search_by_year(sys.argv[1])
 
     if (sys.argv[0]=="--state"):
         if (args.size()==1 or args.size()>2):
             print(usage)
         else:
             search_by_state(args[1])
+            return search_by_state(sys.argv[1])
 
     # if (sys.argv[0]!="--state" or sys.arg[0]!="--year"):
     #     print(usage)
