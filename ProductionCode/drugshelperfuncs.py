@@ -12,9 +12,7 @@ def load_drugdata():
             
 def search_by_state(state):
     data = load_drugdata()
-    results = [row for row in data if row['State'].strip().lower() == state_name.lower()]
-    if len(results) == 0:
-        print("No records found for state:", state_name)
+    results = [row for row in data if row['State'].strip().lower() == state.lower()]
     return results
 
 def search_by_year(year):
