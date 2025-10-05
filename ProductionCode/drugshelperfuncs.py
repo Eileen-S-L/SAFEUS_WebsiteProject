@@ -6,7 +6,7 @@ def load_drugdata():
     '''loads the data and returns a list format'''
     data_list = []
     with open (data_file, mode= 'r') as data_file:
-        csv_reader = csv.DictReader(file)
+        csv_reader = csv.DictReader(data_file)
         for row in csv_reader:
             data_list.append(row)
     return data_list
