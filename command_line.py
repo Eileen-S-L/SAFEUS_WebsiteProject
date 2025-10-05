@@ -7,7 +7,6 @@ import sys
 from ProductionCode.drugshelperfuncs import search_by_state
 from ProductionCode.drugshelperfuncs import search_by_year
 
-
 # import the python file with the written functions
 # import drug_state_year_search.py 
 
@@ -21,23 +20,22 @@ def main ():
         #function of our team project that nees us to write up from scratch
         #the function could really name as anything, I named it like this here
         # get_drugdata_year(): grabs rows of related data based on the year enters"
-        if (args.size()==1):
-            print(usage)
-        if (args.size()>2):
+        if (args.size()==1 or args.size()>2):
             print(usage)
         else:
             search_by_year(args[1])
 
     if (sys.argv[0]=="--state"):
-        if (args.size()==1):
-            print(usage)
-        if (args.size()>2):
+        if (args.size()==1 or args.size()>2):
             print(usage)
         else:
             search_by_state(args[1])
 
-    if (sys.argv[0]!="--s") and (sys.argv[0]!="--state")and(sys.argv[0]!="--y")and(sys.argv[0]!="--state"):
-        print(usage)
+    # if (sys.argv[0]!="--state" or sys.arg[0]!="--year"):
+    #     print(usage)
+    # else:
+    #     print(usage)
+
     
 
 
