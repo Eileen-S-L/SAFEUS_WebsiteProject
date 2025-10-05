@@ -1,7 +1,7 @@
 #This is test_cl.py for team project -- commanline.py
 
 import unittest
-form ProductionCode.drugshelperfuncs import *
+from ProductionCode.drugshelperfuncs import *
 
 class SearchByState(unittest.Testcase):
   def setUp(self):
