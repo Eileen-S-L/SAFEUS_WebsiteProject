@@ -12,10 +12,13 @@ def load_drugdata():
             
 def search_by_state(state):
     data = load_drugdata()
-    results = [row for row in data if row['State'].strip().lower() == state.lower()]
+    results = [row for row in data if row['State'].strip() == state.lower()]
     return results
 
 def search_by_year(year):
     data = load_drugdata()
+    results = [row for row in data if row['Year'].strip() == str(year)]
+    return results
+
     
     
