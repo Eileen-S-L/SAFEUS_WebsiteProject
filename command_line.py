@@ -3,8 +3,8 @@ The eventual location for the command line interface (CLI) for the project.
 This will be the entry point for the project when run from the command line.
 '''
 import argparse 
-from ProductionCode.drugshelperfuncs import searchstatename
-from ProductionCode.drugshelperfuncs import searchbyyear
+from ProductionCode.drugshelperfuncs import search_by_state
+from ProductionCode.drugshelperfuncs import search_by_year
 
 
 # import the python file with the written functions
@@ -22,14 +22,18 @@ def main ():
         # get_drugdata_year(): grabs rows of related data based on the year enters"
         if (args.size()==1):
             print(usage)
+        if (args.size()>2):
+            print(usage)
         else:
-            get_drugdata_year(args[1])
+            search_by_year(args[1])
 
     if (args[0]=="--state"):
         if (args.size()==1):
             print(usage)
+        if (args.size()>2):
+            print(usage)
         else:
-            get_drugdata_state(args[1])
+            search_by_state(args[1])
 
     if (args[0]!="--s") and (args[0]!="--state")and(args[0]!="--y")and(args[0]!="--state"):
         print(usage)
