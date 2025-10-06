@@ -18,10 +18,10 @@ def search_by_state(state_name):
     data = load_drugdata()
     results = []
     for row in data:
-        if row['\ufeffState'].strip().lower() == state_name.lower():
+        if row['\ufeffState'].strip().lower() == str(state_name).lower():
             results.append(row)
     if len(results) == 0:
-        return "No records found for state " + state_name
+        return "No records found for state " + str(state_name)
         print(result)
     return results
 
