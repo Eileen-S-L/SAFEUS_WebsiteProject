@@ -22,6 +22,7 @@ def search_by_state(state_name):
             results.append(row)
     if len(results) == 0:
         return "No records found for state " + state_name
+        print(result)
     return results
 
 def search_by_year(year):
