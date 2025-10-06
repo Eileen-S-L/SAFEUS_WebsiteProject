@@ -1,7 +1,8 @@
 import csv
 
-
-data_file = '../Data/Minidrugdataset.csv' 
+import os
+data_file = os.path.join(os.path.dirname(__file__), "..", "Data", "Minidrugdataset.csv") 
+#data_file = '../Data/Minidrugdataset.csv' 
 
 def load_drugdata():
     '''loads the data and returns a list format'''
@@ -17,7 +18,7 @@ def search_by_state(state_name):
     data = load_drugdata()
     results = []
     for row in data:
-        if row['State'].strip().lower() == state_name.lower():
+        if row['\ufeffState'].strip().lower() == state_name.lower():
             results.append(row)
     if len(results) == 0:
         return "No records found for state " + state_name
@@ -34,4 +35,3 @@ def search_by_year(year):
         return "No records found for year: " + str(year)
     return results
 
-    
