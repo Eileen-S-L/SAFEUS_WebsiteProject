@@ -16,24 +16,24 @@ def main ():
     args= parser.parse_args()
     usage = 'python3 command_line.py --year/state "year"/"state" '
 
-    if (args[0]=="--year"):
+    if (args.year):
         #function of our team project that nees us to write up from scratch
         #the function could really name as anything, I named it like this here
         # get_drugdata_year(): grabs rows of related data based on the year enters"
-        if (args.size()==1 or args.size()>2):
-            print(usage)
-        else:
-            search_by_year(args[1])
+        # if (args.==1 or args.size()>2):
+        #     print(usage)
+        # else:
+            search_by_year(args.year)
 
-    if (args[0]=="--state"):
-        if (args.size()==1 or args.size()>2):
-            print(usage)
-        else:
-            search_by_state(args[1])
-            return search_by_state(args[1])
+    if (args.state):
+        # if (args.size()==1 or args.size()>2):
+        #     print(usage)
+        # else:
+            search_by_state(args.state)
+            # return search_by_state(args[1])
 
-    if (args[0]!="--state" or args[0]!="--year"):
-        print(usage)
+    # if (args[0]!="--state" or args[0]!="--year"):
+    #     print(usage)
     # else:
     #     print(usage)
 
