@@ -28,3 +28,16 @@ class SearchByName(unittest.TestCase):
         result = search_by_year("2100")
         self.assertEqual(result, expected)
 
+# Command line test
+def main_test_year_n(self):
+    code = subprocess.Popen(['python3','--year', 'command_line.py', '2002'],stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf8')
+    output, err = code.communicate()
+    # self.assertEqual("column_1", output.strip())
+    
+    code.terminate()
+def main_test_state_edge(self):
+    code = subprocess.Popen(['python3','--state', 'command_line.py', 'alabama'],stdin=subprocess.PIPE, 
+        stdout=subprocess.PIPE, encoding='utf8')
+        
+        output, err = code.communicate()
+        # self.assertEqual("Usage: python3 basic_cl.py row column", output.strip())
