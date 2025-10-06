@@ -37,7 +37,7 @@ class TestMain():
         self.assertEqual(result, output)
         
         code.terminate()
-    def main_test_state_edge(self):
+    def main_test_state_n(self):
         code = subprocess.Popen(['python3','--state', 'command_line.py', 'alabama'],stdin=subprocess.PIPE, 
         stdout=subprocess.PIPE, encoding='utf8') 
         output, err = code.communicate()
