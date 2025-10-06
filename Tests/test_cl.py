@@ -12,6 +12,13 @@ class SearchByState(unittest.TestCase):
         result = search_by_state('Canada')
         self.assertEqual(result,expected)
 
+    def test_valid_state_name(self):
+        '''ensures that the function returns list of dictionaries for valid US state input'''
+        result = search_by_state('Alabama')
+        self.assertIsInstance(result, list)
+        self.assertIsInstance(result[0], dict)
+        self.assertEqual(result[0]['\ufeffState'], 'Alabama')
+
 class SearchByName(unittest.TestCase):
     def setUp(self):
         load_drugdata()
