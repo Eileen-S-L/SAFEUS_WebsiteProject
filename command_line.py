@@ -10,21 +10,27 @@ from ProductionCode.drugshelperfuncs import *
 # import drug_state_year_search.py 
 
 def main ():
-        parser= argparse.ArgumentParser(usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \n To filter the dataset by state name use: python3 command_line.py --state \"chosen state\"')
+        parser= argparse.ArgumentParser(usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\"')
         parser.add_argument('--year')
         parser.add_argument('--state')
-        args= parser.parse_args()
-        usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \n To filter the dataset by state name use: python3 command_line.py --state \"chosen state\"'
+        # args= parser.parse_args()
+        args, unknown = parser.parse_known_args()
 
-        if (len(sys.argv) > 2):
+        usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\"'
+
+        if (len(sys.argv) > 3):
+                print(usage)
+        
+        elif unknown:
                 print(usage)
 
-        if (args.year != None and args.state == None):
+        elif (args.year != None and args.state == None):
                 print(search_by_year(args.year))
 
 
-        if (args.state != None and args.year == None):
+        elif (args.state != None and args.year == None):
                 print(search_by_state(args.state))
+                pass
 
         else:
                 print(usage)
