@@ -10,10 +10,9 @@ from ProductionCode.drugshelperfuncs import *
 # import drug_state_year_search.py 
 
 def main ():
-        parser= argparse.ArgumentParser(usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\"')
+        parser = argparse.ArgumentParser(usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\"')
         parser.add_argument('--year')
         parser.add_argument('--state')
-        # args= parser.parse_args()
         args, unknown = parser.parse_known_args()
 
         usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\"'

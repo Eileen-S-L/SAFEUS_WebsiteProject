@@ -21,7 +21,7 @@ def search_by_state(state_name):
         if row['\ufeffState'].strip().lower() == str(state_name).lower():
             results.append(row)
     if len(results) == 0:
-        return "No records found for state " + str(state_name)
+        return "No records found for state " + state_name
         print(result)
     return results
 
@@ -35,4 +35,3 @@ def search_by_year(year):
     if results == []:
         return "No records found for year: " + str(year)
     return results
-
