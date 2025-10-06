@@ -2,10 +2,13 @@
 - features:
     search data by year or by state through command line
 
-
 ## Potential Users
+- anyone who intends to search about data of drug usage in U.S by states/years
 
-## Potential benefits and harms
+## Potential benefits
+- could provide an easy access to dataset information for users who could properly carry out the searching process.
+## Potential Harms
+- Some user might be excluded due to various reasons.(check CIDER analysis)
 
 ## Critique
 1. The user must be literated, and an english-speaker in order to use command line
@@ -29,3 +32,4 @@ Critique 3:
 - the dataset is limited, users might make biased assumptions or overgeneralize the results about specific age groups or substances without sufficient evidence/ or information
 - the data only asks for state and year it does not provide graphs for better visualisation 
 ## Repeat
+- we repeat this CIDER process twice, all ideas are recorded in previous sections. 
