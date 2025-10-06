@@ -2,6 +2,11 @@
 - features:
     search data by year or by state through command line
 
+
+## Potential Users
+
+## Potential benefits and harms
+
 ## Critique
 1. The user must be literated, and an english-speaker in order to use command line
 2. The user must be visually functional. The process of entering command line and return data all needs visual ability.  
@@ -21,5 +26,6 @@ Critique 3:
 4. If the website could actively update to other datasets, or even swap dataset based on user's request, then this issue could be solved. 
 
 ## Expand
-
+- the dataset is limited, users might make biased assumptions or overgeneralize the results about specific age groups or substances without sufficient evidence/ or information
+- the data only asks for state and year it does not provide graphs for better visualisation 
 ## Repeat
