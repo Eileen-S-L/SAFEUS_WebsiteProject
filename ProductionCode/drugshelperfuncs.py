@@ -35,9 +35,4 @@ def search_by_year(year):
         return "No records found for year: " + str(year)
     return results
 
-
-
-print(search_by_year(2002))
-
-    
     
