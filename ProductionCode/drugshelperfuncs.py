@@ -16,9 +16,12 @@ def load_drugdata():
 def search_by_state(state_name):
     '''returns results(row from dataset) based on state as input'''
     data = load_drugdata()
-    results = [row for row in data if row['State'].strip().lower() == state_name.lower()]
-    if len(results) == 0:
-        print("No records found for state:", state_name)
+    results = []
+    for row in data:
+        if row['\ufeffState'].strip().lower() == state_name.lower():
+            results.append(row)
+    if results == []:
+        return "No records found for state " + state_name
     return results
 
 def search_by_year(year):
@@ -30,7 +33,7 @@ def search_by_year(year):
     return results
 
 
-print(load_drugdata())
+print(search_by_state('Canada'))
 
     
     
