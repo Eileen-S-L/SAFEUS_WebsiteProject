@@ -29,7 +29,7 @@ class SearchByName(unittest.TestCase):
         self.assertEqual(result, expected)
 
 # Command line test
-class TestMain(self):
+class TestMain():
     def main_test_year_n(self):
         code = subprocess.Popen(['python3','--year', 'command_line.py', '2002'],stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf8')
         output, err = code.communicate()
