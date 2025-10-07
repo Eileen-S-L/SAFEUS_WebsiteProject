@@ -43,3 +43,9 @@ class TestMain():
         output, err = code.communicate()
         result = [{'\ufeffState': 'Alabama', 'Year': '2002', 'Population.12-17': '380805'}, {'\ufeffState': 'Alabama', 'Year': '2003', 'Population.12-17': '381563'}, {'\ufeffState': 'Alabama', 'Year': '2004', 'Population.12-17': '380150'}, {'\ufeffState': 'Alabama', 'Year': '2005', 'Population.12-17': '384026'}, {'\ufeffState': 'Alabama', 'Year': '2006', 'Population.12-17': '386639'}, {'\ufeffState': 'Alabama', 'Year': '2007', 'Population.12-17': '383012'}, {'\ufeffState': 'Alabama', 'Year': '2008', 'Population.12-17': '379377'}, {'\ufeffState': 'Alabama', 'Year': '2009', 'Population.12-17': '375942'}, {'\ufeffState': 'Alabama', 'Year': '2010', 'Population.12-17': '386718'}, {'\ufeffState': 'Alabama', 'Year': '2011', 'Population.12-17': '385060'}, {'\ufeffState': 'Alabama', 'Year': '2012', 'Population.12-17': '383469'}, {'\ufeffState': 'Alabama', 'Year': '2013', 'Population.12-17': '382134'}, {'\ufeffState': 'Alabama', 'Year': '2014', 'Population.12-17': '380801'}, {'\ufeffState': 'Alabama', 'Year': '2015', 'Population.12-17': '378330'}, {'\ufeffState': 'Alabama', 'Year': '2016', 'Population.12-17': '375632'}, {'\ufeffState': 'Alabama', 'Year': '2017', 'Population.12-17': '373065'}, {'\ufeffState': 'Alabama', 'Year': '2018', 'Population.12-17': '371033'}]
         self.assertEqual(result, output)
+
+    def main_test_state_invalid(self):
+        code = subprocess.Popen(['python3', '--state', 'command_line.py', 'China'], stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE, encoding='utf8')
+        output, err =code.communicate()
+        self.assertEqual(output.strip(), 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\"')
