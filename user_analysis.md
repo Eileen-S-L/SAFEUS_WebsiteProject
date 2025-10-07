@@ -4,9 +4,12 @@
 
 ## Potential Users
 - anyone who intends to search about data of drug usage in U.S by states/years
+- Students who want to use the data for school projects or data collection
 
 ## Potential benefits
 - could provide an easy access to dataset information for users who could properly carry out the searching process.
+- Could help establish correlation between substance intake, geographical locations and age groups in the U.S.
+
 ## Potential Harms
 - Some user might be excluded due to various reasons.(check CIDER analysis)
 
