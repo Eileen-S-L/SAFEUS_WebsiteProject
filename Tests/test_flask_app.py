@@ -50,7 +50,17 @@ class TestErrorHandler(unittest.TestCase):
     def test_404error(self):
         self.app = app.test_client()
         response = self.app.get('404', follow_redirects=True)
-        """ Arguments: 404
+        """ Arguments: 404/function and expected output
         Return Value: String explaining the error
         Purpose: Make sure that the user realizes that there is an error"""
         self.assertIn(b"Page not found. Go to the homepage and look at the directions for searching through the data.", response.data)
+
+    # NOT WORKING IDK WHY
+    # def test_500error(self):
+    #     self.app = app.test_client()
+    #     response = self.app.get('500', follow_redirects=True)
+    #     """ Arguments: 500/function and expected output
+    #     Return Value: String explaining the error
+    #     Purpose: Ensures that the coder recognizes that there is an error"""
+    #     self.assertRaises(AssertionError, response.data, "500" )
+        
