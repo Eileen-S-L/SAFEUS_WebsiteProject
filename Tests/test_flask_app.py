@@ -45,3 +45,12 @@ class TestStateDisplay(unittest.TestCase):
         Return Value: None
         Purpose: Makes sure that the edge case for the state display route passes"""
         self.assertIn(b'No records found for state: China', response.data)
+
+class TestErrorHandler(unittest.TestCase):
+    def test_404error(self):
+        self.app = app.test_client()
+        response = self.app.get('404', follow_redirects=True)
+        """ Arguments: 404
+        Return Value: String explaining the error
+        Purpose: Make sure that the user realizes that there is an error"""
+        self.assertIn(b"Page not found. Go to the homepage and look at the directions for searching through the data.", response.data)

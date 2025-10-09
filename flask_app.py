@@ -42,6 +42,20 @@ def displaydatabyyear(year):
 def displaydatabystate(state):
     return str(search_by_state(str(state)))
 
+""" Arguments: e
+    Return Value: Instructions on how to get to an actual page
+    Purpose: Tell users that they went to the wrong/nonexistent page and tell them how to get to a correct/real one"""
+@app.errorhandler(404)
+def page_not_found(e):
+    return "Page not found. Go to the homepage and look at the directions for searching through the data."
+
+""" Arguments: e
+    Return Value: A message stating that there is an error
+    Purpose: To catch an error within the python code"""
+@app.errorhandler(500)
+def python_bug(e):
+    return "You made an error! Go back through your code to find it!"
+
 if __name__ == '__main__':
     load_data()
     app.run()
