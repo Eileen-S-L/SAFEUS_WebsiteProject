@@ -38,7 +38,7 @@ def get_cell(row, column):
 def displaydatabyyear(year):
     return str(search_by_year(year))
 
-@app.route('/state/{state}', strict_slashes = False)
+@app.route('/state/<state>', strict_slashes = False)
 def displaydatabystate(state):
     return str(search_by_state(str(state)))
 

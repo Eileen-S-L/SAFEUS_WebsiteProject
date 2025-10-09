@@ -30,9 +30,9 @@ class TestYearDisplay(unittest.TestCase):
 
 class TestStateDisplay(unittest.TestCase):
     def test_routeStandard(self):
-        output = b" "
+        output = b"[{'\ufeffState': 'Texas', 'Year': '2002', 'Population.12-17': '2018953'}, {'\ufeffState': 'Texas', 'Year': '2003', 'Population.12-17': '2038642'}, {'\ufeffState': 'Texas', 'Year': '2004', 'Population.12-17': '2052845'}, {'\ufeffState': 'Texas', 'Year': '2005', 'Population.12-17': '2083455'}, {'\ufeffState': 'Texas', 'Year': '2006', 'Population.12-17': '2105817'}, {'\ufeffState': 'Texas', 'Year': '2007', 'Population.12-17': '2107904'}, {'\ufeffState': 'Texas', 'Year': '2008', 'Population.12-17': '2113980'}, {'\ufeffState': 'Texas', 'Year': '2009', 'Population.12-17': '2125058'}, {'\ufeffState': 'Texas', 'Year': '2010', 'Population.12-17': '2243713'}, {'\ufeffState': 'Texas', 'Year': '2011', 'Population.12-17': '2265694'}, {'\ufeffState': 'Texas', 'Year': '2012', 'Population.12-17': '2295567'}, {'\ufeffState': 'Texas', 'Year': '2013', 'Population.12-17': '2327085'}, {'\ufeffState': 'Texas', 'Year': '2014', 'Population.12-17': '2361420'}, {'\ufeffState': 'Texas', 'Year': '2015', 'Population.12-17': '2395358'}, {'\ufeffState': 'Texas', 'Year': '2016', 'Population.12-17': '2431437'}, {'\ufeffState': 'Texas', 'Year': '2017', 'Population.12-17': '2463690'}, {'\ufeffState': 'Texas', 'Year': '2018', 'Population.12-17': '2485959'}]"
         self.app = app.test_client()
-        response = self.app.get('/state/<state>', follow_redirects=True)
+        response = self.app.get('/state/texas', follow_redirects=True)
         """ Arguments: function and expected output
         Return Value: None
         Purpose: Ensuring that the standard case for the state display route passes"""
@@ -40,11 +40,11 @@ class TestStateDisplay(unittest.TestCase):
     
     def test_routeEdge(self):
         self.app = app.test_client()
-        response = self.app.get('/state/China', follow_redirects=True)
+        response = self.app.get('/state/china', follow_redirects=True)
         """ Arguments: function and expected output
         Return Value: None
         Purpose: Makes sure that the edge case for the state display route passes"""
-        self.assertIn(b'No records found for state: China', response.data)
+        self.assertIn(b'No records found for state china', response.data)
 
 class TestErrorHandler(unittest.TestCase):
     def test_404error(self):
