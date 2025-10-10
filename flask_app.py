@@ -56,6 +56,13 @@ def page_not_found(e):
 def python_bug(e):
     return "You made an error! Go back through your code to find it!"
 
+""" Arguments: random word
+    Return Value: None
+    Purpose: To create an error within the code so the 500 error test can pass and be tested"""
+@app.route('/wrong/<random>', strict_slashes = False)
+def wrongfunction(random):
+    return 
+
 if __name__ == '__main__':
     load_data()
     app.run()
