@@ -1,13 +1,18 @@
 # Drug_data_search features - CIDER analysis
 - features:
-    search data by year or by state through command line
+  search data by year or by state through command line
+  Lets users search U.S. drug data by year or state.
+  Error messages appear when users enter wrong routes or invalid inputs.
 
 ## Potential Users
-- anyone who intends to search about data of drug usage in U.S by states/years
+- Students and researchers exploring drug use data across U.S. states and years.
 - Students who want to use the data for school projects or data collection
+- Anyone interested in youth drug data in the U.S.
 
 ## Potential benefits
 - could provide an easy access to dataset information for users who could properly carry out the searching process.
+- Makes it easier to find drug data without opening large CSV files.
+- Helps users see connections between age, state, and drug use trends.
 - Could help establish correlation between substance intake, geographical locations and age groups in the U.S.
 
 ## Potential Harms
@@ -33,6 +38,7 @@ Critique 3:
 
 ## Expand
 - the dataset is limited, users might make biased assumptions or overgeneralize the results about specific age groups or substances without sufficient evidence/ or information
-- the data only asks for state and year it does not provide graphs for better visualisation 
+- the data only asks for state and year it does not provide graphs for better visualisation
+- It could be improved by adding visual graphs or connecting to live data updates.
 ## Repeat
 - we repeat this CIDER process twice, all ideas are recorded in previous sections. 
