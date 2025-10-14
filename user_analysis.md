@@ -1,38 +1,46 @@
 # Drug_data_search features - CIDER analysis
 - features:
-    search data by year or by state through command line
+  1. search data by year or by state through command line.
+  2. Users can search using simple search links like /year/<year> or /state/<state>.
+  3. Error messages appear when users enter wrong search or invalid inputs.
 
 ## Potential Users
-- anyone who intends to search about data of drug usage in U.S by states/years
-- Students who want to use the data for school projects or data collection
+- Students and researchers exploring drug use data across U.S. states and years.
+- Students who want to use the data for school projects or data collection.
+- Anyone interested in drug data in the U.S.
 
 ## Potential benefits
 - could provide an easy access to dataset information for users who could properly carry out the searching process.
+- Makes it easier to find drug data without opening large CSV files.
+- Helps users see connections between age, state, and drug use trends.
 - Could help establish correlation between substance intake, geographical locations and age groups in the U.S.
 
 ## Potential Harms
-- Some user might be excluded due to various reasons.(check CIDER analysis)
+- Some user might be excluded due to various reasons.(check CIDER analysis).
+- The smaller Minidrugdataset is only for testing, so if used alone, it could give incomplete results.
 
 ## Critique
-1. The user must be literated, and an english-speaker in order to use command line
-2. The user must be visually functional. The process of entering command line and return data all needs visual ability.  
-3. The user must have a certain level of technology access, and have basic level of training about computer science. Command-line level of operation isn't intuitive on its nature.
-4. The dataset is served for user who only cares about younger population's drug usage. Assuming that user might inclined to search their own age range, this dataset may serve only young users well. 
+1. The user must be literated, and an english-speaker in order to use command line.
+2. The user must be visually functional to see the screen and read result.
+3. The user needs basic computer and internet access.
+4. The user need basic level of training about computer science.
+5. The dataset is served for user who only cares about younger population's drug usage. Assuming that user might inclined to search their own age range, this dataset may serve only young users well. 
 
 ## Imagine
 Critique 3:
-- If a user doesn't have any internet access or electronic devices that supports such service, then they won't be able to use our websites. 
-- if a user does have every physical elements to access a website, they might not be able to carry out searching actions due to the unfamiliarity of using command-lines.
+- If someone doesn’t have a computer or internet access, they can’t use our websites. 
+- Even if they do, they might not know how to type the search links for example, /year/2010 or /state/Texas.
 
 ## Design 
 *ignore technical feasibility*
-1. Implementation of auto translation/explanation choice for non-english speaker 
-2. Implementation of reading data return & recieve searching requirement through audio message - allows visually disabled or iliterated user to use the website.
-3. Offer a quick 5secs command-line tutorial before the user first start to search. This service could be optional and skipped by Coding familiar users.
-4. If the website could actively update to other datasets, or even swap dataset based on user's request, then this issue could be solved. 
+1. Add an auto-translate/explanation feature for users who don’t speak English.
+2. Add an audio option that reads results aloud for people with vision problems.
+3. Offer an optional short tutorial or guide before users start searching.
+4. Allow the app to update or switch datasets based on user requests. 
 
 ## Expand
 - the dataset is limited, users might make biased assumptions or overgeneralize the results about specific age groups or substances without sufficient evidence/ or information
-- the data only asks for state and year it does not provide graphs for better visualisation 
+- the data only asks for state and year it does not provide graphs for better visualisation
+- It could be improved by adding visual graphs or connecting to live data updates.
 ## Repeat
 - we repeat this CIDER process twice, all ideas are recorded in previous sections. 
