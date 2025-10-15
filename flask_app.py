@@ -67,7 +67,7 @@ def python_bug(e):
     Purpose: To create an error within the code so the 500 error test can pass and be tested"""
 @app.route('/wrong/<random>', strict_slashes = False)
 def wrongfunction(random):
-    return 
+    raise Exception("Intentional error for testing 500 handler")
 
 if __name__ == '__main__':
     app.run()
