@@ -32,7 +32,9 @@ def search_by_state(state_name=None):
     return results
 
 def search_by_year(year=None):
-    ''''returns results (row from dataset) based on year as input'''
+     """ Arguments: year
+    Return Value: returns string 
+    Purpose: To give returns results (row from dataset) based on year as input"""
     if not year:
         return "Page not found. Go to the homepage and look at the directions for searching through the data."
     data = load_drugdata()
