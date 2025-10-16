@@ -5,7 +5,9 @@ data_file = os.path.join(os.path.dirname(__file__), "..", "Data", "Minidrugdatas
 #data_file = '../Data/Minidrugdataset.csv' 
 
 def load_drugdata():
-    '''loads the data and returns a list format'''
+    """ Arguments: None
+    Return Value: The data as a list
+    Purpose: loads the data and returns a list format"""
     data_list = []
     with open (data_file, mode= 'r') as file:
         csv_reader = csv.DictReader(file)
@@ -14,7 +16,9 @@ def load_drugdata():
     return data_list
             
 def search_by_state(state_name=None):
-    '''returns results (row from dataset) based on state as input'''
+     """ Arguments: state name
+    Return Value: returns string 
+    Purpose: To give results (row from dataset) based on state as input"""
     if not state_name:
         return "Page not found. Go to the homepage and look at the directions for searching through the data."
     data = load_drugdata()
