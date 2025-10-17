@@ -24,9 +24,11 @@
 ### Eileen Liu
     - Time-keeping 
     - Diligent worker
+    - followed rigorous standards
 ### Ayobami Bidokwu
     - Open-minded with changes 
     - Sense of humor
+    - Unorthodox
 
 ## Utilizing strength 
     - With members who's open-minded and creative, with efficent communication, our team
