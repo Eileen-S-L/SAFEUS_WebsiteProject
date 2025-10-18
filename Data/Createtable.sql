@@ -44,7 +44,7 @@ CREATE TABLE Marijuana_table (
     Past_month_26AndMore int,
     Rate_month_12To17 float,
     Rate_month_18To25 float,
-    Rate_month_26AndMore float
+    Rate_month_26AndMore float,
     Past_year_12To17 int,
     Past_year_18To25 int, 
     Past_year_26AndMore int, 
