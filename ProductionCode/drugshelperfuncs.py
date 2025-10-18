@@ -1,3 +1,6 @@
+'''
+We probably need to refractor this file into Datasource.py format and add more function
+'''
 import csv
 import os
 
@@ -16,7 +19,7 @@ def load_drugdata():
     return data_list
             
 def search_by_state(state_name=None):
-     """ Arguments: state name
+    """ Arguments: state name
     Return Value: returns string 
     Purpose: To give results (row from dataset) based on state as input"""
     if not state_name:
@@ -32,7 +35,7 @@ def search_by_state(state_name=None):
     return results
 
 def search_by_year(year=None):
-     """ Arguments: year
+    """ Arguments: year
     Return Value: returns string 
     Purpose: To give returns results (row from dataset) based on year as input"""
     if not year:
