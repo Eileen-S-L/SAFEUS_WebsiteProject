@@ -38,9 +38,9 @@ CREATE TABLE Alcohol_table (
 
 DROP TABLE IF EXISTS Cocaine_table;
 FOREIGN KEY(State_id)
-REFERENCES state_table_name (State_id);
+REFERENCES State_table (State_id);
 FOREIGN KEY(Year_id)
-REFERENCES Year_table_name (Year_id);
+REFERENCES Year_table (Year_id);
 CREATE TABLE Cocaine_table (
     Past_year_12To17 int,
     Past_year_18To25 int, 
@@ -52,9 +52,9 @@ CREATE TABLE Cocaine_table (
 
 DROP TABLE IF EXISTS Marijuana_table;
 FOREIGN KEY(State_id)
-REFERENCES state_table_name (State_id);
+REFERENCES State_table (State_id);
 FOREIGN KEY(Year_id)
-REFERENCES Year_table_name (Year_id);
+REFERENCES Year_table (Year_id);
 CREATE TABLE Marijuana_table (
     New_users_12To17 int,
     New_users_18To25 int,
@@ -78,9 +78,9 @@ CREATE TABLE Marijuana_table (
 
 DROP TABLE IF EXISTS Tobacco_table;
 FOREIGN KEY(State_id)
-REFERENCES state_table_name (State_id);
+REFERENCES State_table(State_id);
 FOREIGN KEY(Year_id)
-REFERENCES Year_table_name (Year_id);
+REFERENCES Year_table(Year_id);
 CREATE TABLE Tobacco_table (
     Past_year_12To17 int,
     Past_year_18To25 int, 
