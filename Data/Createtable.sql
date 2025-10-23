@@ -4,12 +4,23 @@
 We probably need another table for common shared-data like population of each age 
 and state. Minidrugdataset only have population for 12-17 so it's incomplete
 */
+DROP TABLE IF EXISTS Year_table;
+ALTER TABLE Year_table ADD PRIMARY KEY (Year_id)
+CREATE TABLE Alcohol_table (
+    Year_no, int
+);
+
+DROP TABLE IF EXISTS State_table;
+ALTER TABLE State_table ADD PRIMARY KEY (State_id)
+CREATE TABLE State_table (
+    Year_no, int
+);
 
 DROP TABLE IF EXISTS Alcohol_table;
 FOREIGN KEY(State_id)
-REFERENCES state_table_name (State_id);
+REFERENCES State_table (State_id);
 FOREIGN KEY(Year_id)
-REFERENCES Year_table_name (Year_id);
+REFERENCES Year_table (Year_id);
 CREATE TABLE Alcohol_table (
     Past_year_12To17 int,
     Past_year_18To25 int, 
