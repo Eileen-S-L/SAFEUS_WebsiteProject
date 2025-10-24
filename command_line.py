@@ -13,7 +13,7 @@ def main ():
         parser = argparse.ArgumentParser(usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\" \nTo filter the dataset by state name use: python3 command_line.py -- drug type \"chosen drug type\"')
         parser.add_argument('--year')
         parser.add_argument('--state')
-        parser.add_argument('--drugType')
+        parser.add_argument('--substance')
         args, unknown = parser.parse_known_args()
 
         usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\" \nTo filter the dataset by state name use: python3 command_line.py -- drug type \"chosen drug type\"'
