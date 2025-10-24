@@ -25,7 +25,7 @@ class DataSource:
         return connection
     
     def get_data_by_year(self, Substance, Year):
-        '''Argument: Year
+        '''Argument: Year & substance
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
         if (int(Year)>2018 or int(Year)<2002):
@@ -45,13 +45,13 @@ class DataSource:
             return None
     
     def get_data_by_state(self, Substance, State):
-        '''Argument: Year
+        '''Argument: State & substance
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
         try:
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
-            query = "SELECT * FROM %s WHERE State = %s ;"
+            query = "SELECT * FROM " + Substance " WHERE State = %s ;"
             #Execute a query
             #Retrieve query results
             cursor.execute(query, (Substance, State,))
