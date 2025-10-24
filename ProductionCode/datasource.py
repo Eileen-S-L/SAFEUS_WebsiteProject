@@ -57,6 +57,8 @@ class DataSource:
             cursor.execute(query, (State.title(),))
 
             records = cursor.fetchall()
+            if records == []:
+                return "That state does not exist in the USA"
             return records
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
