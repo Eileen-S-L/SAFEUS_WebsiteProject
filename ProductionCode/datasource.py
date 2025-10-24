@@ -54,7 +54,7 @@ class DataSource:
             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
             #Execute a query
             #Retrieve query results
-            cursor.execute(query, (State,))
+            cursor.execute(query, (State.capitalize(),))
 
             records = cursor.fetchall()
             return records
