@@ -28,10 +28,10 @@ class DataSource:
         try:
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
-            query = "SELECT * FROM %s WHERE Year = %s ;"
+            query = "SELECT * FROM" + Substance + "WHERE Year = %s ;"
             #Execute a query
             #Retrieve query results
-            cursor.execute(query, (Substance, Year,))
+            cursor.execute(query, (Year,))
 
             records = cursor.fetchall()
             return records
