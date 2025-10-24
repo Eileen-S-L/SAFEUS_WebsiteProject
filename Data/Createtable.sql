@@ -25,6 +25,8 @@ CREATE TABLE Alcohol_table (
 
 DROP TABLE IF EXISTS Cocaine_table;
 CREATE TABLE Cocaine_table (
+    Year int,
+    State text,
     Past_year_12To17 int,
     Past_year_18To25 int, 
     Past_year_26AndMore int, 
@@ -35,6 +37,8 @@ CREATE TABLE Cocaine_table (
 
 DROP TABLE IF EXISTS Marijuana_table;
 CREATE TABLE Marijuana_table (
+    Year int,
+    State text,
     New_users_12To17 int,
     New_users_18To25 int,
     New_users_26AndMore int,
@@ -57,6 +61,8 @@ CREATE TABLE Marijuana_table (
 
 DROP TABLE IF EXISTS Tobacco_table;
 CREATE TABLE Tobacco_table (
+    Year int,
+    State text,
     Past_year_12To17 int,
     Past_year_18To25 int, 
     Past_year_26AndMore int, 

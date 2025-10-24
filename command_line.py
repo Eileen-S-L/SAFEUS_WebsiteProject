@@ -10,12 +10,13 @@ from ProductionCode.drugshelperfuncs import *
 # import drug_state_year_search.py 
 
 def main ():
-        parser = argparse.ArgumentParser(usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\"')
+        parser = argparse.ArgumentParser(usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\" \nTo filter the dataset by state name use: python3 command_line.py -- drug type \"chosen drug type\"')
         parser.add_argument('--year')
         parser.add_argument('--state')
+        parser.add_argument('--drugType')
         args, unknown = parser.parse_known_args()
 
-        usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\"'
+        usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\" \nTo filter the dataset by state name use: python3 command_line.py -- drug type \"chosen drug type\"'
 
         if (len(sys.argv) > 3):
                 print(usage)
