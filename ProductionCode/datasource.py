@@ -51,7 +51,7 @@ class DataSource:
         try:
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
-            query = "SELECT * FROM " + Substance " WHERE State = %s ;"
+            query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
             #Execute a query
             #Retrieve query results
             cursor.execute(query, (Substance, State,))
