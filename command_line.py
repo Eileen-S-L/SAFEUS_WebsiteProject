@@ -25,11 +25,13 @@ def main ():
                 print(usage)
         
 
-        elif (args.year != None and args.state == None):
+        # elif (args.year != None and args.state == None):
+        elif (args.year != None):
                 print(search_by_year(args.year))
 
 
-        elif (args.state != None and args.year == None):
+        # elif (args.state != None and args.year == None):
+        elif (args.state != None):
                 print(search_by_state(args.state))
                 pass
 
