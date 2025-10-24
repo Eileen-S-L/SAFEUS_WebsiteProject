@@ -4,11 +4,13 @@
 We probably need another table for common shared-data like population of each age 
 and state. Minidrugdataset only have population for 12-17 so it's incomplete
 */
-
 DROP TABLE IF EXISTS Alcohol_table;
 CREATE TABLE Alcohol_table (
     Year int,
     State text,
+    Population_12To17 int,
+    Population_18To25 int,
+    Population_26AndMore int,
     Past_year_12To17 int,
     Past_year_18To25 int, 
     Past_year_26AndMore int, 
@@ -27,6 +29,9 @@ DROP TABLE IF EXISTS Cocaine_table;
 CREATE TABLE Cocaine_table (
     Year int,
     State text,
+    Population_12To17 int,
+    Population_18To25 int,
+    Population_26AndMore int,
     Past_year_12To17 int,
     Past_year_18To25 int, 
     Past_year_26AndMore int, 
@@ -39,6 +44,9 @@ DROP TABLE IF EXISTS Marijuana_table;
 CREATE TABLE Marijuana_table (
     Year int,
     State text,
+    Population_12To17 int,
+    Population_18To25 int,
+    Population_26AndMore int,
     New_users_12To17 int,
     New_users_18To25 int,
     New_users_26AndMore int,
@@ -63,6 +71,9 @@ DROP TABLE IF EXISTS Tobacco_table;
 CREATE TABLE Tobacco_table (
     Year int,
     State text,
+    Population_12To17 int,
+    Population_18To25 int,
+    Population_26AndMore int,
     Past_year_12To17 int,
     Past_year_18To25 int, 
     Past_year_26AndMore int, 
