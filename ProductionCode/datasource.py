@@ -38,4 +38,22 @@ class DataSource:
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
             return None
+    
+    def get_data_by_state(self, drugType, State):
+        '''Argument: Year
+        Return: records, which is a list of data related to searched-year
+        Purpose: Select wanted data from connected database'''
+        try:
+            #Open a cursor to perform database operations
+            cursor = self.connection.cursor()
+            query = "SELECT * FROM %s WHERE State = %s ;"
+            #Execute a query
+            #Retrieve query results
+            cursor.execute(query, (drugType, State,))
+
+            records = cursor.fetchall()
+            return records
+        except Exception as e: 
+            print ("something went wrong when executing the query:",e)
+            return None
         
