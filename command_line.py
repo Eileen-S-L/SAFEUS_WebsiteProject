@@ -19,6 +19,7 @@ def main ():
         usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\" \nTo filter the dataset by state name use: python3 command_line.py -- drug type \"chosen drug type\"'
 
         if (len(sys.argv) > 4):
+                #why do we need and comparison in the following codes
                 print(usage)
         
         elif unknown:
