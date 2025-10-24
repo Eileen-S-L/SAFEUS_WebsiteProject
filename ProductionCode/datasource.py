@@ -21,17 +21,17 @@ class DataSource:
             sys.exit(1)
         return connection
     
-    def get_data_by_year(self,Year):
+    def get_data_by_year(self, drugType, Year):
         '''Argument: Year
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
         try:
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
-            query = "SELECT * FROM alcohol12_17_table WHERE Year = %s ;"
+            query = "SELECT * FROM %s WHERE Year = %s ;"
             #Execute a query
             #Retrieve query results
-            cursor.execute(query, (Year,))
+            cursor.execute(query, (drugType, Year,))
 
             records = cursor.fetchall()
             return records

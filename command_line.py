@@ -4,7 +4,7 @@ This will be the entry point for the project when run from the command line.
 '''
 import argparse 
 import sys
-from ProductionCode.drugshelperfuncs import *
+from ProductionCode.CSVdrugshelperfuncs import *
 
 # import the python file with the written functions
 # import drug_state_year_search.py 
