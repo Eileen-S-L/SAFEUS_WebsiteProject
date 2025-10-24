@@ -28,7 +28,7 @@ class DataSource:
         '''Argument: Year
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
-        if (Year>2018 or Year<2002):
+        if (int(Year)>2018 or int(Year)<2002):
             return "We only have data from 2002 to 2018. Please input one of these years :)"
         try:
             #Open a cursor to perform database operations
