@@ -22,16 +22,16 @@ def homepage():
 """ Arguments: route and how to view the slashes
     Return Value: All the data from rows with the inputted year
     Purpose: To allow users to see drug data by year"""
-@app.route('substance/<substance>/year/<year>', strict_slashes = False)
-@app.route('Substance/<substance>/Year/<year>', strict_slashes = False)
+@app.route('/substance/<substance>/year/<year>', strict_slashes = False)
+@app.route('/Substance/<substance>/Year/<year>', strict_slashes = False)
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
     return str(data.get_data_by_year(substance, year))
 
 
-@app.route('substance/<substance>/state/<state>', strict_slashes = False)
-@app.route('Substance/<substance>/State/<state>', strict_slashes = False)
+@app.route('/substance/<substance>/state/<state>', strict_slashes = False)
+@app.route('/Substance/<substance>/State/<state>', strict_slashes = False)
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
