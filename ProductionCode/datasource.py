@@ -21,7 +21,7 @@ class DataSource:
             sys.exit(1)
         return connection
     
-    def get_data_by_year(self, drugType, Year):
+    def get_data_by_year(self, Substance, Year):
         '''Argument: Year
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
@@ -31,7 +31,7 @@ class DataSource:
             query = "SELECT * FROM %s WHERE Year = %s ;"
             #Execute a query
             #Retrieve query results
-            cursor.execute(query, (drugType, Year,))
+            cursor.execute(query, (Substance, Year,))
 
             records = cursor.fetchall()
             return records
@@ -39,7 +39,7 @@ class DataSource:
             print ("something went wrong when executing the query:",e)
             return None
     
-    def get_data_by_state(self, drugType, State):
+    def get_data_by_state(self, Substance, State):
         '''Argument: Year
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
@@ -49,7 +49,7 @@ class DataSource:
             query = "SELECT * FROM %s WHERE State = %s ;"
             #Execute a query
             #Retrieve query results
-            cursor.execute(query, (drugType, State,))
+            cursor.execute(query, (Substance, State,))
 
             records = cursor.fetchall()
             return records
