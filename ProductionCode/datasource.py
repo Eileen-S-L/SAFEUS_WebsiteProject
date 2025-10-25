@@ -64,3 +64,24 @@ class DataSource:
             print ("something went wrong when executing the query:",e)
             return None
         
+
+# def get_data_by_substance(self, Substance):
+#         '''Argument: substance
+#         Return: records, which is a list of data related to searched-substance 
+#         Purpose: Select all data from the connected database'''
+#         try:
+#             #Open a cursor to perform database operations
+#             cursor = self.connection.cursor()
+#             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
+#             #Execute a query
+#             #Retrieve query results
+#             cursor.execute(query, (State.title(),))
+
+#             records = cursor.fetchall()
+#             if records == []:
+#                 return "That state does not exist in the USA"
+#             return records
+#         except Exception as e: 
+#             print ("something went wrong when executing the query:",e)
+#             return None
+        
