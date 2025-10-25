@@ -10,6 +10,7 @@ from ProductionCode.datasource import *
 # import the python file with the written functions
 # import drug_state_year_search.py 
 
+data = DataSource()
 def main ():
         parser = argparse.ArgumentParser(usage = 'To filter the dataset by year use: python3 command_line.py --year \"chosen year\" \nTo filter the dataset by state name use: python3 command_line.py --state \"chosen state\" \nTo filter the dataset by substance name(this is required for both state search and year search) use: python3 command_line.py -- drug type \"chosen drug type\"')
         parser.add_argument('--year')
