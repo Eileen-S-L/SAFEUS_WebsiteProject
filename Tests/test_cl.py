@@ -44,7 +44,7 @@ class TestCommandLine(unittest.TestCase):
         Purpose: Checks that searching by a valid state and substance returns expected results."""
         result = subprocess.Popen(['python3', 'command_line.py', '--state', 'California', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
-        self.assertIn(b'[(California', stdout)
+        self.assertIn(b"[('California'", stdout)
 
     def test_invalid_year(self):
         """Arguments: self
@@ -76,7 +76,7 @@ class TestCommandLine(unittest.TestCase):
         Purpose: Checks that searching by a state name with spaces works correctly."""
         result = subprocess.Popen(['python3', 'command_line.py', '--state', 'New York', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
-        self.assertIn(b'[(New York', stdout)
+        self.assertIn(b"[('New York'", stdout)
         
     def test_substance_case_insensitivity(self):
         """Arguments: self
