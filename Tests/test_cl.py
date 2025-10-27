@@ -1,5 +1,6 @@
 import unittest
 from command_line import *
+from ProductionCode.datasource import *
 import subprocess
 
 # Command line tests
@@ -9,7 +10,7 @@ class TestCommandLine(unittest.TestCase):
         """ Arguments: self
         Return Value: None
         Purpose: Checks that running the script without any arguments displays usage instructions."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'To filter the dataset by year use:', stdout)
 
@@ -17,7 +18,7 @@ class TestCommandLine(unittest.TestCase):
         """ Arguments: self
         Return Value: None
         Purpose: Checks that searching by year without specifying a substance returns usage instructions."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--year', '2010'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--year', '2010'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'To filter the dataset by year use:', stdout)
 
@@ -25,7 +26,7 @@ class TestCommandLine(unittest.TestCase):
         """ Arguments: self
         Return Value: None
         Purpose: Checks that searching by substance without specifying year or state returns usage instructions."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'To filter the dataset by year use:', stdout)
         
@@ -33,7 +34,7 @@ class TestCommandLine(unittest.TestCase):
         """Arguments: self
         Return Value: None
         Purpose: Checks that searching by a valid year and substance returns expected results."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--year', '2010', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--year', '2010', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'2010,', stdout)
 
@@ -41,7 +42,7 @@ class TestCommandLine(unittest.TestCase):
         """Arguments: self
         Return Value: None
         Purpose: Checks that searching by a valid state and substance returns expected results."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--state', 'California', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--state', 'California', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'[(California', stdout)
 
@@ -49,7 +50,7 @@ class TestCommandLine(unittest.TestCase):
         """Arguments: self
         Return Value: None
         Purpose: Checks that searching by an invalid year returns the appropriate error message."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--year', '2025', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--year', '2025', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'We only have data from 2002 to 2018. Please input one of these years :)', stdout)
         
@@ -57,7 +58,7 @@ class TestCommandLine(unittest.TestCase):
         """Arguments: self
         Return Value: None
         Purpose: Checks that searching by an invalid state name (non-U.S. state names) returns the appropriate error message."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--state', 'Nigeria', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--state', 'Nigeria', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'That state does not exist in the USA', stdout)
     
@@ -65,7 +66,7 @@ class TestCommandLine(unittest.TestCase):
         """Arguments: self
         Return Value: None
         Purpose: Checks that providing too many arguments returns usage instructions."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--year', '2010', '--state', 'California', '--substance', 'cocaine', '--extra', 'arg'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--year', '2010', '--state', 'California', '--substance', 'cocaine', '--extra', 'arg'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'To filter the dataset by year use:', stdout) 
         
@@ -73,7 +74,7 @@ class TestCommandLine(unittest.TestCase):
         """Arguments: self
         Return Value: None
         Purpose: Checks that searching by a state name with spaces works correctly."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--state', 'New York', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--state', 'New York', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'[(New York', stdout)
         
@@ -81,8 +82,35 @@ class TestCommandLine(unittest.TestCase):
         """Arguments: self
         Return Value: None
         Purpose: Checks that substance search is case insensitive."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--year', '2010', '--substance', 'coCaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py', '--year', '2010', '--substance', 'coCaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'2010,', stdout)
         
         
+class TestDataSourceMethods(unittest.TestCase):
+
+    def setUp(self):
+        """ Set up a DataSource instance for testing. """
+        self.ds = DataSource()
+
+    def test_get_data_by_year_valid(self):
+        """ Test get_data_by_year with a valid year. """
+        records = self.ds.get_data_by_year('cocaine', '2010')
+        self.assertIsInstance(records, list)
+        self.assertGreater(len(records), 0)
+
+    def test_get_data_by_year_invalid(self):
+        """ Test get_data_by_year with an invalid year. """
+        result = self.ds.get_data_by_year('cocaine', '2025')
+        self.assertEqual(result, "We only have data from 2002 to 2018. Please input one of these years :)")
+
+    def test_get_data_by_state_valid(self):
+        """ Test get_data_by_state with a valid state. """
+        records = self.ds.get_data_by_state('cocaine', 'California')
+        self.assertIsInstance(records, list)
+        self.assertGreater(len(records), 0)
+
+    def test_get_data_by_state_invalid(self):
+        """ Test get_data_by_state with an invalid state. """
+        result = self.ds.get_data_by_state('cocaine', 'Nigeria')
+        self.assertEqual(result, "That state does not exist in the USA")

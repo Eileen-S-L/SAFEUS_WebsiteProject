@@ -9,7 +9,7 @@ class DataSource:
 
     def __init__(self):
         '''Arguments: None
-        Return: 
+        Return: None 
         Purpose: Constructor that initiates connection to database'''
         self.connection = self.connect()
 
