@@ -46,6 +46,16 @@ class TestCommandLine(unittest.TestCase):
         stdout, stderr = result.communicate()
         self.assertIn(b'To filter the dataset by year use:', stdout) 
         
-    
+    def test_state_with_spaces(self):
+        '''Checks that searching by a state name with spaces (e.g., "New York") returns expected results.'''
+        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--state', 'New York', '--substance', 'opioids'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = result.communicate()
+        self.assertIn(b'[(New York', stdout)
+        
+    def test_substance_case_insensitivity(self):
+        '''Checks that the substance argument is case-insensitive.'''
+        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py', '--year', '2010', '--substance', 'OpIoIdS'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = result.communicate()
+        self.assertIn(b'2010,', stdout)
         
         
