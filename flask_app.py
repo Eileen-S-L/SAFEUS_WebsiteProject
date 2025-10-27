@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    return "Welcome to the homepage! <br> <br> How to view the data: <br> Go to route '/' and put in a row/column to see data. Column 0 shows state names, column 1 shows year, and column 3 shows population size for ages 12-17 <br> Type in route '/year/*a year*' to view the data according to year"
+    return "Welcome to the homepage! <br> <br> How to view the data: <br> Go to route '/' and put in a Substance and then / to insert your substance name,<br> Then type in /state/'a state' to see data per state <br> Or Type in route '/year/*a year*' to view the data according to year"
 
 
 
