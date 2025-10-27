@@ -1,7 +1,7 @@
 #This is test_cl.py for team project -- commanline.py
 
 import unittest
-from ProductionCode.drugshelperfuncs import *
+from ProductionCode.CSVdrugshelperfuncs import *
 import subprocess
 
 class SearchByState(unittest.TestCase):
