@@ -25,6 +25,8 @@ def homepage():
     Purpose: To allow users to see drug data by year"""
 @app.route('/substance/<substance>/year/<year>', strict_slashes = False)
 @app.route('/Substance/<substance>/Year/<year>', strict_slashes = False)
+@app.route('/Year/<year>/Substance/<substance>', strict_slashes = False)
+@app.route('/year/<year>/substance/<substance>', strict_slashes = False)
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
@@ -33,6 +35,8 @@ def displaydatabyyear(substance, year):
 
 @app.route('/substance/<substance>/state/<state>', strict_slashes = False)
 @app.route('/Substance/<substance>/State/<state>', strict_slashes = False)
+@app.route('/State/<state>/Substance/<substance>', strict_slashes = False)
+@app.route('/state/<state>/substance/<substance>', strict_slashes = False)
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
