@@ -9,7 +9,7 @@ class TestCommandLine(unittest.TestCase):
         """ Arguments: self
         Return Value: None
         Purpose: Checks that running the script without any arguments displays usage instructions."""
-        result = subprocess.Popen(['python3', 'ProductionCode/command_line.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        result = subprocess.Popen(['python3', 'command_line.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
         self.assertIn(b'To filter the dataset by year use:', stdout)
 
