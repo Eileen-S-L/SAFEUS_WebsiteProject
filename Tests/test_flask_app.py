@@ -8,7 +8,7 @@ class TestSOMEPAGE(unittest.TestCase):
         Purpose: For making sure that the proper output is shown on the homepage"""
         self.app = app.test_client()
         response = self.app.get('/', follow_redirects=True)
-        self.assertEqual(b"WWelcome to the homepage! <br> <br> How to view the data: <br> Go to route '/' and put in a Substance and then / to insert your substance name,<br> Then type in '/state/*a state*' to see data per state <br> Or Type in route '/year/*a year*' to view the data according to year", response.data)
+        self.assertEqual(b"Welcome to the homepage! <br> <br> How to view the data: <br> Go to route '/' and put in a Substance and then / to insert your substance name,<br> Then type in '/state/*a state*' to see data per state <br> Or Type in route '/year/*a year*' to view the data according to year", response.data)
 
 class TestYearDisplay(unittest.TestCase):
     def test_routeStandard(self):
@@ -43,7 +43,7 @@ class TestStateDisplay(unittest.TestCase):
         Return Value: None
         Purpose: Makes sure that the edge case for the state display route passes"""
         self.app = app.test_client()
-        response = self.app.get('/state/china', follow_redirects=True)
+        response = self.app.get('/substance/cocaine/state/china', follow_redirects=True)
         self.assertIn(b'That state does not exist in the USA', response.data)
 
 class TestErrorHandler(unittest.TestCase):
