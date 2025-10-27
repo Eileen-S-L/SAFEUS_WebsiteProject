@@ -1,7 +1,7 @@
 from flask_app import *
 import unittest
 
-class TestSOMEPAGE(unittest.TestCase):
+class TestHomePage(unittest.TestCase):
     def test_route(self):
         """ Arguments: function and expected output
         Return Value: None
@@ -27,6 +27,14 @@ class TestYearDisplay(unittest.TestCase):
         self.app = app.test_client()
         response = self.app.get('/substance/cocaine/year/2020', follow_redirects=True)
         self.assertIn(b'We only have data from 2002 to 2018. Please input one of these years :)', response.data)
+
+    def test_routeSubstanceOnly(self):
+        """ Arguments: function and expected output
+        Return Value: None
+        Purpose: Ensures that the edge case for the year display route passes when only substance is given"""
+        self.app = app.test_client()
+        response = self.app.get('/substance/cocaine/', follow_redirects=True)
+        self.assertIn(b'Page not found. Go to the homepage and look at the directions for searching through the data.', response.data)
 
 class TestStateDisplay(unittest.TestCase):
     def test_routeStandard(self):
