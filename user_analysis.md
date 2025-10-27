@@ -25,11 +25,17 @@
 3. The user needs basic computer and internet access.
 4. The user need basic level of training about computer science.
 5. The dataset is served for user who only cares about younger population's drug usage. Assuming that user might inclined to search their own age range, this dataset may serve only young users well. 
+Database:
+1. Assume user had understanding about Past-Month rule in substance questionnair 
+2. Assume user understand age-range classification 
+
 
 ## Imagine
 Critique 3:
 - If someone doesn’t have a computer or internet access, they can’t use our websites. 
 - Even if they do, they might not know how to type the search links for example, /year/2010 or /state/Texas.
+- Users might felt perplex because they're unclear about the Past month element of data
+- Or user might not instantly realize that numbers like 12-17 or 18-25 is for age range.
 
 ## Design 
 *ignore technical feasibility*
@@ -37,10 +43,12 @@ Critique 3:
 2. Add an audio option that reads results aloud for people with vision problems.
 3. Offer an optional short tutorial or guide before users start searching.
 4. Allow the app to update or switch datasets based on user requests. 
+5. Give verbal explanation of data columns or titles - maybe made it mandatory?
 
 ## Expand
 - the dataset is limited, users might make biased assumptions or overgeneralize the results about specific age groups or substances without sufficient evidence/ or information
 - the data only asks for state and year it does not provide graphs for better visualisation
 - It could be improved by adding visual graphs or connecting to live data updates.
+- A hover-over explanation could be provided (like those ones look similar to wikipedia?)
 ## Repeat
 - we repeat this CIDER process twice, all ideas are recorded in previous sections. 
