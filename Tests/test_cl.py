@@ -2,6 +2,7 @@ import unittest
 from command_line import *
 import subprocess
 
+# Command line tests
 class TestCommandLine(unittest.TestCase):
 
     def test_no_arguments(self):
