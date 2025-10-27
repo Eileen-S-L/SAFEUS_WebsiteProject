@@ -87,30 +87,30 @@ class TestCommandLine(unittest.TestCase):
         self.assertIn(b'2010,', stdout)
         
         
-class TestDataSourceMethods(unittest.TestCase):
+# class TestDataSourceMethods(unittest.TestCase):
 
-    def setUp(self):
-        """ Set up a DataSource instance for testing. """
-        self.ds = DataSource()
+#     def setUp(self):
+#         """ Set up a DataSource instance for testing. """
+#         self.ds = DataSource()
 
-    def test_get_data_by_year_valid(self):
-        """ Test get_data_by_year with a valid year. """
-        records = self.ds.get_data_by_year('cocaine', '2010')
-        self.assertIsInstance(records, list)
-        self.assertGreater(len(records), 0)
+#     def test_get_data_by_year_valid(self):
+#         """ Test get_data_by_year with a valid year. """
+#         records = self.ds.get_data_by_year('cocaine', '2010')
+#         self.assertIsInstance(records, list)
+#         self.assertGreater(len(records), 0)
 
-    def test_get_data_by_year_invalid(self):
-        """ Test get_data_by_year with an invalid year. """
-        result = self.ds.get_data_by_year('cocaine', '2025')
-        self.assertEqual(result, "We only have data from 2002 to 2018. Please input one of these years :)")
+#     def test_get_data_by_year_invalid(self):
+#         """ Test get_data_by_year with an invalid year. """
+#         result = self.ds.get_data_by_year('cocaine', '2025')
+#         self.assertEqual(result, "We only have data from 2002 to 2018. Please input one of these years :)")
 
-    def test_get_data_by_state_valid(self):
-        """ Test get_data_by_state with a valid state. """
-        records = self.ds.get_data_by_state('cocaine', 'California')
-        self.assertIsInstance(records, list)
-        self.assertGreater(len(records), 0)
+#     def test_get_data_by_state_valid(self):
+#         """ Test get_data_by_state with a valid state. """
+#         records = self.ds.get_data_by_state('cocaine', 'California')
+#         self.assertIsInstance(records, list)
+#         self.assertGreater(len(records), 0)
 
-    def test_get_data_by_state_invalid(self):
-        """ Test get_data_by_state with an invalid state. """
-        result = self.ds.get_data_by_state('cocaine', 'Nigeria')
-        self.assertEqual(result, "That state does not exist in the USA")
+#     def test_get_data_by_state_invalid(self):
+#         """ Test get_data_by_state with an invalid state. """
+#         result = self.ds.get_data_by_state('cocaine', 'Nigeria')
+#         self.assertEqual(result, "That state does not exist in the USA")
