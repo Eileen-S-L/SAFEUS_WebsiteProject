@@ -30,6 +30,8 @@ class DataSource:
         Purpose: Select wanted data from connected database'''
         if (int(Year)>2018 or int(Year)<2002):
             return "We only have data from 2002 to 2018. Please input one of these years :)"
+        if (Substance != 'cocaine' or Substance != 'marijuana' or Substance != 'alcohol' or Substance != 'tobacco'):
+            return "We don't have data for a substance with that label (pick between alcohol, marijuana, cocaine, and tobacco)"
         try:
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
