@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html> 
+
+    <head>
+        <meta charset="UTF-8">
+        <title>All about Drug Data</title>
+        <link rel="stylesheet" href="../static/datastyle.css">
+    </head>
+
+    <body>
+        <h1>Explore U.S. Drug Usage Data</h1>
+
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href="/state">Search by State</a></li>
+            <li><a href="/year">Search by Year</a></li>
+            <li><a href="/about">About the Data</a></li>
+            </ul>
+        </nav>
+
+        <!-- Introduction Section -->
+        <div>
+            <h2>Understanding Drug Data</h2>
+            <p>This site shares data on drug use trends across U.S. states and years, helping anyone interested learn how alcohol, marijuana, cocaine, and tobacco affected communities from 2002 to 2018. </p>
+            <p>The data comes from the National Survey on Drug Use and Health (NSDUH), conducted by the Substance Abuse and Mental Health Services Administration (SAMHSA). It provides insights into substance use patterns, helping inform public health strategies and policies.</p>
+        </div>
+
+        <br><br>
+
+        <!-- Search Panels -->
+        <div class="search-box">
+            <h2>Quick Search</h2>
+
+            <!-- State Search -->
+            <form onsubmit="event.preventDefault(); location.href='/state/' + document.getElementById('state').value;">
+                <label for="state">Search by State:</label>
+                <input type="text" id="state" name="state_name" placeholder="Enter a state in the US">
+                <button type="submit">Search</button>
+            </form>
+
+            <br><br>
+
+            <!-- Year Search -->
+            <form onsubmit="event.preventDefault(); location.href='/year/' + document.getElementById('year').value;">
+                <label for="year">Search by Year:</label>
+                <input type="text" id="year" name="year" placeholder="Enter a year (2002-2018)">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <br><br>
+
+        <!-- Educational Section -->
+        <div>
+            <h2>Why Explore This Data?</h2>
+            <p>Drug use affects individuals and society in complex ways. Understanding the data behind usage trends can empower people to make informed decisions and inspire public health initiatives as shown in <a href="https://www.justice.gov/archive/ndic/pubs11/18862/impact.htm"> National Drug Intelligence Center</a> page.</p>
+            <p>Exploring this data helps reveal important trends in substance use across the United States. It provides valuable insights that can guide research, public health policies, and prevention programs.</p>
+            
+            <br><br>
+
+            <h3>By exploring this data, you can:</h3>
+            <ul>
+                <li>View trends over time for different substances.</li>
+                <li>Compare usage rates across states.</li>
+                <li>Identify patterns that may inform prevention and treatment efforts.</li>
+                <li>Understand how drug and alcohol use varies by age group.</li>
+                <li>Support data-driven decisions that promote healthier communities</li>
+            </ul>
+        </div>
+
+        <br><br>
+
+        <!-- Data Source Info -->
+        <div>
+            <h2>Data source</h2>
+            <p>The primary dataset used in this project comes from the <a href="https://pdas.samhsa.gov/#/">CORGIS Drugs Dataset</a>, which provides data in spreadsheet format and was retrieved on April 27, 2020.</p>
+            <p>Additional reference information was obtained from the <a href="https://corgis-edu.github.io/corgis/csv/drugs/">Substance Abuse and Mental Health Services Administration (SAMHSA)</a>.</p>
+        </div>
+
+    </body>
+
+</html>
+data_v1.html
+Displaying data_v1.html.
