@@ -16,18 +16,27 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    row = int(request.args['drugchoice'])
-    return render_template("index.html"), request.args['drugchoice']
-# def drugchoice():
-    
-#     return 
-    
+    # row = int(request.args['drugchoice'])
+    # request.args['drugchoice']
+    return render_template("index.html")
 
-""" Arguments: route
-    Return Value: Site page where you can view the data for a particular chosen state
-    Purpose: To allow users to view the data by the state"""
+@app.route('/substance/<substance>/year/<year>', strict_slashes = False)
+@app.route('/Substance/<substance>/Year/<year>', strict_slashes = False)
+@app.route('/Year/<year>/Substance/<substance>', strict_slashes = False)
+@app.route('/year/<year>/substance/<substance>', strict_slashes = False)
+def displaydatabyyear(substance, year):
+    year = str(year).strip()
+    substance = str(substance).strip()
+    return str(data.get_data_by_year(substance, year))
 
-
+@app.route('/substance/<substance>/state/<state>', strict_slashes = False)
+@app.route('/Substance/<substance>/State/<state>', strict_slashes = False)
+@app.route('/State/<state>/Substance/<substance>', strict_slashes = False)
+@app.route('/state/<state>/substance/<substance>', strict_slashes = False)
+def displaydatabystate(substance, state):
+    state = str(state).strip()
+    substance = str(substance).strip()
+    return str(data.get_data_by_state(substance, state))
 
 
 @app.route('/year/<year>', strict_slashes = False)
