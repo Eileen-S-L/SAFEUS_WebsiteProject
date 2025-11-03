@@ -4,6 +4,8 @@ The eventual location for the Flask app interface for the project.
 from flask import Flask
 import csv
 from ProductionCode.datasource import *
+from flask import Flask, render_template, request
+
 #from ProductionCode.SQLdrugshelperfuncs import *
 
 #datasource code
@@ -16,7 +18,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    return "Welcome to the homepage! <br> <br> How to view the data: <br> Go to route '/' and put in a Substance and then / to insert your substance name,<br> Then type in '/state/*a state*' to see data per state <br> Or Type in route '/year/*a year*' to view the data according to year"
+    return render_template("index.html", title = "Cocaine in 2002")
+    #return "Welcome to the homepage! <br> <br> How to view the data: <br> Go to route '/' and put in a Substance and then / to insert your substance name,<br> Then type in '/state/*a state*' to see data per state <br> Or Type in route '/year/*a year*' to view the data according to year"
 
 
 
