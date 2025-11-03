@@ -44,7 +44,7 @@ nav li a {
 /* When you mouse over something in the nav bar, turn it blue. */
 nav li a:hover {
 	color: white;
-	background-color: blue;
+	background-color: rgb(53, 64, 113);
 }
 
 /* Body style */
@@ -78,7 +78,7 @@ body {
 
 
 .search-box button {
-    background-color: green;
+    background-color: rgb(53, 64, 113);
     color: white;
     border: none;
     padding: 8px 15px;
@@ -87,7 +87,7 @@ body {
 }
 
 .search-box button:hover {
-    background-color: darkgreen;
+    background-color: rgb(53, 64, 113);
 }
 .search-box h2 {
     text-align: left;
