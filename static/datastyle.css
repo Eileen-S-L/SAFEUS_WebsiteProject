@@ -17,6 +17,13 @@ h4 {
 	text-align: center;
 }
 
+input[type=radio] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
 /* Navigation bar */
 nav ul {
 	border: gray 1px solid;
