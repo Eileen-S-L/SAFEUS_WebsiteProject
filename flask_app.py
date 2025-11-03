@@ -5,6 +5,8 @@ from flask import Flask
 import csv
 from ProductionCode.datasource import *
 from flask import Flask, render_template, request
+from ProductionCode.core import *
+
 
 #from ProductionCode.SQLdrugshelperfuncs import *
 
@@ -65,6 +67,16 @@ def python_bug(e):
 @app.route('/wrong/<random>', strict_slashes = False)
 def wrongfunction(random):
     raise Exception("Intentional error for testing 500 handler")
+
+""" Arguments: route
+    Return Value: Site page where you can view the data for a particular chosen state
+    Purpose: To allow users to view the data by the state"""
+@app.route('/statedata')
+def homedatapage():
+    row = int(request.args['statechoice'])
+    statedata = get_data_by_year('cocaine', '2002')[row]
+    return render_template("statedatapage.html", statedatadisplay = statedata, statedisplay = statedata[0] )
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5221)
