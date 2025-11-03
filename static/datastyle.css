@@ -1,0 +1,87 @@
+/* Page title */
+h1 {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: green;
+	color: white;
+	text-align: center;
+	margin-bottom:0;
+}
+
+/* Navigation bar */
+nav ul {
+	border: gray 1px solid;
+	list-style-type: none;
+	margin-top: 0;
+	padding: 0;
+	text-align: center;
+}
+
+/* Each item in the nav bar should be displayed inline (horizontally) with no margin. */
+nav li {
+	display: inline-block;
+	margin: 0;
+}
+
+/* Each link in the nav bar should be black with no underline, centered, and padded. */
+nav li a {
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+/* When you mouse over something in the nav bar, turn it blue. */
+nav li a:hover {
+	color: white;
+	background-color: blue;
+}
+
+/* Body style */
+body {
+    margin: 5%;
+	font-family: Arial, sans-serif;
+}
+
+/* Search box style */
+.search-box {
+    background-color: #f0f8ff; /* light blue */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    width: 60%;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.search-box label {
+    font-weight: bold;
+}
+
+.search-box input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    width: 40%;
+}
+
+
+.search-box button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: darkgreen;
+}
+.search-box h2 {
+    text-align: left;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
