@@ -56,7 +56,7 @@ def search_state_online(state_name):
     Purpose: Searches the dataset for records matching the given state name and returns the results as a string."""
     substance= str(drugchoice())
     result = data.get_data_by_state(substance,state_name)
-    return render_template("yeardatapage.html",statedatadisplay=result, statedisplay = state_name)
+    return render_template("statedatapage.html",statedatadisplay=result, statedisplay = state_name)
 
 
 """ Arguments: e
