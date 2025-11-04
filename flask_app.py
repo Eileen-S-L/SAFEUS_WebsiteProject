@@ -37,12 +37,12 @@ def displaydatabystate(substance, state):
 
 @app.route('/year', strict_slashes = False)
 def search_year_online():
-    return render_template("yeardatapage.html")
+    return render_template("yeardatapage.html", yeardisplay='Seach By Year')
 
 
 @app.route('/state', strict_slashes = False)
 def search_state_online():
-    return render_template("statedatapage.html")
+    return render_template("statedatapage.html", statedisplay='Search By State')
 
 """ Arguments: e
     Return Value: Instructions on how to get to an actual page
