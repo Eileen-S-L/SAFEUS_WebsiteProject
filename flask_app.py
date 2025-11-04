@@ -10,36 +10,44 @@ from flask import Flask, render_template, request
 data = DataSource()
 
 app = Flask(__name__)
+
 """ Arguments: route
     Return Value: String/explaination of the website
     Purpose: To explain to users how to use routes to view data"""
-
 @app.route('/')
 def homepage():
     # row = int(request.args['drugchoice'])
     # request.args['drugchoice']
     return render_template("index.html")
 
-
+""" Arguments: route
+    Return Value: the data by substance and year
+    Purpose: To give users a page where they can view the data by year and substance"""
 @app.route('/year/<year>/substance/<substance>', strict_slashes = False)
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
     return str(data.get_data_by_year(substance, year))
 
-
+""" Arguments: route
+    Return Value: the data by substance and state
+    Purpose: To give users a page where they can view the data by state and substance"""
 @app.route('/state/<state>/substance/<substance>', strict_slashes = False)
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
     return str(data.get_data_by_state(substance, state))
 
-
+""" Arguments: route
+    Return Value: a search box for year
+    Purpose: To give users a place to search for data by year"""
 @app.route('/year', strict_slashes = False)
 def search_year_online():
     return render_template("yeardatapage.html", yeardisplay='Seach By Year')
 
-
+""" Arguments: route
+    Return Value: a search box for state
+    Purpose: To give users a place to search for data by state"""
 @app.route('/state', strict_slashes = False)
 def search_state_online():
     return render_template("statedatapage.html", statedisplay='Search By State')
