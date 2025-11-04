@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{{statedisplay}}</title>
-        <link rel="stylesheet" href="../static/datastyle.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='datastyle.css') }}">
     </head>
 
     <body>
@@ -14,7 +14,7 @@
          <div class="search-box">
             <h2>Search by State and Substance</h2>
 
-            <form onsubmit="event.preventDefault(); location.href='/state/' + document.getElementById('state').value + '/substance/' + document.querySelector('input[name=\'statechoice\']:checked').value;">
+            <form onsubmit="event.preventDefault(); const state = document.getElementById('state').value; const substance = document.querySelector('input[name=\'statechoice\']:checked').value; window.location.href = `/state/${state}/substance/${substance}`;">
                 <label for="state">Enter a State:</label>
                 <input type="text" id="state" name="state_name" placeholder="Enter a state in the US">
 
