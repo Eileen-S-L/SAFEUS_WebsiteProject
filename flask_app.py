@@ -20,18 +20,14 @@ def homepage():
     # request.args['drugchoice']
     return render_template("index.html")
 
-@app.route('/substance/<substance>/year/<year>', strict_slashes = False)
-@app.route('/Substance/<substance>/Year/<year>', strict_slashes = False)
-@app.route('/Year/<year>/Substance/<substance>', strict_slashes = False)
+
 @app.route('/year/<year>/substance/<substance>', strict_slashes = False)
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
     return str(data.get_data_by_year(substance, year))
 
-@app.route('/substance/<substance>/state/<state>', strict_slashes = False)
-@app.route('/Substance/<substance>/State/<state>', strict_slashes = False)
-@app.route('/State/<state>/Substance/<substance>', strict_slashes = False)
+
 @app.route('/state/<state>/substance/<substance>', strict_slashes = False)
 def displaydatabystate(substance, state):
     state = str(state).strip()
@@ -39,25 +35,14 @@ def displaydatabystate(substance, state):
     return str(data.get_data_by_state(substance, state))
 
 
-@app.route('/year/<year>', strict_slashes = False)
+@app.route('/year', strict_slashes = False)
 def search_year_online(year):
-    """Arguments: year
-    Return Value: String representation of search results
-    Purpose: Searches the dataset for records matching the given year and returns the results as a string."""
-    substance= str(drugchoice())
-    result= data.get_data_by_year(substance,year)
-    return render_template("yeardatapage.html",yeardatadisplay=result, yeardisplay = year)
+    return render_template("yeardatapage.html")
 
 
-@app.route('/state/<state_name>', strict_slashes = False)
+@app.route('/state', strict_slashes = False)
 def search_state_online(state_name):
-    """Arguments: state_name
-    Return Value: String representation of search results
-    Purpose: Searches the dataset for records matching the given state name and returns the results as a string."""
-    substance= str(drugchoice())
-    result = data.get_data_by_state(substance,state_name)
-    return render_template("statedatapage.html",statedatadisplay=result, statedisplay = state_name)
-
+    return render_template("statedatapage.html")
 
 """ Arguments: e
     Return Value: Instructions on how to get to an actual page

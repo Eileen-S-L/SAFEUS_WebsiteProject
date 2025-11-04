@@ -14,23 +14,23 @@
          <div class="search-box">
             <h2>Search by State and Substance</h2>
 
-            <form onsubmit="event.preventDefault(); location.href='/state/' + document.getElementById('state').value + '/' + document.querySelector('input[name=\'statechoice\']:checked').value;">
+            <form onsubmit="event.preventDefault(); location.href='/state/' + document.getElementById('state').value + '/substance/' + document.querySelector('input[name=\'statechoice\']:checked').value;">
                 <label for="state">Enter a State:</label>
                 <input type="text" id="state" name="state_name" placeholder="Enter a state in the US">
 
                 <br><br>
 
                 <label>Select a Substance:</label>
-                <input type="radio" id="Cocaine" name="statechoice" value="0">
+                <input type="radio" id="Cocaine" name="statechoice" value="Cocaine">
                 <label for="Cocaine">Cocaine</label>
 
-                <input type="radio" id="Tobacco" name="statechoice" value="1">
+                <input type="radio" id="Tobacco" name="statechoice" value="Tobacco">
                 <label for="Tobacco">Tobacco</label>
 
-                <input type="radio" id="Marijuana" name="statechoice" value="2">
+                <input type="radio" id="Marijuana" name="statechoice" value="Marijuana">
                 <label for ="Marijuana">Marijuana</label>
 
-                <input type="radio" id="Alcohol" name="statechoice" value="3">
+                <input type="radio" id="Alcohol" name="statechoice" value="Alcohol">
                 <label for ="Alcohol">Alcohol</label>
 
                 <button type="submit">Search</button>
