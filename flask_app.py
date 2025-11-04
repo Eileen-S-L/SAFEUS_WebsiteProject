@@ -21,6 +21,13 @@ def homepage():
     return render_template("index.html")
 
 """ Arguments: route
+    Return Value: A website page explaining the data
+    Purpose: To allow users to learn about the origins of the data"""
+@app.route('/about', strict_slashes = False)
+def aboutthedata():
+    return render_template("aboutdatapage.html")
+
+""" Arguments: route
     Return Value: the data by substance and year
     Purpose: To give users a page where they can view the data by year and substance"""
 @app.route('/year/<year>/substance/<substance>', strict_slashes = False)
