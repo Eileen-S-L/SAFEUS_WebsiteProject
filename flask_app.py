@@ -41,7 +41,7 @@ def search_year_online(year):
 
 
 @app.route('/state', strict_slashes = False)
-def search_state_online(state_name):
+def search_state_online():
     return render_template("statedatapage.html")
 
 """ Arguments: e
