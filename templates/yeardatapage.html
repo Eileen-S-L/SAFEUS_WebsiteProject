@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html> <!-- all pages start and end with this tag -->
-<!-- Header information: links to external scripts and style files, other metadata about the page. -->
-<head>
-<!-- The title is mandatory. If you use tabs, the title appears in the page's tab in your browser.-->
-<title>{{yeardisplay}}</title>
-<link rel="stylesheet" href="../static/datastyle.css">
+<html> 
 
-</head>
-<!-- The body consists of the visible parts of the web page. -->
-<body>
-<h4>{{yeardisplay}}</h4>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{statedisplay}}</title>
+        <link rel="stylesheet" href="../static/datastyle.css">
+    </head>
 
-<p>{{yeardatadisplay}}</p>
+    <body>
+        <h1>Search by Year and Substance</h1>
 
+        <!-- Combined Search Form -->
+        <div class="search-box">
+            <h2> Search by Year and Substance</h2>
+            <form onsubmit="event.preventDefault(); const year = document.getElementById('year').value; const substance = document.querySelector('input[name=\'yearchoice\']:checked').value; window.location.href = `/year/${year}/substance/${substance}`;">
+                <label for="year">Enter a Year (2002-2018):</label>
+                <input type="text" id="year" name="year" placeholder="Enter a year between 2002 and 2018">
 
+                <br><br>
+
+                <label>Select a Substance:</label>
+                <input type="radio" id="Cocaine" name="yearchoice" value="Cocaine">
+                <label for="Cocaine">Cocaine</label>
+
+                <input type="radio" id="Tobacco" name="yearchoice" value="Tobacco">
+                <label for="Tobacco">Tobacco</label>
+
+                <input type="radio" id="Marijuana" name="yearchoice" value="Marijuana">
+                <label for ="Marijuana">Marijuana</label>
+
+                <input type="radio" id="Alcohol" name="yearchoice" value="Alcohol">
+                <label for ="Alcohol">Alcohol</label>
+
+                <button type="submit">Search</button>
+    </body>
 </html>

@@ -36,7 +36,7 @@ def displaydatabystate(substance, state):
 
 
 @app.route('/year', strict_slashes = False)
-def search_year_online(year):
+def search_year_online():
     return render_template("yeardatapage.html")
 
 
