@@ -43,8 +43,8 @@ def displaydatabyyear(substance, year):
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
-    display = str(data.get_data_by_state(substance, state))
-    return render_template("displaydata.html", state, substance, display)
+    showdata = str(data.get_data_by_state(substance, state))
+    return render_template("displaydata.html", state, substance, showdata)
     #return str(data.get_data_by_state(substance, state))
 
 """ Arguments: route
