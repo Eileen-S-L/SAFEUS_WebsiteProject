@@ -8,6 +8,15 @@ h1 {
 	text-align: center;
 }
 
+h2 {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: rgb(73, 106, 255);
+	color: rgb(77, 172, 255);
+	border: 2px solid rgb(177, 177, 177);
+	text-align: center;
+}
+
 h4 {
 	padding-top: 1em;
 	padding-bottom: 1em;
