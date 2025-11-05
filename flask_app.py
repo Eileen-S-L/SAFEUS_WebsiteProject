@@ -34,7 +34,7 @@ def aboutthedata():
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
-    showdata = str(data.get_data_by_state(substance, year))
+    showdata = str(data.get_data_by_year(substance, year))
     return render_template("displaydata.html", location = year, sub = substance, seedata = showdata)
     #return str(data.get_data_by_year(substance, year))
 
