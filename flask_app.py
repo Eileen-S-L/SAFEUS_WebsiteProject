@@ -46,7 +46,7 @@ def displaydatabystate(substance, state):
     substance = str(substance).strip()
     statename = data.get_data_by_state(substance, state)
     showdata = str(data.get_data_by_state(substance, state))
-    return render_template("displaydata.html", searchtype = state.upper(), sub = substance, seedata = showdata)
+    return render_template("displaydata.html", searchtype = state.title(), sub = substance, seedata = showdata)
     #return render_template("displaydata.html", searchtype = statename[0][0], sub = substance, seedata = showdata)
 
 """ Arguments: route
