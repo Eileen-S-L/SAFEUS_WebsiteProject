@@ -23,7 +23,7 @@
         <div class="search-box">
             <h2>Search by State and Substance</h2>
 
-            <form onsubmit="event.preventDefault(); const state = document.getElementById('state').value; const substance = document.querySelector('input[name=\'statechoice\']:checked').value; window.location.href = `/state/${state}/substance/${substance}`;">
+            <form onsubmit="event.preventDefault(); const state = document.getElementById('state').value; const substance = document.querySelector('input[name=\'substancechoice\']:checked').value; window.location.href = `/state/${state}/substance/${substance}`;">
                 <label for="state">Enter a State:</label>
                 <input type="text" id="state" name="state_name" placeholder="Enter a state in the US">
 
