@@ -22,7 +22,7 @@
         <!-- Combined Search Form -->
         <div class="search-box">
             <h2> Search by Year and Substance</h2>
-            <form onsubmit="event.preventDefault(); const year = document.getElementById('year').value; const substance = document.querySelector('input[name=\'yearchoice\']:checked').value; window.location.href = `/year/${year}/substance/${substance}`;">
+            <form onsubmit="event.preventDefault(); const year = document.getElementById('year').value; const substance = document.querySelector('input[name=\'substancechoice\']:checked').value; window.location.href = `/year/${year}/substance/${substance}`;">
                 <label for="year">Enter a Year (2002-2018):</label>
                 <input type="text" id="year" name="year" placeholder="Enter a year between 2002 and 2018">
 
