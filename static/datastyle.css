@@ -68,12 +68,14 @@ body {
     padding: 20px;
     margin: 30px auto;
     width: 60%;
-    text-align: center;
+    /* text-align: center; */
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .search-box label {
     font-weight: bold;
+    margin-right: 10px;
+    
 }
 
 .search-box input[type="text"] {
