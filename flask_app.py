@@ -43,14 +43,13 @@ def displaydatabystate(substance, state):
     substance = str(substance).strip()
     # return str(data.get_data_by_state(substance, state))
     # return render_template("displaydata")
-    match substance:
-        case 'Cocaine':
+    if substance == 'Cocaine':
             return render_template('displayCocaineData.html', result=data.get_data_by_state(substance, state))
-        case 'Tobacco':
+    if substance == 'Tobacco':
             return render_template('displayTobaccoData.html', result=data.get_data_by_state(substance, state))
-        case 'Marijuana':
+    if substance == 'Marijuana':
             return render_template('displayMarijuanaData.html', result=data.get_data_by_state(substance, state))
-        case 'Alcohol':
+    if substance == 'Alcohol':
             return render_template('displayAlcoholData.html', result=data.get_data_by_state(substance, state))
 
 """ Arguments: route
