@@ -34,8 +34,7 @@ def aboutthedata():
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
-    showdata = str(data.get_data_by_year(substance, year))
-    return render_template("displaydata.html", searchtype = year, sub = substance, seedata = showdata)
+    return str(data.get_data_by_year(substance, year))
 
 """ Arguments: route
     Return Value: the data by substance and state
@@ -44,8 +43,7 @@ def displaydatabyyear(substance, year):
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
-    showdata = str(data.get_data_by_state(substance, state))
-    return render_template("displaydata.html", searchtype = state.title(), sub = substance, seedata = showdata)
+    return str(data.get_data_by_state(substance, state))
 
 """ Arguments: route
     Return Value: a search box for year
@@ -87,4 +85,4 @@ def wrongfunction(random):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5121)
+    app.run(host='0.0.0.0', port=5221)
