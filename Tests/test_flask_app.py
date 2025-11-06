@@ -16,6 +16,10 @@ class TestHomePage(unittest.TestCase):
         response = self.app.get('/about',follow_redirects=True)
         self.assertIn("The data shown on the website was obtained from this website:", response.data.decode())
 
+    def test_search_by_state_route(self):
+        self .app = app.test_client()
+        response = self.app.get("/state", follow_redirects=True)
+        self.assertIn("Search by State and Substance",response.data.decode())
 # class TestYearDisplay(unittest.TestCase):
 #     def test_routeStandard(self):
 #         """ Arguments: function and expected output
