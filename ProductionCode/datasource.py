@@ -30,13 +30,10 @@ class DataSource:
         Purpose: Select wanted data from connected database'''
         if (int(Year)>2018 or int(Year)<2002):
             return "We only have data from 2002 to 2018. Please input one of these years :)"
-        # if (Substance != 'cocaine' or Substance != 'marijuana' or Substance != 'alcohol' or Substance != 'tobacco'):
-        #     return "We don't have data for a substance with that label (pick between alcohol, marijuana, cocaine, and tobacco)"
         try:
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
             query = "SELECT * FROM " + Substance + " WHERE Year = %s ;"
-            #Execute a query
             #Retrieve query results
             cursor.execute(query, (Year,))
 
@@ -50,13 +47,10 @@ class DataSource:
         '''Argument: State & substance
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
-        # if (Substance != 'cocaine' or Substance != 'marijuana' or Substance != 'alcohol' or Substance != 'tobacco'):
-        #     return "We don't have data for a substance with that label (pick between alcohol, marijuana, cocaine, and tobacco)"
         try:
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
-            #Execute a query
             #Retrieve query results
             cursor.execute(query, (State.title(),))
 
@@ -67,25 +61,4 @@ class DataSource:
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
             return None
-        
-
-# def get_data_by_substance(self, Substance):
-#         '''Argument: substance
-#         Return: records, which is a list of data related to searched-substance 
-#         Purpose: Select all data from the connected database'''
-#         try:
-#             #Open a cursor to perform database operations
-#             cursor = self.connection.cursor()
-#             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
-#             #Execute a query
-#             #Retrieve query results
-#             cursor.execute(query, (State.title(),))
-
-#             records = cursor.fetchall()
-#             if records == []:
-#                 return "That state does not exist in the USA"
-#             return records
-#         except Exception as e: 
-#             print ("something went wrong when executing the query:",e)
-#             return None
         
