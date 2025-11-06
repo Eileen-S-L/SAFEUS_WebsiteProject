@@ -8,7 +8,10 @@ class TestHomePage(unittest.TestCase):
         Purpose: For making sure that the proper output is shown on the homepage"""
         self.app = app.test_client()
         response = self.app.get('/', follow_redirects=True)
-        self.assertIn(b"Understanding Drug Data", response)
+        self.assertIn(b"Understanding Drug Data"
+            b"This site shares data on drug use trends across U.S. states and years, helping anyone interested learn how alcohol, marijuana, cocaine, and tobacco affected communities from 2002 to 2018."
+            b"The data comes from the National Survey on Drug Use and Health (NSDUH), conducted by the Substance Abuse and Mental Health Services Administration (SAMHSA). It provides insights into substance use patterns, helping inform public health strategies and policies."
+        , response.data)
 
 # class TestYearDisplay(unittest.TestCase):
 #     def test_routeStandard(self):
