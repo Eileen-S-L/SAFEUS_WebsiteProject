@@ -4,23 +4,21 @@ The eventual location for the Flask app interface for the project.
 from flask import Flask
 from ProductionCode.datasource import *
 from flask import Flask, render_template, request
-# from ProductionCode.core import * we shouldn't need this anymore
 
-#datasource code
+
+#datasource includes sets of searching_functions
 data = DataSource()
 
 app = Flask(__name__)
 
-""" Arguments: route
+""" Arguments: route '/'
     Return Value: String/explaination of the website
     Purpose: To explain to users how to use routes to view data"""
 @app.route('/')
 def homepage():
-    # row = int(request.args['drugchoice'])
-    # request.args['drugchoice']
     return render_template("index.html")
 
-""" Arguments: route
+""" Arguments: route '/about'
     Return Value: A website page explaining the data
     Purpose: To allow users to learn about the origins of the data"""
 @app.route('/about', strict_slashes = False)
