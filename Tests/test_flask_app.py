@@ -26,8 +26,13 @@ class TestHomePage(unittest.TestCase):
         response = self.app.get("/year", render_template = True)
         self.assertIn("Enter a Year (2002-2018)",response.data.decode())
 
-
-
+class testInSeachByState(unittest.TestCase):
+    
+    def test_valid_year_and_substance(self):
+        self.app = add.test_client()
+        response = self.app.get('/state/Alabama/substance/Tobacco',render_template = True)
+        partial_output = "('Alabama', 2002, 380805, 499453, 2812905, 52, 196, 728, 136.906, 392.404, 258.844, 63, 226, 930, 166.578, 451.976, 330.659)"
+        self. assertIn(partial_output, str(response.data))s
 
 
 # class TestYearDisplay(unittest.TestCase):
