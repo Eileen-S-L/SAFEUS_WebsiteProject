@@ -43,7 +43,7 @@ def displaydatabystate(substance, state):
     substance = str(substance).strip()
     # return str(data.get_data_by_state(substance, state))
     # return render_template("displaydata")
-    return render_template('displayCocaine.html', result=data.get_data_by_state(substance, state))
+    return render_template('displayCocaineData.html', result=data.get_data_by_state(substance, state))
 
 """ Arguments: route
     Return Value: a search box for year
