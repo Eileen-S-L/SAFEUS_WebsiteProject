@@ -28,6 +28,8 @@ class DataSource:
         '''Argument: Year & substance
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
+        if not isinstance(Year, int):
+            print "Year input must be valid year"
         if (int(Year)>2018 or int(Year)<2002):
             return "We only have data from 2002 to 2018. Please input one of these years :)"
         try:
