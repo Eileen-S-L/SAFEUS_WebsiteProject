@@ -2,7 +2,7 @@ from flask_app import *
 import unittest
 
 class TestHomePage(unittest.TestCase):
-    def test_route(self):
+    def test_homepage_route(self):
         """ Arguments: function and expected output
         Return Value: None
         Purpose: For making sure that the proper output is shown on the homepage"""
@@ -10,6 +10,11 @@ class TestHomePage(unittest.TestCase):
         response = self.app.get('/', follow_redirects=True)
         self.assertIn("This site shares data on drug use trends across U.S. states and years, helping anyone interested learn how alcohol, marijuana, cocaine, and tobacco affected communities from 2002 to 2018"
         , response.data.decode())
+
+    def test_about_route(self):
+        self.app = app.test_client()
+        response = self.app.get('/about',follow_redirects=True)
+        self.assertIn("The data shown on the website was obtained from this website:", response.data.decode())
 
 # class TestYearDisplay(unittest.TestCase):
 #     def test_routeStandard(self):
