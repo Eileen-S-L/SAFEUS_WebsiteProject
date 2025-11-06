@@ -37,7 +37,7 @@ class testInSeachByState(unittest.TestCase):
     def test_invalid_year_valid_substance(self):
         self.app = app.test_client()
         response = self.app.get('/state/China/substance/Tobacco', follow_redirects = True)
-        output = "That state does not exist in the USA"
+        output = "China does not exist in the USA or doesn't have any data correspondence"
         self.assertIn(output, response.data)
 
 
