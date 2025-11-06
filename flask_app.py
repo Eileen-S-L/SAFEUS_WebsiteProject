@@ -4,23 +4,21 @@ The eventual location for the Flask app interface for the project.
 from flask import Flask
 from ProductionCode.datasource import *
 from flask import Flask, render_template, request
-# from ProductionCode.core import * we shouldn't need this anymore
 
-#datasource code
+
+#datasource includes sets of searching_functions
 data = DataSource()
 
 app = Flask(__name__)
 
-""" Arguments: route
+""" Arguments: route '/'
     Return Value: String/explaination of the website
     Purpose: To explain to users how to use routes to view data"""
 @app.route('/')
 def homepage():
-    # row = int(request.args['drugchoice'])
-    # request.args['drugchoice']
     return render_template("index.html")
 
-""" Arguments: route
+""" Arguments: route '/about'
     Return Value: A website page explaining the data
     Purpose: To allow users to learn about the origins of the data"""
 @app.route('/about', strict_slashes = False)
@@ -34,8 +32,7 @@ def aboutthedata():
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
-    showdata = str(data.get_data_by_year(substance, year))
-    return render_template("displaydata.html", searchtype = year, sub = substance, seedata = showdata)
+    return str(data.get_data_by_year(substance, year))
 
 """ Arguments: route
     Return Value: the data by substance and state
@@ -44,8 +41,7 @@ def displaydatabyyear(substance, year):
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
-    showdata = str(data.get_data_by_state(substance, state))
-    return render_template("displaydata.html", searchtype = state.title(), sub = substance, seedata = showdata)
+    return str(data.get_data_by_state(substance, state))
 
 """ Arguments: route
     Return Value: a search box for year
@@ -87,4 +83,4 @@ def wrongfunction(random):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5121)
+    app.run(host='0.0.0.0', port=5221)

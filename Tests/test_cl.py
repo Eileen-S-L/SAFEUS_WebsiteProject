@@ -60,7 +60,7 @@ class TestCommandLine(unittest.TestCase):
         Purpose: Checks that searching by an invalid state name (non-U.S. state names) returns the appropriate error message."""
         result = subprocess.Popen(['python3', 'command_line.py', '--state', 'Nigeria', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
-        self.assertIn(b'That state does not exist in the USA', stdout)
+        self.assertIn(b"Nigeria does not exist in the USA or doesn't have any data correspondence", stdout)
     
     def test_too_many_arguments(self):
         """Arguments: self
@@ -123,4 +123,4 @@ class TestDataSourceMethods(unittest.TestCase):
         Return Value: None
         Purpose: Tests get_data_by_state with an invalid state. """
         result = self.ds.get_data_by_state('cocaine', 'Nigeria')
-        self.assertEqual(result, "That state does not exist in the USA")
+        self.assertEqual(result, "Nigeria does not exist in the USA or doesn't have any data correspondence")

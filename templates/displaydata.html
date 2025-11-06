@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Data</title>
-        <link rel="stylesheet" href="../static/datastyle.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='datastyle.css') }}">
     </head>
 
     <body>
-        <h1>{{searchtype}} {{sub}} Data</h1>
+        <h2>{{searchtype}} {{sub}} Data</h2>
 
         <p>{{seedata}}</p>
     </body>

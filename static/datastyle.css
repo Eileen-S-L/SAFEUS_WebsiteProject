@@ -8,6 +8,15 @@ h1 {
 	text-align: center;
 }
 
+h2 {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: rgb(73, 106, 255);
+	color: rgb(255, 255, 255);
+	border: 2px solid rgb(77, 172, 255);
+	text-align: center;
+}
+
 h4 {
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -68,18 +77,20 @@ body {
     padding: 20px;
     margin: 30px auto;
     width: 60%;
-    text-align: center;
+    /* text-align: center; */
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .search-box label {
     font-weight: bold;
+    margin-right: 10px;
+    
 }
 
 .search-box input[type="text"] {
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #aaa;
+    border: 1px solid #f6f6f6;
     width: 40%;
 }
 
