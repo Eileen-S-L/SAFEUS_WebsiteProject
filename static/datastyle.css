@@ -112,11 +112,3 @@ body {
     font-size: 1.2em;
     margin-bottom: 15px;
 }
-
-
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
