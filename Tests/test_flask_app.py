@@ -20,6 +20,16 @@ class TestHomePage(unittest.TestCase):
         self .app = app.test_client()
         response = self.app.get("/state", follow_redirects=True)
         self.assertIn("Search by State and Substance",response.data.decode())
+
+    def test_search_by_year_route(self):
+        self.app = app.test_client()
+        response = self.app.get("/year", render_template = True)
+        self.assertIn("Enter a Year (2002-2018)",response.data.decode())
+
+
+
+
+
 # class TestYearDisplay(unittest.TestCase):
 #     def test_routeStandard(self):
 #         """ Arguments: function and expected output
