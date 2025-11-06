@@ -90,7 +90,7 @@ body {
 .search-box input[type="text"] {
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #aaa;
+    border: 1px solid #f6f6f6;
     width: 40%;
 }
 
