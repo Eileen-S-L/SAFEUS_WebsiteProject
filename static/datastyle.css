@@ -73,7 +73,6 @@ body {
 
 /* Form elements inside the search box */
 .search-box label {
-    display: block;
     font-weight: bold;
     margin-bottom: 8px; 
 }
@@ -87,8 +86,13 @@ body {
 }
 
 /* Radio button style */
-.search-box input[type=radio] {
-	margin-right: 10px;
+.search-box input[type="radio"] {
+    margin-right: 5px;
+}
+
+.search-box input[type="radio"] + label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 .search-box button {
