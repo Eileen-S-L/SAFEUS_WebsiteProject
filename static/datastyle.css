@@ -86,15 +86,25 @@ body {
 }
 
 /* Radio button style */
-.search-box input[type="radio"] {
-    margin-right: 5px;
+.substance-options {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.search-box input[type="radio"] + label {
-    display: block;
+.substance-options label {
+    display: inline;
+    font-weight: normal;
+}
+
+.substance-options div {
     margin-bottom: 5px;
 }
 
+.search-box input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Submit button style */
 .search-box button {
     background-color: rgb(53, 64, 113);
     color: white;
