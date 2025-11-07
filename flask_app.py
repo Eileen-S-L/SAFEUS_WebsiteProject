@@ -4,21 +4,23 @@ The eventual location for the Flask app interface for the project.
 from flask import Flask
 from ProductionCode.datasource import *
 from flask import Flask, render_template, request
+# from ProductionCode.core import * we shouldn't need this anymore
 
-
-#datasource includes sets of searching_functions
+#datasource code
 data = DataSource()
 
 app = Flask(__name__)
 
-""" Arguments: route '/'
+""" Arguments: route
     Return Value: String/explaination of the website
     Purpose: To explain to users how to use routes to view data"""
 @app.route('/')
 def homepage():
+    # row = int(request.args['drugchoice'])
+    # request.args['drugchoice']
     return render_template("index.html")
 
-""" Arguments: route '/about'
+""" Arguments: route
     Return Value: A website page explaining the data
     Purpose: To allow users to learn about the origins of the data"""
 @app.route('/about', strict_slashes = False)
@@ -41,16 +43,9 @@ def displaydatabyyear(substance, year):
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
-    # return str(data.get_data_by_state(substance, state))
-    # return render_template("displaydata")
-    if substance == 'Cocaine':
-            return render_template('displayCocaineData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Tobacco':
-            return render_template('displayTobaccoData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Marijuana':
-            return render_template('displayMarijuanaData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Alcohol':
-            return render_template('displayAlcoholData.html', result=data.get_data_by_state(substance, state))
+    display = str(data.get_data_by_state(substance, state))
+    return render_template("displaydata.html", state, substance, display)
+    #return str(data.get_data_by_state(substance, state))
 
 """ Arguments: route
     Return Value: a search box for year
@@ -92,4 +87,4 @@ def wrongfunction(random):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5121)
+    app.run(host='0.0.0.0', port=5102)
