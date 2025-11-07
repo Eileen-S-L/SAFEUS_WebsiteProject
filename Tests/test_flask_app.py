@@ -38,7 +38,7 @@ class TestInSearchByState(unittest.TestCase):
         self.app = app.test_client()
         response = self.app.get('/state/China/substance/Tobacco', follow_redirects = True)
         output = "China does not exist in the USA or doesn't have any data correspondence"
-        self.assertIn(output, str(response.data))
+        self.assertIn(output, str(response.data.decode()))
     
 class TestInSearchByYear(unittest.TestCase):
 
@@ -50,7 +50,9 @@ class TestInSearchByYear(unittest.TestCase):
     def test_out_of_range_year_and_valid_substance(self):
         self.app = app.test_client()
         response = self.app.get('/year/2020/substance/Tobacco', follow_redirects = True)
-        self.assertIn('We only have data from 2002 to 2018. Please input one of these years :)',response.data)
+        self.assertIn('We only have data from 2002 to 2018. Please input one of these years :)',response.data.decode())
+
+    
 # class TestYearDisplay(unittest.TestCase):
 #     def test_routeStandard(self):
 #         """ Arguments: function and expected output

@@ -22,26 +22,41 @@
         <!-- Combined Search Form -->
         <div class="search-box">
             <h2> Search by Year and Substance</h2>
+
             <form onsubmit="event.preventDefault(); const year = document.getElementById('year').value; const substance = document.querySelector('input[name=\'substancechoice\']:checked').value; window.location.href = `/year/${year}/substance/${substance}`;">
+
+                <!-- Year Input -->
                 <label for="year">Enter a Year (2002-2018):</label>
-                <input type="text" id="year" name="year" placeholder="Enter a year between 2002 and 2018">
+                <input type="text" id="year" name="year" pattern ="[0-9]{4}" placeholder="Enter a year between 2002 and 2018">
 
                 <br><br>
 
+                <!-- Substance Selection -->
                 <label>Select a Substance:</label>
-                
-                <input type="radio" id="Cocaine" name="substancechoice" value="Cocaine">
-                <label for="Cocaine">Cocaine</label>
-                
-                <input type="radio" id="Tobacco" name="substancechoice" value="Tobacco">
-                <label for="Tobacco">Tobacco</label>
-                
-                <input type="radio" id="Marijuana" name="substancechoice" value="Marijuana">
-                <label for ="Marijuana">Marijuana</label>
-                
-                <input type="radio" id="Alcohol" name="substancechoice" value="Alcohol">
-                <label for ="Alcohol">Alcohol</label>
-                
+
+                <div class ="substance-options">
+
+                    <div>
+                        <input type="radio" id="Cocaine" name="substancechoice" value="Cocaine">
+                        <label for="Cocaine">Cocaine</label>
+                    </div>
+                    
+                    <div>
+                        <input type="radio" id="Tobacco" name="substancechoice" value="Tobacco">
+                        <label for="Tobacco">Tobacco</label>
+                    </div>
+                    
+                    <div>
+                        <input type="radio" id="Marijuana" name="substancechoice" value="Marijuana">
+                        <label for ="Marijuana">Marijuana</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="Alcohol" name="substancechoice" value="Alcohol">
+                        <label for ="Alcohol">Alcohol</label>
+                    <div>
+
+                </div>
                 <button type="submit">Search</button>
             </form>
     </body>
