@@ -27,7 +27,8 @@ h4 {
 }
 
 input[type=radio] {
-    margin-left: 20px;
+	display: block;
+    margin: 10px 0;
 }
 
 /* Navigation bar */
