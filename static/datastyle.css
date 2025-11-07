@@ -26,12 +26,6 @@ h4 {
 	text-align: center;
 }
 
-input[type=radio] {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    box-sizing: border-box;
-}
 
 /* Navigation bar */
 nav ul {
@@ -42,13 +36,11 @@ nav ul {
 	text-align: center;
 }
 
-/* Each item in the nav bar should be displayed inline (horizontally) with no margin. */
 nav li {
 	display: inline-block;
 	margin: 0;
 }
 
-/* Each link in the nav bar should be black with no underline, centered, and padded. */
 nav li a {
 	display: inline-block;
 	color: black;
@@ -57,7 +49,6 @@ nav li a {
 	padding: 14px 16px;
 }
 
-/* When you mouse over something in the nav bar, turn it blue. */
 nav li a:hover {
 	color: white;
 	background-color: rgb(53, 64, 113);
@@ -77,16 +68,16 @@ body {
     padding: 20px;
     margin: 30px auto;
     width: 60%;
-    /* text-align: center; */
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* Form elements inside the search box */
 .search-box label {
     font-weight: bold;
-    margin-right: 10px;
-    
+    margin-bottom: 8px; 
 }
 
+/* Text input field style */
 .search-box input[type="text"] {
     padding: 8px;
     border-radius: 5px;
@@ -94,7 +85,26 @@ body {
     width: 40%;
 }
 
+/* Radio button style */
+.substance-options {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
+.substance-options label {
+    display: inline;
+    font-weight: normal;
+}
+
+.substance-options div {
+    margin-bottom: 5px;
+}
+
+.search-box input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Submit button style */
 .search-box button {
     background-color: rgb(53, 64, 113);
     color: white;
@@ -106,9 +116,4 @@ body {
 
 .search-box button:hover {
     background-color: rgb(53, 64, 113);
-}
-.search-box h2 {
-    text-align: left;
-    font-size: 1.2em;
-    margin-bottom: 15px;
 }
