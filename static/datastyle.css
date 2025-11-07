@@ -27,10 +27,7 @@ h4 {
 }
 
 input[type=radio] {
-	margin-left: 20px;
-	margin-right: 5px;
-	width : auto;
-	vertical-align: middle;
+    margin-left: 20px;
 }
 
 /* Navigation bar */
@@ -82,9 +79,10 @@ body {
 }
 
 .search-box label {
+    display: inline-block;
+    width: 120px;
     font-weight: bold;
-    margin-right: 10px;
-    
+    margin-bottom: 8px; 
 }
 
 .search-box input[type="text"] {
