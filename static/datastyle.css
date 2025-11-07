@@ -79,7 +79,7 @@ body {
 }
 
 .search-box label {
-    display: inline-block;
+    display: block;
     width: 120px;
     font-weight: bold;
     margin-bottom: 8px; 
