@@ -45,12 +45,14 @@ def displaydatabystate(substance, state):
     # return render_template("displaydata")
     if substance == 'Cocaine':
             return render_template('displayCocaineData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Tobacco':
+    elif substance == 'Tobacco':
             return render_template('displayTobaccoData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Marijuana':
+    elif substance == 'Marijuana':
             return render_template('displayMarijuanaData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Alcohol':
+    elif substance == 'Alcohol':
             return render_template('displayAlcoholData.html', result=data.get_data_by_state(substance, state))
+    else:
+            return render_template('displaydata.html', result=data.get_data_by_state(substance, state))
 
 """ Arguments: route
     Return Value: a search box for year
