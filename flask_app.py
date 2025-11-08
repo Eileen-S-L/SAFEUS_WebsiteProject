@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 
 #datasource includes sets of searching_functions
 data = DataSource()
-substance_list=['cocaine','marijuana','alcohol','tobacco']
+substance_list=['Cocaine','Marijuana','Alcohol','Tobacco']
 app = Flask(__name__)
 
 """ Arguments: route '/'
