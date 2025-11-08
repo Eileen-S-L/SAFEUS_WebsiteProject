@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 
 #datasource includes sets of searching_functions
 data = DataSource()
-
+substance_list=['cocaine','marijuana','alcohol','tobacco']
 app = Flask(__name__)
 
 """ Arguments: route '/'
@@ -41,18 +41,22 @@ def displaydatabyyear(substance, year):
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
-    # return str(data.get_data_by_state(substance, state))
-    # return render_template("displaydata")
-    if substance == 'Cocaine':
-            return render_template('displayCocaineData.html', result=data.get_data_by_state(substance, state))
-    elif substance == 'Tobacco':
-            return render_template('displayTobaccoData.html', result=data.get_data_by_state(substance, state))
-    elif substance == 'Marijuana':
-            return render_template('displayMarijuanaData.html', result=data.get_data_by_state(substance, state))
-    elif substance == 'Alcohol':
-            return render_template('displayAlcoholData.html', result=data.get_data_by_state(substance, state))
+    if substance in substance_list:
+        Html_template='display'+str(substance).title()+'Data.html'
+        return render_template(Html_template, result=data.get_data_by_state(substance, state))
     else:
-            return render_template('displaydata.html', result=data.get_data_by_state(substance, state))
+        return render_template('404errorpage.html', title = "404 Not Found")
+
+    # if substance == 'Cocaine':
+    #         return render_template('displayCocaineData.html', result=data.get_data_by_state(substance, state))
+    # elif substance == 'Tobacco':
+    #         return render_template('displayTobaccoData.html', result=data.get_data_by_state(substance, state))
+    # elif substance == 'Marijuana':
+    #         return render_template('displayMarijuanaData.html', result=data.get_data_by_state(substance, state))
+    # elif substance == 'Alcohol':
+    #         return render_template('displayAlcoholData.html', result=data.get_data_by_state(substance, state))
+    # else:
+    #         return render_template('displaydata.html', result=data.get_data_by_state(substance, state))
 
 """ Arguments: route
     Return Value: a search box for year
