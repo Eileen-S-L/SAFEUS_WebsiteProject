@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 
 #datasource includes sets of searching_functions
 data = DataSource()
-substance_list=['Cocaine','Marijuana','Alcohol','Tobacco']
+
 app = Flask(__name__)
 
 """ Arguments: route '/'
@@ -32,12 +32,10 @@ def aboutthedata():
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
-    if substance in substance_list:
-        Html_template='display'+str(substance).title()+'Data.html'
-        return render_template(Html_template, result=data.get_data_by_state(substance, year))
-    else:
-        return render_template('404errorpage.html', title = "404 Not Found")
 
+    Html_template='display'+str(substance).title()+'Data.html'
+    return render_template(Html_template, result=data.get_data_by_state(substance, year))
+    
 """ Arguments: route
     Return Value: the data by substance and state
     Purpose: To give users a page where they can view the data by state and substance"""
@@ -46,11 +44,8 @@ def displaydatabyyear(substance, year):
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
-    if substance in substance_list:
-        Html_template='display'+str(substance).title()+'Data.html'
-        return render_template(Html_template, result=data.get_data_by_state(substance, state))
-    else:
-        return render_template('404errorpage.html', title = "404 Not Found")
+    Html_template='display'+str(substance).title()+'Data.html'
+    return render_template(Html_template, result=data.get_data_by_state(substance, state))
 
 
 """ Arguments: route
