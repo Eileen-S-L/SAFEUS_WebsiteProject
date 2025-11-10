@@ -32,25 +32,21 @@ def aboutthedata():
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
-    return str(data.get_data_by_year(substance, year))
-
+    Html_template='display'+str(substance).title()+'Data.html'
+    return render_template(Html_template, result=data.get_data_by_state(substance, year))
+    
 """ Arguments: route
     Return Value: the data by substance and state
     Purpose: To give users a page where they can view the data by state and substance"""
+#CODE improvement - only one if else case, not a lot of elif.
 @app.route('/state/<state>/substance/<substance>', strict_slashes = False)
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
-    # return str(data.get_data_by_state(substance, state))
-    # return render_template("displaydata")
-    if substance == 'Cocaine':
-            return render_template('displayCocaineData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Tobacco':
-            return render_template('displayTobaccoData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Marijuana':
-            return render_template('displayMarijuanaData.html', result=data.get_data_by_state(substance, state))
-    if substance == 'Alcohol':
-            return render_template('displayAlcoholData.html', result=data.get_data_by_state(substance, state))
+    result=data.get_data_by_state(substance, state)
+    Html_template='display'+str(substance).title()+'Data.html'
+    return render_template(Html_template, result)
+
 
 """ Arguments: route
     Return Value: a search box for year

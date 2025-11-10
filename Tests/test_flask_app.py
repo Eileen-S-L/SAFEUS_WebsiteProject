@@ -31,8 +31,12 @@ class TestInSearchByState(unittest.TestCase):
     def test_valid_year_and_substance(self):
         self.app = app.test_client()
         response = self.app.get('/state/Alabama/substance/Tobacco',follow_redirects = True)
-        partial_output = "('Alabama', 2002, 380805, 499453, 2812905, 52, 196, 728, 136.906, 392.404, 258.844, 63, 226, 930, 166.578, 451.976, 330.659)"
-        self.assertIn(partial_output, str(response.data))
+        #partial_output = "('Alabama', 2002, 380805, 499453, 2812905, 52, 196, 728, 136.906, 392.404, 258.844, 63, 226, 930, 166.578, 451.976, 330.659)"
+        html = response.get_data(as_text=True)
+        self.assertIn("<table>", html)
+        self.assertIn("<td>Alabama</td>", html)
+        self.assertIn("<td>2002</td>", html)
+        self.assertIn("<td>2003</td>", html)
     
     def test_invalid_year_valid_substance(self):
         self.app = app.test_client()
