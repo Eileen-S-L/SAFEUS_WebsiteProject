@@ -2,17 +2,61 @@ from flask_app import *
 import unittest
 
 class TestHomePage(unittest.TestCase):
-    def test_route(self):
+    def test_homepage_route(self):
         """ Arguments: function and expected output
         Return Value: None
         Purpose: For making sure that the proper output is shown on the homepage"""
         self.app = app.test_client()
         response = self.app.get('/', follow_redirects=True)
-        self.assertIn(b"Understanding Drug Data"
-            b"This site shares data on drug use trends across U.S. states and years, helping anyone interested learn how alcohol, marijuana, cocaine, and tobacco affected communities from 2002 to 2018."
-            b"The data comes from the National Survey on Drug Use and Health (NSDUH), conducted by the Substance Abuse and Mental Health Services Administration (SAMHSA). It provides insights into substance use patterns, helping inform public health strategies and policies."
-        , response)
+        self.assertIn("This site shares data on drug use trends across U.S. states and years, helping anyone interested learn how alcohol, marijuana, cocaine, and tobacco affected communities from 2002 to 2018"
+        , response.data.decode())
 
+    def test_about_route(self):
+        self.app = app.test_client()
+        response = self.app.get('/about',follow_redirects=True)
+        self.assertIn("The data shown on the website was obtained from this website:", response.data.decode())
+
+    def test_search_by_state_route(self):
+        self.app = app.test_client()
+        response = self.app.get("/state", follow_redirects=True)
+        self.assertIn("Search by State and Substance",response.data.decode())
+
+    def test_search_by_year_route(self):
+        self.app = app.test_client()
+        response = self.app.get("/year", follow_redirects = True)
+        self.assertIn("Enter a Year (2002-2018)",response.data.decode())
+
+class TestInSearchByState(unittest.TestCase):
+    
+    def test_valid_year_and_substance(self):
+        self.app = app.test_client()
+        response = self.app.get('/state/Alabama/substance/Tobacco',follow_redirects = True)
+        #partial_output = "('Alabama', 2002, 380805, 499453, 2812905, 52, 196, 728, 136.906, 392.404, 258.844, 63, 226, 930, 166.578, 451.976, 330.659)"
+        html = response.get_data(as_text=True)
+        self.assertIn("<table>", html)
+        self.assertIn("<td>Alabama</td>", html)
+        self.assertIn("<td>2002</td>", html)
+        self.assertIn("<td>2003</td>", html)
+    
+    def test_invalid_year_valid_substance(self):
+        self.app = app.test_client()
+        response = self.app.get('/state/China/substance/Tobacco', follow_redirects = True)
+        output = "China does not exist in the USA or doesn't have any data correspondence"
+        self.assertIn(output, str(response.data.decode()))
+    
+class TestInSearchByYear(unittest.TestCase):
+
+    def test_valid_year_and_substance(self):
+        self.app = app.test_client()
+        response = self.app.get('/year/2002/substance/Tobacco', follow_redirects = True)
+        self.assertIn("('Alabama', 2002, 380805, 499453, 2812905, 52, 196, 728, 136.906, 392.404, 258.844, 63, 226, 930, 166.578, 451.976, 330.659)",str(response.data))
+
+    def test_out_of_range_year_and_valid_substance(self):
+        self.app = app.test_client()
+        response = self.app.get('/year/2020/substance/Tobacco', follow_redirects = True)
+        self.assertIn('We only have data from 2002 to 2018. Please input one of these years :)',response.data.decode())
+
+    
 # class TestYearDisplay(unittest.TestCase):
 #     def test_routeStandard(self):
 #         """ Arguments: function and expected output
