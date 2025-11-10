@@ -45,7 +45,7 @@ def displaydatabystate(substance, state):
     substance = str(substance).strip()
     result=data.get_data_by_state(substance, state)
     Html_template='display'+str(substance).title()+'Data.html'
-    return render_template(Html_template, )
+    return render_template(Html_template, result)
 
 
 """ Arguments: route
