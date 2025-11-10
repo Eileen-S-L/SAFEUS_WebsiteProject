@@ -33,7 +33,7 @@ def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
     Html_template='display'+str(substance).title()+'Data.html'
-    return render_template(Html_template, result=data.get_data_by_state(substance, year))
+    return render_template(page = Html_template, result=data.get_data_by_state(substance, year))
     
 """ Arguments: route
     Return Value: the data by substance and state
@@ -45,7 +45,7 @@ def displaydatabystate(substance, state):
     substance = str(substance).strip()
     search_result=data.get_data_by_state(substance, state)
     Html_template='display'+str(substance).title()+'Data.html'
-    return render_template(Html_template, result=search_result)
+    return render_template(page = Html_template, result=search_result)
 
 
 """ Arguments: route
