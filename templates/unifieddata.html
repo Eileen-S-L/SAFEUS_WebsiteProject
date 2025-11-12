@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html> 
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ substance.title() }} Data</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='datastyle.css') }}">
+    </head>
+
+    <body>
+        <h2>{{ substance.title() }} Data</h2>
+        <table>
+            <tr>
+                <th>State</th>
+                <th>Year</th>
+                {% if substance == 'alcohol' or substance == 'tobacco' %}
+                    <th>State</th>
+                    <th>Year</th> 
+                    <th>Population_12To17</th>
+                    <th>Population_18To25 </th>
+                    <th>Population_26AndMore</th>
+                    <th>Past_year_12To17</th>
+                    <th>Past_year_18To25</th>
+                    <th>Past_year_26AndMore</th>
+                    <th>Rate_year_12To17</th>
+                    <th>Rate_year_18To25</th>
+                    <th>Rate_year_26AndMore</th>
+                    <th>Past_month_12To17</th>
+                    <th>Past_month_18To25</th>
+                    <th>Past_month_26AndMore</th>
+                    <th>Rate_month_12To17</th>
+                    <th>Rate_month_18To25</th>
+                    <th>Rate_month_26AndMore</th>
+                {% elif substance == 'marijuana' %}
+                    <th>Population_12To17</th>
+                    <th>Population_18To25 </th>
+                    <th>Population_26AndMore</th>
+                    <th>New_users_12To17</th>
+                    <th>New_users_18To25</th>
+                    <th>New_users_26AndMore</th>
+                    <th>Rate_newusers_12To17</th>
+                    <th>Rate_newusers_18To25</th>
+                    <th>Rate_newusers_26AndMore</th>
+                    <th>Past_month_12To17</th>
+                    <th>Past_month_18To25</th>
+                    <th>Past_month_26AndMore</th>
+                    <th>Rate_month_12To17</th>
+                    <th>Rate_month_18To25</th>
+                    <th>Rate_month_26AndMore</th>
+                    <th>Past_year_12To17</th>
+                    <th>Past_year_18To25</th>
+                    <th>Past_year_26AndMore</th>
+                    <th>Rate_year_12To17</th>
+                    <th>Rate_year_18To25</th>
+                    <th>Rate_year_26AndMore</th>
+                {% elif substance == 'cocaine' %}
+                    <th>Population_12To17</th>
+                    <th>Population_18To25 </th>
+                    <th>Population_26AndMore</th>
+                    <th>Past_year_12To17</th>
+                    <th>Past_year_18To25</th>
+                    <th>Past_year_26AndMore</th>
+                    <th>Rate_year_12To17</th>
+                    <th>Rate_year_18To25</th>
+                    <th>Rate_year_26AndMore</th>
+                {% endif %}
+            </tr>
+            {% for row in result %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
