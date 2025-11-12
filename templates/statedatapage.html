@@ -22,6 +22,7 @@
         <!-- Combined Search Form -->
         <div class="search-box">
             <p>Search by State and Substance</p>
+            <p>You must type in a state name and substance</p>
 
             <form onsubmit="event.preventDefault(); const state = document.getElementById('state').value; const substance = document.querySelector('input[name=\'substancechoice\']:checked').value; window.location.href = `/state/${state}/substance/${substance}`;">
 
