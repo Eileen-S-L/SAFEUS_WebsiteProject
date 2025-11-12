@@ -8,8 +8,7 @@
     </head>
 
     <body>
-        <p>Search by Year and Substance</p>
-        <p>You must type in a year and substance</p>
+        <h1>Search by Year and Substance</h1>
         <nav>
             <ul>
                 <li><a href='/'>Home</a></li>
@@ -22,6 +21,7 @@
         <!-- Combined Search Form -->
         <div class="search-box">
             <h2> Search by Year and Substance</h2>
+            <p>You must type in a year and substance</p>
 
             <form onsubmit="event.preventDefault(); const year = document.getElementById('year').value; const substance = document.querySelector('input[name=\'substancechoice\']:checked').value; window.location.href = `/year/${year}/substance/${substance}`;">
 
