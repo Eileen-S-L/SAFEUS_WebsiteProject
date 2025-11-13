@@ -28,8 +28,6 @@ class DataSource:
         '''Argument: Year & substance
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
-        if not isinstance(Year, int):
-            return "Year input must be valid year"
         if (int(Year)>2018 or int(Year)<2002):
             return "We only have data from 2002 to 2018. Please input one of these years :)"
         try:
@@ -40,6 +38,7 @@ class DataSource:
             cursor.execute(query, (Year,))
 
             records = cursor.fetchall()
+            print(records)
             return records
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
