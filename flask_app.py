@@ -32,8 +32,9 @@ def aboutthedata():
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
+    search_result=data.get_data_by_year(substance, year)
     Html_template='display'+str(substance).title()+'Data.html'
-    return render_template(Html_template,type = year, result=data.get_data_by_year(substance, year))
+    return render_template(Html_template,type = year, result=search_result)
     
 """ Arguments: route
     Return Value: the data by substance and state
@@ -85,4 +86,4 @@ def wrongfunction(random):
     raise Exception("Intentional error for testing 500 handler")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5221)
+    app.run(host='0.0.0.0', port=5106)
