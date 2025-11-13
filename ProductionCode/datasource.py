@@ -38,6 +38,7 @@ class DataSource:
             cursor.execute(query, (Year,))
 
             records = cursor.fetchall()
+            print(records)
             return records
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
