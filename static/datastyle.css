@@ -1,6 +1,9 @@
 /* Page title */
 
+/* Body style */
 body {
+    margin: 5%;
+	font-family: Arial, sans-serif;
 	background-color: rgb(239, 248, 255);
 }
 
@@ -55,12 +58,6 @@ nav li a {
 nav li a:hover {
 	color: white;
 	background-color: rgb(53, 64, 113);
-}
-
-/* Body style */
-body {
-    margin: 5%;
-	font-family: Arial, sans-serif;
 }
 
 /* Search box style */
