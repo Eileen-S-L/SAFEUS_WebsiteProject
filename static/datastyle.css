@@ -12,10 +12,12 @@ h2 {
 	padding-top: 1em;
 	padding-bottom: 1em;
 	background-color: rgb(53, 64, 113);
-	color: rgb(255, 255, 255);
+	color: rgb(201, 201, 201);
 	border: 2px solid rgb(177, 177, 177);
 	text-align: center;
 }
+
+
 
 h4 {
 	padding-top: 1em;

@@ -32,8 +32,8 @@ def aboutthedata():
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
-    # Html_template='display'+str(substance).title()+'Data.html'
-    return render_template("unifieddata.html", result=data.get_data_by_state(substance, year), substance=substance)
+    Html_template='display'+str(substance).title()+'Data.html'
+    return render_template(Html_template, result=data.get_data_by_state(substance, year))
     
 """ Arguments: route
     Return Value: the data by substance and state
@@ -44,8 +44,8 @@ def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
     search_result=data.get_data_by_state(substance, state)
-    # Html_template='display'+str(substance).title()+'Data.html'
-    return render_template("unifieddata.html", result=search_result, substance=substance)
+    Html_template='display'+str(substance).title()+'Data.html'
+    return render_template(Html_template, result=search_result)
 
 
 """ Arguments: route
@@ -83,9 +83,6 @@ def python_bug(e):
 @app.route('/wrong/<random>', strict_slashes = False)
 def wrongfunction(random):
     raise Exception("Intentional error for testing 500 handler")
-
-
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5121)
