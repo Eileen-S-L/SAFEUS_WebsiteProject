@@ -11,7 +11,7 @@
         <h2>{{type}} {{subname}} Data</h2>
         <table>
             <tr>
-                {% if sub == 'alcohol' or sub == 'tobacco' %} 
+                {% if sub|lower == 'alcohol' or sub|lower == 'tobacco' %} 
                     <th>State</th>
                     <th>Year</th>
                     <th>Population_12To17</th>
