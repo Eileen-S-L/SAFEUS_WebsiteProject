@@ -52,12 +52,20 @@ def displaydatabyyear(substance, year):
     Return Value: the data by substance and state
     Purpose: To give users a page where they can view the data by state and substance"""
 #CODE improvement - only one if else case, not a lot of elif.
+# @app.route('/state/<state>/substance/<substance>', strict_slashes = False)
+# def displaydatabystate(substance, state):
+#     state = str(state).strip()
+#     substance = str(substance).strip()
+#     search_result=data.get_data_by_state(substance, state)
+#     Html_template='display'+str(substance).title()+'Data.html'
+#     return render_template(Html_template, result=search_result)
+
 @app.route('/state/<state>/substance/<substance>', strict_slashes = False)
 def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
     search_result=data.get_data_by_state(substance, state)
-    Html_template='display'+str(substance).title()+'Data.html'
+    Html_template='unifieddata'
     return render_template(Html_template, result=search_result)
 
 
