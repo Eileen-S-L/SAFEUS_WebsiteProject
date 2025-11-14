@@ -11,9 +11,9 @@
         <h2>{{type}} Data</h2>
         <table>
             <tr>
-                <th>State</th>
-                <th>Year</th>
                 {% if substance == 'alcohol' or substance == 'tobacco' %} 
+                    <th>State</th>
+                    <th>Year</th>
                     <th>Population_12To17</th>
                     <th>Population_18To25 </th>
                     <th>Population_26AndMore</th>
@@ -29,7 +29,13 @@
                     <th>Rate_month_12To17</th>
                     <th>Rate_month_18To25</th>
                     <th>Rate_month_26AndMore</th>
+            </tr>
+        </table>
+        <table>
+            <tr>
                 {% elif substance == 'marijuana' %}
+                    <th>State</th>
+                    <th>Year</th>
                     <th>Population_12To17</th>
                     <th>Population_18To25 </th>
                     <th>Population_26AndMore</th>
@@ -51,7 +57,13 @@
                     <th>Rate_year_12To17</th>
                     <th>Rate_year_18To25</th>
                     <th>Rate_year_26AndMore</th>
+            </tr>
+        </table>
+        <table>
+            <tr>
                 {% elif substance == 'cocaine' %}
+                    <th>State</th>
+                    <th>Year</th>
                     <th>Population_12To17</th>
                     <th>Population_18To25 </th>
                     <th>Population_26AndMore</th>
@@ -63,6 +75,7 @@
                     <th>Rate_year_26AndMore</th>
                 {% endif %}
             </tr>
+        </table>            
             {% for row in result %}
             <tr>
                 {% for cell in row %}
