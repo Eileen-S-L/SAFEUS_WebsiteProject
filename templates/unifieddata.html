@@ -32,7 +32,7 @@
                 {% endif %}
             </tr>
             <tr>
-                {% if sub == 'marijuana' %}
+                {% if sub|lower == 'marijuana' %}
                     <th>State</th>
                     <th>Year</th>
                     <th>Population_12To17</th>
@@ -59,7 +59,7 @@
                 {% endif %}
             </tr>
             <tr>
-                {% if sub == 'cocaine' %}
+                {% if sub|lower == 'cocaine' %}
                     <th>State</th>
                     <th>Year</th>
                     <th>Population_12To17</th>
