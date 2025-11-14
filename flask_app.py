@@ -117,4 +117,4 @@ def wrongfunction(random):
     raise Exception("Intentional error for testing 500 handler")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5206)
+    app.run(host='0.0.0.0', port=5221)
