@@ -28,26 +28,37 @@ def aboutthedata():
 """ Arguments: route
     Return Value: the data by substance and year
     Purpose: To give users a page where they can view the data by year and substance"""
+# EILEEN STUFF
+# @app.route('/year/<year>/substance/<substance>', strict_slashes = False)
+# def displaydatabyyear(substance, year):
+#     year = str(year).strip()
+#     substance = str(substance).strip()
+
+#     # search_result_=data.get_data_by_year(substance, year)
+
+#     basic_results = data.get_basics_by_year(substance,year)
+#     pastyear_results=data.get_pastyear_by_year(substance,year)
+#     if (substance != 'Cocaine'):
+#         pastmonth_results =data.get_pastmonth_by_year(substance,year)
+#     else:
+#         pastmonth_results=None
+#     if (substance=='Maijuana'):
+#         newuser_results=data.get_newuser_by_year(substance, year)
+#     else:
+#         newuser_results=None
+#     Html_template='display'+str(substance).title()+'Data.html'
+#     return render_template(Html_template,type = year, result_1=basic_results, result_2=pastyear_results, result_3=pastmonth_results, result_4=newuser_results)
+    
+    #________________________- new year
+    
 @app.route('/year/<year>/substance/<substance>', strict_slashes = False)
 def displaydatabyyear(substance, year):
     year = str(year).strip()
     substance = str(substance).strip()
+    search_result=data.get_data_by_state(substance, year)
+    Html_template='unifieddata.html'
+    return render_template(Html_template, result=search_result, type = substance.title())
 
-    # search_result_=data.get_data_by_year(substance, year)
-
-    basic_results = data.get_basics_by_year(substance,year)
-    pastyear_results=data.get_pastyear_by_year(substance,year)
-    if (substance != 'Cocaine'):
-        pastmonth_results =data.get_pastmonth_by_year(substance,year)
-    else:
-        pastmonth_results=None
-    if (substance=='Maijuana'):
-        newuser_results=data.get_newuser_by_year(substance, year)
-    else:
-        newuser_results=None
-    Html_template='display'+str(substance).title()+'Data.html'
-    return render_template(Html_template,type = year, result_1=basic_results, result_2=pastyear_results, result_3=pastmonth_results, result_4=newuser_results)
-    
 """ Arguments: route
     Return Value: the data by substance and state
     Purpose: To give users a page where they can view the data by state and substance"""
