@@ -78,7 +78,7 @@ class DataSource:
             cursor.execute(query, (Year,))
 
             records_pastyear = cursor.fetchall()
-            # print(records_pastyear)
+            print("Pastyear")
             return records_pastyear
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
@@ -98,7 +98,7 @@ class DataSource:
                 cursor.execute(query, (Year,))
 
                 records_pastmonth = cursor.fetchall()
-                # print(records_pastyear)
+                print("Past Month")
                 return records_pastmonth
             except Exception as e: 
                 print ("something went wrong when executing the query:",e)
@@ -118,7 +118,7 @@ class DataSource:
             cursor.execute(query, (Year,))
 
             records_newusers = cursor.fetchall()
-            # print(records_pastyear)
+            print("New User")
             return records_newusers
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
