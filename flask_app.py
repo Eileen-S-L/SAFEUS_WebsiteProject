@@ -65,8 +65,8 @@ def displaydatabystate(substance, state):
     state = str(state).strip()
     substance = str(substance).strip()
     search_result=data.get_data_by_state(substance, state)
-    Html_template='unifieddata'
-    return render_template(Html_template, result=search_result)
+    Html_template='unifieddata.html'
+    return render_template(Html_template, result=search_result, type = substance.title())
 
 
 """ Arguments: route
