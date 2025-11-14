@@ -104,26 +104,6 @@ class DataSource:
                 print ("something went wrong when executing the query:",e)
                 return None
 
-    def get_pastmonth_by_year(self, Substance, Year):
-            '''Argument: Year & substance
-            Return: records, which is a list of data related to searched-year
-            Purpose: Select wanted data from connected database'''
-            if (int(Year)>2018 or int(Year)<2002):
-                return "We only have data from 2002 to 2018. Please input one of these years :)"
-            try:
-                #Open a cursor to perform database operations
-                cursor = self.connection.cursor()
-                query = "SELECT Past_month_12To17,Past_month_18To25,Past_month_26AndMore,Rate_month_12To17, Rate_month_18To25, Rate_month_26AndMore FROM " + Substance + " WHERE Year = %s ;"
-                #Retrieve query results
-                cursor.execute(query, (Year,))
-
-                records_pastmonth = cursor.fetchall()
-                # print(records_pastyear)
-                return records_pastmonth
-            except Exception as e: 
-                print ("something went wrong when executing the query:",e)
-                return None
-
     def get_newuser_by_year(self, Substance, Year):
         '''Argument: Year & substance
             Return: records, which is a list of data related to searched-year
