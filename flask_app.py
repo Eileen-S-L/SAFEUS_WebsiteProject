@@ -57,7 +57,7 @@ def displaydatabyyear(substance, year):
     substance = str(substance).strip()
     search_result=data.get_data_by_year(substance, year)
     Html_template='unifieddata.html'
-    return render_template(Html_template, result=search_result, type = substance.title(), sub = substance)
+    return render_template(Html_template, result=search_result, type = year, sub = substance, subname = substance.title())
 
 """ Arguments: route
     Return Value: the data by substance and state
@@ -77,7 +77,7 @@ def displaydatabystate(substance, state):
     substance = str(substance).strip()
     search_result=data.get_data_by_state(substance, state)
     Html_template='unifieddata.html'
-    return render_template(Html_template, result=search_result, type = substance.title(), sub = substance)
+    return render_template(Html_template, result=search_result, type = state.title(), sub = substance, subname = substance.title())
 
 
 """ Arguments: route
