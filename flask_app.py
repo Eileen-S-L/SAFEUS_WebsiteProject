@@ -50,12 +50,12 @@ def aboutthedata():
 #     return render_template(Html_template,type = year, result_1=basic_results, result_2=pastyear_results, result_3=pastmonth_results, result_4=newuser_results)
     
     #________________________- new year
-    
+
 @app.route('/year/<year>/substance/<substance>', strict_slashes = False)
 def displaydatabyyear(substance, year):
-    year = str(year).strip()
+    year = str(year)
     substance = str(substance).strip()
-    search_result=data.get_data_by_state(substance, year)
+    search_result=data.get_data_by_year(substance, year)
     Html_template='unifieddata.html'
     return render_template(Html_template, result=search_result, type = substance.title())
 
