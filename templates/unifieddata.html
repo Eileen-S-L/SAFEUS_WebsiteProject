@@ -10,7 +10,7 @@
     <body>
         <h2>{{type}} Data</h2>
         <table>
-            {% if substance == 'alcohol' or substance == 'tobacco' %} 
+            {% if sub == 'alcohol' or sub == 'tobacco' %} 
             <tr>
                     <th>State</th>
                     <th>Year</th>
@@ -31,7 +31,7 @@
                     <th>Rate_month_26AndMore</th>
             </tr>
             <tr>
-                {% elif substance == 'marijuana' %}
+                {% elif sub == 'marijuana' %}
                     <th>State</th>
                     <th>Year</th>
                     <th>Population_12To17</th>
@@ -57,7 +57,7 @@
                     <th>Rate_year_26AndMore</th>
             </tr>
             <tr>
-                {% elif substance == 'cocaine' %}
+                {% elif sub == 'cocaine' %}
                     <th>State</th>
                     <th>Year</th>
                     <th>Population_12To17</th>
