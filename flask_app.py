@@ -52,7 +52,7 @@ def aboutthedata():
     #________________________- new year
 
 @app.route('/year/<year>/substance/<substance>', strict_slashes = False)
-def displaydatabyyear(substance, year):
+def displaydatabyyear(year, substance):
     year = str(year)
     substance = str(substance).strip()
     search_result=data.get_data_by_year(substance, year)
@@ -72,7 +72,7 @@ def displaydatabyyear(substance, year):
 #     return render_template(Html_template, result=search_result)
 
 @app.route('/state/<state>/substance/<substance>', strict_slashes = False)
-def displaydatabystate(substance, state):
+def displaydatabystate(state, substance):
     state = str(state).strip()
     substance = str(substance).strip()
     search_result=data.get_data_by_state(substance, state)
