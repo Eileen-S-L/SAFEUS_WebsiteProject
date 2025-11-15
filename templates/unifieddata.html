@@ -9,6 +9,7 @@
 
     <body>
         <h2>{{type}} {{subname}} Data</h2>
+        <div class="table container">
         <table>
             <tr>
                 {% if sub|lower == 'alcohol' or sub|lower == 'tobacco' %} 
@@ -81,5 +82,6 @@
             </tr>
             {% endfor %}
         </table>
+        </div>
     </body>
 </html>
