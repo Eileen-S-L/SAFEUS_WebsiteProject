@@ -116,3 +116,11 @@ nav li a:hover {
 .search-box button:hover {
     background-color: rgb(53, 64, 113);
 }
+
+table {
+	border-collapse: collapse;
+	border:1px rgb(53, 64, 113);
+}
+th,tr,td {
+	padding: 10px;
+}
