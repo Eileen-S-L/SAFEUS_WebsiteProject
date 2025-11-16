@@ -134,12 +134,11 @@ class DataSource:
             cursor = self.connection.cursor()
             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
             #Retrieve query results
-            if records == []:
-                return f"{State} does not exist in the USA or doesn't have any data correspondence"
             cursor.execute(query, (State.title(),))
 
             records = cursor.fetchall()
-            
+            if records == []:
+                return f"{State} does not exist in the USA or doesn't have any data correspondence"
             return records
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
