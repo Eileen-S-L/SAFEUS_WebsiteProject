@@ -48,7 +48,7 @@ nav li {
 
 nav li a {
 	display: inline-block;
-	color: black;
+	color: rgb(201, 201, 201);
 	text-decoration: none;
 	text-align: center;
 	padding: 14px 16px;
