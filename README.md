@@ -15,11 +15,11 @@ Rachel, Eileen, Ayobami, Emmanuel
 - search_by_state() is called by the command line
     <python3 command_line.py --state "chosen state">
 - argument from "chosen state" would be taken as input into this function
-- return a list of sublists consisting ['state name: state', 'year number: year', 'age
+- return a list of sublists consisting ['state name: state', 'year number: year', 'age]
 
 
 ### Test 
-- if wants to run the test_cl.py to test helperfunc and command_lines
+- if wants to run the test files, (test_cl.py and test_flask_app.py) to test flask_app and command_lines, run
     <python3 -m unittest discover Tests/>
 
 ### Scanability
