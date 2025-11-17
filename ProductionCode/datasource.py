@@ -131,10 +131,10 @@ class DataSource:
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
         try:
-            # allowed_substances = {'cocaine','marijuana','alcohol','tobacco'}
-            # if Substance.lower() not in allowed_substances:
-            #     print("Invalid substance:", Substance)
-            #     return []
+            allowed_substances = {'cocaine','marijuana','alcohol','tobacco'}
+            if Substance.lower() not in allowed_substances:
+                print("Invalid substance:", Substance)
+                return f"{Substance} is not a part of our database. Please choose between Cocaine, Marijuana, Alcohol, or Tobaco."
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
