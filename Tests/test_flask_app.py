@@ -8,8 +8,7 @@ class TestHomePage(unittest.TestCase):
         Purpose: For making sure that the proper output is shown on the homepage"""
         self.app = app.test_client()
         response = self.app.get('/', follow_redirects=True)
-        self.assertIn("This site shares data on drug use trends across U.S. states and years, helping anyone interested learn how alcohol, marijuana, cocaine, and tobacco affected communities from 2002 to 2018"
-        , response.data.decode())
+        self.assertIn('<li><a href="/about">About the Data</a></li>\n', response.get_data(as_text=True))
 
     def test_about_route(self):
         self.app = app.test_client()
