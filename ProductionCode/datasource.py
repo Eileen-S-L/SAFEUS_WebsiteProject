@@ -30,7 +30,6 @@ class DataSource:
         Purpose: Select wanted data from connected database'''
         if (int(Year)>2018 or int(Year)<2002):
             print("We only have data from 2002 to 2018. Please input one of these years :)")
-            return []
         try:
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
