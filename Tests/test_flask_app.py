@@ -51,7 +51,7 @@ class TestInSearchByYear(unittest.TestCase):
         html = response.get_data(as_text=True)
         self.assertIn("<h2>2002 Tobacco Data</h2>", html)
         self.assertIn("<td>Alabama</td>", html)
-        self.assertIn("<td>Arkansa</td>", html)
+        self.assertIn("<td>Arkansas</td>", html)
         self.assertIn("<td>District of Columbia</td>", html)
 
     def test_out_of_range_year_and_valid_substance(self):
