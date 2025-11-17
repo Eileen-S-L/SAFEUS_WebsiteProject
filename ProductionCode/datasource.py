@@ -131,9 +131,9 @@ class DataSource:
         Purpose: Select wanted data from connected database'''
         try:
             allowed_substances = {'Cocaine','Marijuana','Alcohol','Tobacco'}
-            if Substance not in allowed_tables:
-            print("Invalid table:", Substance)
-            return []
+            if Substance not in allowed_substances:
+                print("Invalid table:", Substance)
+                return []
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
@@ -144,7 +144,7 @@ class DataSource:
             # if records == []:
             #     return f"{State} does not exist in the USA or doesn't have any data correspondence"
             return records
-        except Exception as e: 
-            print ("something went wrong when executing the query:",e)
-            return []
+        except Exception as e:
+                print ("something went wrong when executing the query:",e)
+                return []
         
