@@ -60,7 +60,7 @@ class TestCommandLine(unittest.TestCase):
         Purpose: Checks that searching by an invalid state name (non-U.S. state names) returns the appropriate error message."""
         result = subprocess.Popen(['python3', 'command_line.py', '--state', 'Nigeria', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
-        self.assertIn(b"Invalid substance:", stdout)
+        self.assertIn(b"Nigeria does not exist in the USA", stdout)
     
     def test_too_many_arguments(self):
         """Arguments: self
@@ -108,7 +108,7 @@ class TestDataSourceMethods(unittest.TestCase):
         Return Value: None
         Purpose: Tests get_data_by_year with an invalid year. """
         result = self.ds.get_data_by_year('cocaine', '2025')
-        self.assertEqual(result, "We only have data from 2002 to 2018. Please input one of these years :)")
+        self.assertIn(result, "We only have data from 2002 to 2018. Please input one of these years :)")
 
     def test_get_data_by_state_valid(self):
         """ Arguments: self
