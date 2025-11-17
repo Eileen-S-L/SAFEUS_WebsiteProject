@@ -1,0 +1,82 @@
+/* Navigation bars */
+nav ul {
+	/* border: gray 1px solid; */
+    background:  rgb(75, 121, 153);
+	list-style-type: none;
+	margin-top: 0;
+	padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+nav .logo-text h1{
+    display: inline-block;
+    font-weight: 600;
+    font-family: sans-serif;
+    color:aliceblue;
+}
+nav .logo-text b{
+    color:yellowgreen
+}
+nav li {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+nav li a {
+    font-family:sans-serif;
+    font-weight: 500;
+    font-size:15px;
+	display: inline-block;
+	color: white;
+    padding: 10px 18px;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+
+
+nav li a:hover {
+	color: white;
+	background-color: rgb(169, 191, 137);
+    border-radius: 10px;
+}
+
+/* Overall sites  */
+h1 {
+    text-align: Center;
+    font-family:sans-serif;
+}
+
+/* search button */
+.SearchButton {
+    display: middle;
+}
+
+/* -------Active------- */
+nav ul.active::after{
+    content:'';
+    width: 50%;
+    height:3px;
+    background-color:white;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+}
+
+input{
+    padding: 10px 20px;
+    border-radius: 10%;
+    border-color:rgb(75, 121, 153) ;
+    cursor:pointer;
+    font-weight: 800;
+    display: center;
+
+}
+.SearchButton{
+    background:rgb(75, 121, 153);
+    color:white;
+    border-radius: 10px;
+}
