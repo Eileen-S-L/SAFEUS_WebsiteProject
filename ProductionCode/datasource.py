@@ -67,6 +67,7 @@ class DataSource:
             if (records == []):
                 print(f"{State} does not exist in the USA or does not have any data correspondence")
                 return []
+            return records
 
         except Exception as e:
                 print ("something went wrong when executing the query:",e)
