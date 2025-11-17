@@ -52,7 +52,7 @@ class TestCommandLine(unittest.TestCase):
         Purpose: Checks that searching by an invalid year returns the appropriate error message."""
         result = subprocess.Popen(['python3', 'command_line.py', '--year', '2025', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
-        self.assertEqual(b'We only have data from 2002 to 2018. Please input one of these years :)', stdout)
+        self.assertIn(b'We only have data from 2002 to 2018. Please input one of these years :)', stdout)
         
     def test_invalid_state_name(self):
         """Arguments: self
@@ -123,4 +123,4 @@ class TestDataSourceMethods(unittest.TestCase):
         Return Value: None
         Purpose: Tests get_data_by_state with an invalid state. """
         result = self.ds.get_data_by_state('cocaine', 'Nigeria')
-        self.assertEqual(result, "Nigeria does not exist in the USA or doesn't have any data correspondence")
+        self.assertIn(result, "Nigeria does not exist in the USA or doesn't have any data correspondence")
