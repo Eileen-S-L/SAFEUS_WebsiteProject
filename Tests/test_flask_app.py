@@ -37,10 +37,10 @@ class TestInSearchByState(unittest.TestCase):
         self.assertIn("<td>2002</td>", html)
         self.assertIn("<td>2003</td>", html)
     
-    def test_invalid_year_valid_substance(self):
+    def test_invalid_state_valid_substance(self):
         self.app = app.test_client()
         response = self.app.get('/state/China/substance/Tobacco', follow_redirects = True)
-        output = " We do not have data for Tobacco in 2001"
+        output = " We do not have data for Tobacco in China"
         self.assertIn(output, str(response.get_data(as_text=True)))
     
 class TestInSearchByYear(unittest.TestCase):
