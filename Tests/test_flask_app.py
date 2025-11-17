@@ -62,7 +62,7 @@ class TestInSearchByYear(unittest.TestCase):
 class TestExceptionalCases(unittest.TestCase):
     def test_invalid_substance_in_year_search(self):
         self.app = app.test_client()
-        response = self.app.get('/year/2005/substance/Weed', follow_redirects = True)
+        response = self.app.get('/year/Alabamaa/substance/Weed', follow_redirects = True)
         self.assertIn('We do not have data for Weed in Alabamaa', response.get_data(as_text=True))
 
 
