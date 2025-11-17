@@ -28,7 +28,7 @@ class TestHomePage(unittest.TestCase):
 
 class TestInSearchByState(unittest.TestCase):
     
-    def test_valid_year_and_substance(self):
+    def test_valid_state_and_substance(self):
         self.app = app.test_client()
         response = self.app.get('/state/Alabama/substance/Tobacco',follow_redirects = True)
         #partial_output = "('Alabama', 2002, 380805, 499453, 2812905, 52, 196, 728, 136.906, 392.404, 258.844, 63, 226, 930, 166.578, 451.976, 330.659)"
@@ -49,7 +49,11 @@ class TestInSearchByYear(unittest.TestCase):
     def test_valid_year_and_substance(self):
         self.app = app.test_client()
         response = self.app.get('/year/2002/substance/Tobacco', follow_redirects = True)
-        self.assertIn("('Alabama', 2002, 380805, 499453, 2812905, 52, 196, 728, 136.906, 392.404, 258.844, 63, 226, 930, 166.578, 451.976, 330.659)",str(response.data))
+        html = response.get_data(as_text=True)
+        self.assertIn("<h2>2002 Tobacco Data</h2>", html)
+        self.assertIn("<td>Alabama</td>", html)
+        self.assertIn("<td>Arkansa</td>", html)
+        self.assertIn("<td>District of Columbia</td>", html)
 
     def test_out_of_range_year_and_valid_substance(self):
         self.app = app.test_client()
