@@ -65,6 +65,13 @@ class TestExceptionalCases(unittest.TestCase):
         response = self.app.get('/year/Alabamaa/substance/Weed', follow_redirects = True)
         self.assertIn('We do not have data for Weed in Alabamaa', response.get_data(as_text=True))
 
+    def test_404error(self):
+        """ Arguments: 404/function and expected output
+        Return Value: String explaining the error
+        Purpose: Make sure that the user realizes that there is an error"""
+        self.app = app.test_client()
+        response = self.app.get('/nonexistentpage', follow_redirects=True)
+        self.assertIn(b"Page not found. This is the link to get back to the", response.data)
 
 #         Return Value: None
 #         Purpose: Ensuring that the standard case for the year display route passes"""
