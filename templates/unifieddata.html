@@ -83,5 +83,16 @@
             {% endfor %}
         </table>
         </div>
+        {% if result %}
+    {% for row in result %}
+    <tr>
+        {% for cell in row %}
+            <td>{{ cell }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+{% else %}
+    <tr><td colspan="20">No data available for this substance.</td></tr>
+{% endif %}
     </body>
 </html>
