@@ -131,10 +131,10 @@ class DataSource:
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
         try:
-            allowed_substances = {'cocaine','marijuana','alcohol','tobacco'}
-            if Substance.lower() not in allowed_substances:
-                print("Invalid substance:", Substance)
-                return []
+            # allowed_substances = {'cocaine','marijuana','alcohol','tobacco'}
+            # if Substance.lower() not in allowed_substances:
+            #     print("Invalid substance:", Substance)
+            #     return []
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()
             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
@@ -143,8 +143,7 @@ class DataSource:
 
             records = cursor.fetchall()
             if records == []:
-                print( f"{State} does not exist in the USA or doesn't have any data correspondence")
-                return []
+                return f"{State} does not exist in the USA or does not have any data correspondence"
             return records
         except Exception as e:
                 print ("something went wrong when executing the query:",e)
