@@ -132,7 +132,7 @@ class DataSource:
         try:
             allowed_substances = {'Cocaine','Marijuana','Alcohol','Tobacco'}
             if Substance not in allowed_substances:
-                print("Invalid table:", Substance)
+                print("Invalid substance:", Substance)
                 return []
             #Open a cursor to perform database operations
             cursor = self.connection.cursor()

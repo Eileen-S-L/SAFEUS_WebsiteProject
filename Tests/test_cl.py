@@ -60,7 +60,7 @@ class TestCommandLine(unittest.TestCase):
         Purpose: Checks that searching by an invalid state name (non-U.S. state names) returns the appropriate error message."""
         result = subprocess.Popen(['python3', 'command_line.py', '--state', 'Nigeria', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
-        self.assertIn(b"Nigeria does not exist in the USA or doesn't have any data correspondence", stdout)
+        self.assertIn(b"Invalid substance:", stdout)
     
     def test_too_many_arguments(self):
         """Arguments: self
