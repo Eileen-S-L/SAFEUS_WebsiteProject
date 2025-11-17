@@ -29,6 +29,7 @@ class DataSource:
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
         if (int(Year)>2018 or int(Year)<2002):
+            print("We only have data from 2002 to 2018. Please input one of these years :)")
             return []
         try:
             #Open a cursor to perform database operations
@@ -130,8 +131,8 @@ class DataSource:
         Return: records, which is a list of data related to searched-year
         Purpose: Select wanted data from connected database'''
         try:
-            allowed_substances = {'Cocaine','Marijuana','Alcohol','Tobacco'}
-            if Substance not in allowed_substances:
+            allowed_substances = {'cocaine','marijuana','alcohol','tobacco'}
+            if Substance.lower() not in allowed_substances:
                 print("Invalid substance:", Substance)
                 return []
             #Open a cursor to perform database operations

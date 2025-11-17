@@ -38,7 +38,7 @@ class TestCommandLine(unittest.TestCase):
         stdout, stderr = result.communicate()
         self.assertIn(b'2010,', stdout)
 
-    def test_state_search(self):
+    def test_search_by_state(self):
         """Arguments: self
         Return Value: None
         Purpose: Checks that searching by a valid state and substance returns expected results."""
@@ -52,7 +52,7 @@ class TestCommandLine(unittest.TestCase):
         Purpose: Checks that searching by an invalid year returns the appropriate error message."""
         result = subprocess.Popen(['python3', 'command_line.py', '--year', '2025', '--substance', 'cocaine'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = result.communicate()
-        self.assertIn(b'We only have data from 2002 to 2018. Please input one of these years :)', stdout)
+        self.assertEqual(b'We only have data from 2002 to 2018. Please input one of these years :)', stdout)
         
     def test_invalid_state_name(self):
         """Arguments: self
