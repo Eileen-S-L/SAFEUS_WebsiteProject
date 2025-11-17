@@ -89,7 +89,7 @@ class DataSource:
             Return: records, which is a list of data related to searched-year
             Purpose: Select wanted data from connected database'''
             if (int(Year)>2018 or int(Year)<2002):
-                return "We only have data from 2002 to 2018. Please input one of these years :)"
+                return []
             try:
                 #Open a cursor to perform database operations
                 cursor = self.connection.cursor()
@@ -102,7 +102,7 @@ class DataSource:
                 return records_pastmonth
             except Exception as e: 
                 print ("something went wrong when executing the query:",e)
-                return None
+                return []
 
     def get_newuser_by_year(self, Substance, Year):
         '''Argument: Year & substance
