@@ -40,7 +40,7 @@ class TestInSearchByState(unittest.TestCase):
     def test_invalid_year_valid_substance(self):
         self.app = app.test_client()
         response = self.app.get('/state/China/substance/Tobacco', follow_redirects = True)
-        output = " Page not found. Ensure that you choose a substance type before selecting for year or state. Years included in this database are from 2002-2018"
+        output = " We do not have data for Tobacco in 2001"
         self.assertIn(output, str(response.get_data(as_text=True)))
     
 class TestInSearchByYear(unittest.TestCase):
@@ -57,7 +57,7 @@ class TestInSearchByYear(unittest.TestCase):
     def test_out_of_range_year_and_valid_substance(self):
         self.app = app.test_client()
         response = self.app.get('/year/2020/substance/Tobacco', follow_redirects = True)
-        self.assertIn(' Page not found. Ensure that you choose a substance type before selecting for year or state. Years included in this database are from 2002-2018.',response.get_data(as_text=True))
+        self.assertIn(' We do not have data for Tobacco in 2020',response.get_data(as_text=True))
 
     
 # class TestYearDisplay(unittest.TestCase):
