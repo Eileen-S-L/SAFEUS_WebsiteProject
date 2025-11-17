@@ -72,6 +72,14 @@ class TestExceptionalCases(unittest.TestCase):
         self.app = app.test_client()
         response = self.app.get('/nonexistentpage', follow_redirects=True)
         self.assertIn(b"Page not found. This is the link to get back to the", response.data)
+    
+    def test_500error(self):
+        """ Arguments: 500/function and expected output
+        Return Value: String explaining the error
+        Purpose: Ensures that the coder recognizes that there is an error"""
+        self.app = app.test_client()
+        response = self.app.get('/wrong/randomword', follow_redirects=True)
+        self.assertIn(b"Sorry, there's something wrong with the code! Also ensure that you choose a", response.data)
 
 #         Return Value: None
 #         Purpose: Ensuring that the standard case for the year display route passes"""
