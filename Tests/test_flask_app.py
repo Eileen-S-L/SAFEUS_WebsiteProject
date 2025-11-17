@@ -13,7 +13,7 @@ class TestHomePage(unittest.TestCase):
     def test_about_route(self):
         self.app = app.test_client()
         response = self.app.get('/about',follow_redirects=True)
-        self.assertIn("The data shown on the website was obtained from this website:", response.data.decode())
+        self.assertIn("<p>The primary dataset used in this project comes from the", response.get_data(as_text=True))
 
     def test_search_by_state_route(self):
         self.app = app.test_client()
@@ -40,8 +40,8 @@ class TestInSearchByState(unittest.TestCase):
     def test_invalid_year_valid_substance(self):
         self.app = app.test_client()
         response = self.app.get('/state/China/substance/Tobacco', follow_redirects = True)
-        output = "China does not exist in the USA or doesn't have any data correspondence"
-        self.assertIn(output, str(response.data.decode()))
+        output = " Page not found. Ensure that you choose a substance type before selecting for year or state. Years included in this database are from 2002-2018"
+        self.assertIn(output, str(response.get_data(as_text=True)))
     
 class TestInSearchByYear(unittest.TestCase):
 
@@ -57,7 +57,7 @@ class TestInSearchByYear(unittest.TestCase):
     def test_out_of_range_year_and_valid_substance(self):
         self.app = app.test_client()
         response = self.app.get('/year/2020/substance/Tobacco', follow_redirects = True)
-        self.assertIn('We only have data from 2002 to 2018. Please input one of these years :)',response.data.decode())
+        self.assertIn(' Page not found. Ensure that you choose a substance type before selecting for year or state. Years included in this database are from 2002-2018.',response.get_data(as_text=True))
 
     
 # class TestYearDisplay(unittest.TestCase):
