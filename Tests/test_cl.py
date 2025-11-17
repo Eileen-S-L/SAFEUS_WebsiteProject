@@ -108,7 +108,7 @@ class TestDataSourceMethods(unittest.TestCase):
         Return Value: None
         Purpose: Tests get_data_by_year with an invalid year. """
         result = self.ds.get_data_by_year('cocaine', '2025')
-        self.assertIn(result, "We only have data from 2002 to 2018. Please input one of these years :)")
+        self.assertListEqual(result, [])
 
     def test_get_data_by_state_valid(self):
         """ Arguments: self
@@ -123,4 +123,4 @@ class TestDataSourceMethods(unittest.TestCase):
         Return Value: None
         Purpose: Tests get_data_by_state with an invalid state. """
         result = self.ds.get_data_by_state('cocaine', 'Nigeria')
-        self.assertIn(result, "Nigeria does not exist in the USA or doesn't have any data correspondence")
+        self.assertListEqual(result, [])
