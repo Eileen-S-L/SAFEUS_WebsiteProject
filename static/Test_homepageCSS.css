@@ -1,7 +1,11 @@
-/* Navigation bars */
+body{
+    background-color: rgb(162, 206, 97);
+}
+
+/* -------Navigation bars------- */
 nav ul {
 	/* border: gray 1px solid; */
-    background:  rgb(75, 121, 153);
+    background:  rgb(19, 40, 55);
 	list-style-type: none;
 	margin-top: 0;
 	padding: 0;
@@ -36,23 +40,16 @@ nav li a {
 	padding: 14px 16px;
 }
 
-
-
 nav li a:hover {
 	color: white;
-	background-color: rgb(169, 191, 137);
-    border-radius: 10px;
+	background-color: rgb(162, 206, 97);
+    border-radius: 5px;
 }
 
 /* Overall sites  */
 h1 {
     text-align: Center;
     font-family:sans-serif;
-}
-
-/* search button */
-.SearchButton {
-    display: middle;
 }
 
 /* -------Active------- */
@@ -66,17 +63,110 @@ nav ul.active::after{
     margin-left: 10px;
 }
 
-input{
-    padding: 10px 20px;
-    border-radius: 10%;
-    border-color:rgb(75, 121, 153) ;
-    cursor:pointer;
-    font-weight: 800;
-    display: center;
+/* -------Content------- */
+.content{
+    display:grid;
+    grid-template-columns: 50% auto;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top:50px;
+    margin-left: 50px;
 
 }
-.SearchButton{
-    background:rgb(75, 121, 153);
+.content .content-left{
+    display: block;
+    width:100%;
+}
+.content .content-left .info{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content .content-left .info h2{
     color:white;
-    border-radius: 10px;
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+}
+.content .content-left .info p{
+    color: rgb(19, 40, 55);
+    font-size:20px;
+    font-family: sans-serif;
+    line-height: 2pc;
+    margin-bottom:30px;
+}
+
+.content .content-left .acronym {
+    color:rgb(19, 40, 55);
+    font-size:23px;
+    font-family: sans-serif;
+    line-height: 5px;
+    
+}
+/* .content .content-left.acronym p b{
+    color: blueviolet;
+} */
+/* ------Button------ */
+.content .content-left button{
+    padding:10px 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    background-color:rgb(19, 40, 55) ;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    cursor:pointer;
+}
+/* ----Content Right----- */
+.content .content-right{
+    display: block;
+    width: 100%;
+    align-items: center;
+}
+.content .content-right img{
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    position: relative;
+    margin: 0 200px 70px 0;
+    /* animation-name: slide-in,float;
+    animation-duration: 3s,infinite;
+    animation-timing-function: linear,ease-in-out; */
+    animation: 3s linear 1s slide-in;
+    /*animation: float 3s ease-in-out infinite; */
+}
+
+/* ------Animation----- */
+@keyframes slide-in {
+    from {
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0; /* Optional: start transparent */
+    }
+    to {
+    transform: translateX(0); /* End at its original position */
+    opacity: 1; /* Optional: fully visible */
+    }
+}
+
+/* @keyframes float{
+    0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+} */
+
+
+/* ------Scroll next page------ */
+.substance-introduction{
+    margin-left:50px ;
+    margin-top: 50px;
 }
