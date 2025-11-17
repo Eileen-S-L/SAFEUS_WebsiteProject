@@ -41,6 +41,7 @@ class DataSource:
             records = cursor.fetchall()
             print(records)
             return records
+        
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
             return None
@@ -59,8 +60,10 @@ class DataSource:
             query = "SELECT * FROM " + Substance + " WHERE State = %s ;"
             #Retrieve query results
             cursor.execute(query, (State.title(),))
-
             records = cursor.fetchall()
+            if (records == []):
+                return f"{State} does not exist in the USA or does not have any data correspondence"
+
         except Exception as e:
                 print ("something went wrong when executing the query:",e)
                 return []
