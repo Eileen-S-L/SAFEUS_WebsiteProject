@@ -16,7 +16,11 @@ app = Flask(__name__)
     Purpose: To explain to users how to use routes to view data"""
 @app.route('/')
 def homepage():
-    return render_template("index.html")
+    return render_template("Test_homepage.html")
+
+@app.route('/start_explore', strict_slashes=False)
+def Explorepage():
+    return render_template("Start_Explorepage.html")
 
 """ Arguments: route '/about'
     Return Value: A website page explaining the data
