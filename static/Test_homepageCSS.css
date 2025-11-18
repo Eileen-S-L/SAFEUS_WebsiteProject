@@ -1,0 +1,188 @@
+body{
+    background-color: rgb(162, 206, 97);
+}
+
+/* -------Navigation bars------- */
+
+nav{
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 9999;
+}
+
+nav ul {
+	/* border: gray 1px solid; */
+    background:  rgb(19, 40, 55);
+	list-style-type: none;
+	margin-top: 0;
+	padding: 0;
+    display: flex;
+    align-items: center;
+    float:right;
+    width:100%;
+}
+
+
+nav .logo-text h1{
+    display: inline-block;
+    font-weight: 600;
+    font-family: sans-serif;
+    color:aliceblue;
+    margin-left:10px;
+}
+nav .logo-text b{
+    color:yellowgreen
+}
+nav li {
+	display: inline-block;
+	margin-right: 30px;
+    /* float: right; */
+}
+
+nav li a {
+    font-family:sans-serif;
+    font-weight: 500;
+    font-size:18px;
+	display: inline-block;
+	color: white;
+    padding: 10px 18px;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+nav li a:hover {
+	color: white;
+	background-color: rgb(162, 206, 97);
+    border-radius: 5px;
+}
+
+
+
+
+/* Overall sites  */
+h1 {
+    text-align: Center;
+    font-family:sans-serif;
+}
+
+/* -------Active------- */
+nav ul.active::after{
+    content:'';
+    width: 50%;
+    height:3px;
+    background-color:white;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+}
+
+/* -------Content------- */
+.content{
+    display:grid;
+    grid-template-columns: 50% auto;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top:50px;
+    margin-left: 50px;
+
+}
+.content .content-left{
+    display: block;
+    width:100%;
+}
+.content .content-left .info{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content .content-left .info h2{
+    color:white;
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+}
+.content .content-left .info p{
+    color: rgb(19, 40, 55);
+    font-size:20px;
+    font-family: sans-serif;
+    line-height: 2pc;
+    margin-bottom:30px;
+}
+
+.content .content-left .acronym {
+    color:rgb(19, 40, 55);
+    font-size:30px;
+    font-family: sans-serif;
+    line-height: 5px;
+    
+}
+/* .content .content-left.acronym p b{
+    color: blueviolet;
+} */
+/* ------Button------ */
+.content .content-left button{
+    padding:10px 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    background-color:rgb(19, 40, 55) ;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    cursor:pointer;
+    margin-bottom: 30px;
+}
+/* ----Content Right----- */
+.content .content-right{
+    display: block;
+    width: 100%;
+    align-items: center;
+}
+.content .content-right img{
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    width:auto;
+    position: relative;
+    margin: 45px 200px 70px 0;
+    max-width:700px;
+    max-height: 700px;
+    animation: 3s linear slide-in;
+
+}
+
+/* ------Animation----- */
+@keyframes slide-in {
+    from {
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0; /* Optional: start transparent */
+    }
+    to {
+    transform: translateX(0); /* End at its original position */
+    opacity: 1; /* Optional: fully visible */
+    }
+}
+
+
+
+/* ------Scroll next page------ */
+/* .substance-introduction{
+    margin-left:50px ;
+    margin-top: 50px;
+} */
+.Purpose {
+    margin-left: 50px;
+    font-family: sans-serif;
+}
+.Purpose h3{
+    color:white;
+    font-size: 30px;
+}
+.Purpose h4{
+    font-size: 20px;
+    color:white;
+}
