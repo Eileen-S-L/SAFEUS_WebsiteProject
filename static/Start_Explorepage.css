@@ -90,7 +90,7 @@ nav li a:hover {
     font-family: sans-serif;
     background-color:rgb(19, 40, 55) ;
     color: white;
-    border-radius: 5px;
+    border-radius: 80px;
     border:none;
     cursor:pointer;
     margin-bottom: 30px;
@@ -103,7 +103,7 @@ nav li a:hover {
     font-family: sans-serif;
     background-color:rgb(19, 40, 55) ;
     color: white;
-    border-radius: 5px;
+    border-radius: 80px;
     border:none;
     cursor:pointer;
     margin-bottom: 30px;
