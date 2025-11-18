@@ -37,9 +37,11 @@ class TestHomePage(unittest.TestCase):
 class TestInSearchByState(unittest.TestCase):
     
     def test_valid_state_and_substance(self):
+        """Arguments: self
+        Return Value: table for the data by substance and state
+        Purpose: To ensure that the data by state and substance displays correctly"""
         self.app = app.test_client()
         response = self.app.get('/state/Alabama/substance/Tobacco',follow_redirects = True)
-        #partial_output = "('Alabama', 2002, 380805, 499453, 2812905, 52, 196, 728, 136.906, 392.404, 258.844, 63, 226, 930, 166.578, 451.976, 330.659)"
         html = response.get_data(as_text=True)
         self.assertIn("<table>", html)
         self.assertIn("<td>Alabama</td>", html)
@@ -47,6 +49,9 @@ class TestInSearchByState(unittest.TestCase):
         self.assertIn("<td>2003</td>", html)
     
     def test_invalid_state_valid_substance(self):
+        """Arrguments: self
+        Return Value: appropriate error message for invalid state
+        Purpose: To ensure that an invalid state returns the correct error message"""
         self.app = app.test_client()
         response = self.app.get('/state/China/substance/Tobacco', follow_redirects = True)
         output = " We do not have data for Tobacco in China"
@@ -55,6 +60,9 @@ class TestInSearchByState(unittest.TestCase):
 class TestInSearchByYear(unittest.TestCase):
 
     def test_valid_year_and_substance(self):
+        """Arguments: self
+        Return Value: table for the data by year and substance
+        Purpose: To ensure that the data by year and substance displays correctly"""
         self.app = app.test_client()
         response = self.app.get('/year/2002/substance/Tobacco', follow_redirects = True)
         html = response.get_data(as_text=True)
@@ -64,12 +72,18 @@ class TestInSearchByYear(unittest.TestCase):
         self.assertIn("<td>District of Columbia</td>", html)
 
     def test_out_of_range_year_and_valid_substance(self):
+        """Arguments: self
+        Return Value: appropriate error message for out of range year
+        Purpose: To ensure that an out of range year returns the correct error message"""
         self.app = app.test_client()
         response = self.app.get('/year/2020/substance/Tobacco', follow_redirects = True)
         self.assertIn(' We do not have data for Tobacco in 2020',response.get_data(as_text=True))
 
 class TestExceptionalCases(unittest.TestCase):
     def test_invalid_substance_in_year_search(self):
+        """Arguments: invalid substance/function and expected output
+        Return Value: String explaining the error
+        Purpose: Make sure that the user realizes that the substance is invalid"""
         self.app = app.test_client()
         response = self.app.get('/state/Alabamaa/substance/Weed', follow_redirects = True)
         self.assertIn('We do not have data for Weed in Alabamaa', response.get_data(as_text=True))
