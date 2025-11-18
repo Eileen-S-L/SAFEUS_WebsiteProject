@@ -42,7 +42,7 @@ class DataSource:
             cursor.execute(query, (Year,))
 
             records = cursor.fetchall()
-            print(records)
+            #print(records)
             return records
         
         except Exception as e: 
