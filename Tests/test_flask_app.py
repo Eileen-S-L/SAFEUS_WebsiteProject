@@ -11,16 +11,25 @@ class TestHomePage(unittest.TestCase):
         self.assertIn('<li><a href="/about">About the Data</a></li>\n', response.get_data(as_text=True))
 
     def test_about_route(self):
+        """Arguments: self
+        Return Value: About page content
+        Purpose: Ensures that the about page displays the correct information about the data"""
         self.app = app.test_client()
         response = self.app.get('/about',follow_redirects=True)
         self.assertIn("<p>The primary dataset used in this project comes from the", response.get_data(as_text=True))
 
     def test_search_by_state_route(self):
+        """Arguments: self
+        Return Value: redirect to search by state page
+        Purpose: To ensure that the state search page displays correctly"""
         self.app = app.test_client()
         response = self.app.get("/state", follow_redirects=True)
         self.assertIn("Search by State and Substance",response.data.decode())
 
     def test_search_by_year_route(self):
+        """Arguments: self
+        Return Value: redirect to search by year page
+        Purpose: To ensure that the year search page displays correctly"""
         self.app = app.test_client()
         response = self.app.get("/year", follow_redirects = True)
         self.assertIn("Enter a Year (2002-2018)",response.data.decode())
