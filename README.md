@@ -3,20 +3,22 @@ Rachel, Eileen, Ayobami, Emmanuel
 
 ## features in Drug Usage data in US 
 - command lines:
-    <python3 command_line.py --year "chosen year">
-    <python3 command_line.py --state "chosen state">
+    <python3 command_line.py --substance "type substance" --year "chosen year">
+    <python3 command_line.py --substance "type substance" --state "chosen state">
     - Those command line carry our searching data that relates to wanted variables.
 ### Search_by_year
 - search_by_year() is called by the command line
-    <python3 command_line.py --year "chosen year">
+    <python3 command_line.py --substance "type substance" --year "chosen year">
 - argument from "chosen year" would be taken as input into this function
 - return a list of sublists consisting ['state name: state', 'year number: year', 'age Range: age', 'data: numbers' ]
 ### Search_by_state
 - search_by_state() is called by the command line
-    <python3 command_line.py --state "chosen state">
+    <python3 command_line.py --substance "type substance" --state "chosen state">
 - argument from "chosen state" would be taken as input into this function
 - return a list of sublists consisting ['state name: state', 'year number: year', 'age]
 
+### Error case for command lines
+- Command line would return usage statement and an empty list [].
 
 ### Test 
 - if wants to run the test files, (test_cl.py and test_flask_app.py) to test flask_app and command_lines, run
