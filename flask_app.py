@@ -20,7 +20,7 @@ def homepage():
 
 @app.route('/start_explore', strict_slashes=False)
 def Explorepage():
-    return render_template("Start_Explorepage.html")
+    return render_template("start_explorepage.html")
 
 """ Arguments: route '/about'
     Return Value: A website page explaining the data
