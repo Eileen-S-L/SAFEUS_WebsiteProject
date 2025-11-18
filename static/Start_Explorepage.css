@@ -1,0 +1,120 @@
+
+body{
+    background-color: rgb(162, 206, 97);
+}
+/* ----Nav bar---- */
+nav{
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 9999;
+}
+
+nav ul {
+	/* border: gray 1px solid; */
+    background:  rgb(19, 40, 55);
+	list-style-type: none;
+	margin-top: 0;
+	padding: 0;
+    display: flex;
+    align-items: center;
+    float:right;
+    width:100%;
+}
+
+
+nav .logo-text h1{
+    display: inline-block;
+    font-weight: 600;
+    font-family: sans-serif;
+    color:aliceblue;
+    margin-left:10px;
+}
+nav .logo-text b{
+    color:yellowgreen
+}
+nav li {
+	display: inline-block;
+	margin-right: 30px;
+    /* float: right; */
+}
+
+nav li a {
+    font-family:sans-serif;
+    font-weight: 500;
+    font-size:18px;
+	display: inline-block;
+	color: white;
+    padding: 10px 18px;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+nav li a:hover {
+	color: white;
+	background-color: rgb(162, 206, 97);
+    border-radius: 5px;
+}
+
+/* ----Title---- */
+.title h1 {
+    text-align: Center;
+    font-family:sans-serif;
+    margin-top:100px;
+    color:white;
+    font-size:70px;
+}
+
+
+/* ----Content---- */
+.content{
+    display:grid;
+    grid-template-columns: 50% auto;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top:50px;
+    margin-left: 50px;
+
+}
+.content .content-left{
+    display: block;
+    width:100%;
+}
+.content .content-left button{
+    padding:50px 50px;
+    font-size: 30px;
+    font-family: sans-serif;
+    background-color:rgb(19, 40, 55) ;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    cursor:pointer;
+    margin-bottom: 30px;
+    margin-top:0px;
+    margin-left: 70px;
+}
+.content .content-right button{
+    padding:50px 50px;
+    font-size: 30px;
+    font-family: sans-serif;
+    background-color:rgb(19, 40, 55) ;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    cursor:pointer;
+    margin-bottom: 30px;
+    margin-top:0px;
+    margin-right:70px;
+}
+
+img {
+    width: 700px;
+    height: 300px;
+    display: flex;
+    margin:auto;
+
+}

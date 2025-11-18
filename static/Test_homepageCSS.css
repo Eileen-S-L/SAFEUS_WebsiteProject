@@ -9,6 +9,7 @@ nav{
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    z-index: 9999;
 }
 
 nav ul {
@@ -115,7 +116,7 @@ nav ul.active::after{
 
 .content .content-left .acronym {
     color:rgb(19, 40, 55);
-    font-size:23px;
+    font-size:30px;
     font-family: sans-serif;
     line-height: 5px;
     
@@ -133,6 +134,7 @@ nav ul.active::after{
     border-radius: 5px;
     border:none;
     cursor:pointer;
+    margin-bottom: 30px;
 }
 /* ----Content Right----- */
 .content .content-right{
