@@ -21,14 +21,24 @@
                 <th colspan="3">Amount of new users in the past year</th>
                 <th colspan="3">Rate of new users in the past year per 1000 people</th>
                 <th colspan="3">Amount of users in past month</th>
+                <th colspan="3">Rate of new users in the past month per 1000 people</th>
+                <th colspan="3">Amount of users in the past year</th>
+                <th colspan="3">Rate of users in the past year per 1000 people</th>
                 {% endif %}
-                <th colspan="3">Use in the past year</th>
-                <th colspan="3">Rate of use in the past year per 1000 people</th>
+
+                {% if sub|lower == 'cocaine'}
+                <th colspan="3">Amount of users in the past year</th>
+                <th colspan="3">Rate of users in the past year per 1000 people</th>
+                {% endif%}
+
                 {% if sub|lower == 'alcohol' or sub|lower == 'tobacco'%}
-                <th colspan="3">{{subname}} use disorder in the past month</th>
+                <th colspan="3">{{subname}} use disorder in the past year</th>
                 <th colspan="3">{{subname}} use disorder per 1000 people in the past month</th>
+                <th colspan="3">{{subname}} use in the past month</th>
+                <th colspan="3">Rate of {{subname}} use in the past month per 1000 people</th>
+
+
                 {% endif %}
-                <th colspan="3"></th>
             </tr>
             <tr>
                 {% if sub|lower == 'alcohol' or sub|lower == 'tobacco' %} 
