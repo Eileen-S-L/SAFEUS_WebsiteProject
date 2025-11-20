@@ -203,13 +203,23 @@ nav li a:hover {
     border-radius: 5px;
 }
 
-.content{
-    display:grid;
-    grid-template-columns: 50% auto;
-    gap: 30px;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-top:50px;
-    margin-left: 50px;
+nav .logo-text h1{
+    display: inline-block;
+    font-weight: 600;
+    font-family: sans-serif;
+    color:aliceblue;
+    margin-left:10px;
+}
+nav .logo-text b{
+    color:yellowgreen
+}
+
+nav ul.active::after{
+    content:'';
+    width: 50%;
+    height:3px;
+    background-color:white;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
 }
