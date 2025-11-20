@@ -4,7 +4,7 @@
 body {
     margin: 5%;
 	font-family: Arial, sans-serif;
-	background-color: rgb(162, 206, 97);
+	background-color: linear-gradient(to right, #48d746aa, #eef5ed)
 }
 /* 
 h1 {
