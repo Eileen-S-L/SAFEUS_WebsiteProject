@@ -169,7 +169,7 @@ nav ul {
 }
 
 
-nav .logo-text h1{
+/* nav .logo-text h1{
     display: inline-block;
     font-weight: 600;
     font-family: sans-serif;
@@ -182,8 +182,8 @@ nav .logo-text b{
 nav li {
 	display: inline-block;
 	margin-right: 30px;
-    /* float: right; */
-}
+    float: right;
+} */
 
 nav li a {
     font-family:sans-serif;
