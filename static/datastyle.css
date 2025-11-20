@@ -4,7 +4,7 @@
 body {
     margin: 5%;
 	font-family: Arial, sans-serif;
-	background-image: linear-gradient(to right, #48d746aa, #eef5ed);
+	background-color: rgb(162, 206, 97);
     min-height: 100vh;
     margin: 0;
 
