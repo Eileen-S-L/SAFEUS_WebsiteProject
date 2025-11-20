@@ -131,10 +131,12 @@ th {
 }
 
 
-th,tr,td {
-	padding: 5px;
+th, td {
+	padding: 10px;
 }
+
 tr:hover {background-color: rgb(53, 64, 113);}
+
 .tablecontainer {
 	overflow-x: auto;
 }
