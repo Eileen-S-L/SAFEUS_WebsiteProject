@@ -137,14 +137,14 @@ th {
 
 
 td, tr {
-    align-items: center;
+    text-align: center;
 	padding: 10px;
 	margin-left:auto;
 	margin-right: auto;
 }
 
 tr:hover {background-color: rgb(53, 64, 113);
-		color:fuchsia}
+		color:rgb(255, 255, 255)}
 
 .tablecontainer {
 	overflow-x: auto;
