@@ -47,7 +47,7 @@ class DataSource:
         
         except Exception as e: 
             print ("something went wrong when executing the query:",e)
-            return None
+            return []
 
     def get_data_by_state(self, Substance, State):
         '''Argument: State & substance
