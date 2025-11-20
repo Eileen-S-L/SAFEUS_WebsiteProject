@@ -118,7 +118,7 @@ nav li a:hover {
 }
 
 table {
-	width: 150%;
+	width: too%;
 	margin-left: auto;
 	margin-right: auto;
 	border-collapse: collapse;
@@ -132,9 +132,9 @@ th {
 
 
 th,tr,td {
-	padding: 10px;
+	padding: 5px;
 }
-tr:hover {background-color: gray;}
+tr:hover {background-color: rgb(53, 64, 113);}
 .tablecontainer {
 	overflow-x: auto;
 }
