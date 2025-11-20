@@ -202,3 +202,14 @@ nav li a:hover {
 	background-color: rgb(162, 206, 97);
     border-radius: 5px;
 }
+
+.content{
+    display:grid;
+    grid-template-columns: 50% auto;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top:50px;
+    margin-left: 50px;
+}
