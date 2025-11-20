@@ -145,7 +145,7 @@ td, tr {
 }
 
 tr:hover {background-color: rgb(53, 64, 113);
-		color:fuchsia}
+		color:rgb(255, 255, 255)}
 
 .tablecontainer {
 	overflow-x: auto;
