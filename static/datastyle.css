@@ -128,12 +128,12 @@ table {
 th {
 	background-color: rgb(53, 64, 113);
 	color: rgb(201, 201, 201);
-	padding: 10px;
+	padding: 1px;
 }
 
 
 td {
-	padding: 2px;
+	padding: 10px;
 }
 
 tr:hover {background-color: rgb(53, 64, 113);}
