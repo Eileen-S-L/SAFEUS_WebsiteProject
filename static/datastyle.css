@@ -21,13 +21,12 @@ body {
 }  */
 
 h2 {
-	padding-top: 3em;
-    padding-bottom: 1em;
-    background-color: rgb(29 63 33 / 70%);
+    padding-top: 2em;
+    background-color: rgb(255 255 255 / 0%);
     color: rgb(255, 255, 255);
-    border: 2px solid rgb(177, 177, 177);
+    border: 2px solid rgb(175 45 45 / 0%);
     text-align: center;
-    font-size: 2em;
+    font-size: 2.3em;
 }
 
 h3 {
