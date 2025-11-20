@@ -21,12 +21,13 @@ body {
 }  */
 
 h2 {
-	padding-top: 1em;
-	padding-bottom: 1em;
-	background-color: rgb(53, 64, 113);
-	color: rgb(201, 201, 201);
-	border: 2px solid rgb(177, 177, 177);
-	text-align: center;
+	padding-top: 3em;
+    padding-bottom: 1em;
+    background-color: rgb(29 63 33 / 70%);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(177, 177, 177);
+    text-align: center;
+    font-size: 2em;
 }
 
 h3 {
@@ -65,13 +66,14 @@ nav li a:hover {
 
 /* Search box style */
 .search-box {
-    background-color: #f0f8ff; /* light blue */
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    background-color: rgb(29 63 33 / 70%);
+    border: 5px solid #ccc;
+    border-radius: 30px;
     padding: 20px;
     margin: 30px auto;
     width: 60%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 3px 12px rgba(0, 0, 0, 0.1);
+    border-color: #001b718a;
 }
 
 /* Form elements inside the search box */
