@@ -138,7 +138,8 @@ td {
 	margin-right: auto;
 }
 
-tr:hover {background-color: rgb(53, 64, 113);}
+tr:hover {background-color: rgb(53, 64, 113);
+		color:fuchsia}
 
 .tablecontainer {
 	overflow-x: auto;
