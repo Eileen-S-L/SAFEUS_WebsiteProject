@@ -223,3 +223,8 @@ nav ul.active::after{
     position: relative;
     margin-left: 10px;
 }
+
+h1 {
+    text-align: Center;
+    font-family:sans-serif;
+}
