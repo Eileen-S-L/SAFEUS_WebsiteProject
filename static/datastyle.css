@@ -179,12 +179,12 @@ nav ul {
 }
 nav .logo-text b{
     color:yellowgreen
-}
+} */
 nav li {
 	display: inline-block;
 	margin-right: 30px;
-    float: right;
-} */
+    /* float: right;*/
+} 
 
 nav li a {
     font-family:sans-serif;
