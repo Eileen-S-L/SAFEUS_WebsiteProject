@@ -18,6 +18,12 @@ class TestHomePage(unittest.TestCase):
         response = self.app.get('/about',follow_redirects=True)
         self.assertIn("<p>The primary dataset used in this project comes from the", response.get_data(as_text=True))
 
+    def test_start_explore_page(self):
+        self.app = app.test_client(self)
+        response = self.app.get('/start_explore', follow_redirects=True)
+        html = response.get_data(as_text=True)
+        self.assertIn("<h1>Search Starts Here!</h1>", html)
+        
     def test_search_by_state_route(self):
         """Arguments: self
         Return Value: redirect to search by state page
