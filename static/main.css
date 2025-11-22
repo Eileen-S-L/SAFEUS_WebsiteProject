@@ -88,12 +88,12 @@ table {
 	margin-left: auto;
 	margin-right: auto;
 	border-collapse: collapse;
-	border:1px solid rgb(53, 64, 113);
+	border:1px solid rgb(19, 40, 55);
 }
 
 th {
-	background-color: rgb(53, 64, 113);
-	color: rgb(201, 201, 201);
+	background-color: rgb(19, 40, 55);
+	color: rgb(255, 255, 255);
 	padding: 10px;
     text-align: center;
 }
