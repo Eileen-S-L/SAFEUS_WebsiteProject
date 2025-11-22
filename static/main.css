@@ -126,7 +126,7 @@ td:not(:first-child) {
 
 .sticky-table th {
     position: sticky;
-    top: 40px; /* Adjust based on header height */
+    top: 50px; /* Adjust based on header height */
     background-color: rgb(53, 64, 113);
     z-index: 100;
 }
