@@ -1,5 +1,3 @@
-/* Page title */
-
 /* Body style */
 body {
     margin: 5%;
@@ -7,18 +5,8 @@ body {
 	background-color: rgb(162, 206, 97);
     min-height: 100vh;
     margin: 0;
-
-
 }
 
-/* h1 {
-	padding-top: 1em;
-	padding-bottom: 1em;
-	background-color: rgb(53, 64, 113);
-	color: rgb(201, 201, 201);
-	border: 2px solid rgb(177, 177, 177);
-	text-align: center;
-}  */
 
 h2 {
     padding-top: 2em;
@@ -35,33 +23,6 @@ h3 {
 	font-size: 30px;
 }
 
-
-/* Navigation bar */
-/* nav ul {
-	border: gray 1px solid;
-	list-style-type: none;
-	margin-top: 0;
-	padding: 0;
-	text-align: center;
-}
-
-nav li {
-	display: inline-block;
-	margin: 0;
-}
-
-nav li a {
-	display: inline-block;
-	color: black;
-	text-decoration: none;
-	text-align: center;
-	padding: 14px 16px;
-}
-
-nav li a:hover {
-	color: rgb(201, 201, 201);
-	background-color: rgb(53, 64, 113);
-} */
 
 /* Search box style */
 .search-box {
@@ -136,8 +97,6 @@ th {
 	padding: 10px;
 }
 
-
-
 td, tr {
 	padding: 10px;
 	margin-left:auto;
@@ -152,7 +111,6 @@ tr:hover {background-color: rgb(53, 64, 113);
 }
 
 /* -------Navigation bars------- */
-
 nav{
     overflow: hidden;
     position: fixed; /* Set the navbar to fixed position */
@@ -178,7 +136,6 @@ nav ul {
 nav li {
 	display: inline-block;
 	margin-right: 30px;
-    /* float: right;*/
 } 
 
 nav li a {

@@ -3,7 +3,6 @@ body{
 }
 
 /* -------Navigation bars------- */
-
 nav{
     overflow: hidden;
     position: fixed; /* Set the navbar to fixed position */
@@ -59,8 +58,6 @@ nav li a:hover {
 	background-color: rgb(162, 206, 97);
     border-radius: 5px;
 }
-
-
 
 
 /* Overall sites  */
@@ -122,9 +119,8 @@ nav ul.active::after{
     line-height: 5px;
     
 }
-/* .content .content-left.acronym p b{
-    color: blueviolet;
-} */
+
+
 /* ------Button------ */
 .content .content-left button{
     padding:10px 20px;
@@ -171,10 +167,6 @@ nav ul.active::after{
 
 
 /* ------Scroll next page------ */
-/* .substance-introduction{
-    margin-left:50px ;
-    margin-top: 50px;
-} */
 .Purpose {
     margin-left: 50px;
     font-family: sans-serif;
