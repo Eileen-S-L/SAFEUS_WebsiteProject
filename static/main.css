@@ -119,19 +119,19 @@ td:not(:first-child) {
 .sticky-header {
     position: sticky;
     top: 0;
-    height: 100px;
+    height: 50px;
     background-color: rgb(53, 64, 113);
     margin: 0;
     z-index: 101;
     padding: 10px 0;
 }
-/* 
+
 .sticky-table th {
     position: sticky;
     top: 50px;
     background-color: rgb(53, 64, 113);
     z-index: 100;
-} */
+}
 
 
 tr:hover {background-color: rgb(53, 64, 113);
