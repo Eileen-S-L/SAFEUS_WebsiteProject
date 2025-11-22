@@ -116,7 +116,7 @@ td:not(:first-child) {
     text-align: center;
 }
 
-.sticky-header {
+/* .sticky-header {
     position: sticky;
     top: 0;
     background-color: rgb(53, 64, 113);
@@ -126,9 +126,18 @@ td:not(:first-child) {
 
 .sticky-table th {
     position: sticky;
-    top: 100px; /* Adjust based on header height */
+    top: 50px;
     background-color: rgb(53, 64, 113);
     z-index: 100;
+} */
+
+.sticky{
+    position: sticky;
+    top: 0;
+    background-color: rgb(53, 64, 113);
+    color: rgb(255, 255, 255);
+    z-index: 101;
+    padding: 10px 0;
 }
 
 tr:hover {background-color: rgb(53, 64, 113);
