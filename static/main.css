@@ -121,7 +121,7 @@ td:not(:first-child) {
     position: sticky;
     top: 0;
     height: 50px;
-    background-color: rgb(53, 64, 113);
+    background-color: rgb(19, 40, 55);
     margin: 0;
     z-index: 100;
     padding: 15px 0;
@@ -135,13 +135,13 @@ td:not(:first-child) {
 thead tr:first-child th {
     position: sticky;
     top: 84px; 
-    background-color: rgb(53, 64, 113);
-    color: rgb(201, 201, 201);
+    background-color: rgb(19, 40, 55);
+    color: rgb(255, 255, 255);
     z-index: 99;
     border: 1px solid black;
 }
 
-tr:hover {background-color: rgb(53, 64, 113);
+tr:hover {background-color: rgb(19, 40, 55);
 		color:rgb(255, 255, 255)}
 
 .tablecontainer {
