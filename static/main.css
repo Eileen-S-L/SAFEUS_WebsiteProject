@@ -128,7 +128,7 @@ td:not(:first-child) {
 
 .sticky-table th {
     position: sticky;
-    top: 100px;
+    top: 50px;
     background-color: rgb(53, 64, 113);
     margin: 150px 0 0 0;
     z-index: 50;
