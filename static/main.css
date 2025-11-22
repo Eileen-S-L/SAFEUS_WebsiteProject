@@ -103,6 +103,7 @@ td, tr {
 	margin-left:auto;
 	margin-right: auto;
 }
+
 th, td {
     border: 1px solid black;
 }
@@ -110,8 +111,13 @@ th, td {
 td:first-child {
     text-align: left;
 }
+
 td:not(:first-child) {
     text-align: center;
+}
+
+h2, td tr:first-child {
+    position: sticky;
 }
 
 tr:hover {background-color: rgb(53, 64, 113);
