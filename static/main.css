@@ -10,7 +10,7 @@ body {
 
 h2 {
     padding-top: 2em;
-    background-color:  rgb(53, 64, 113);
+    background-color: rgb(255 255 255 / 0%);
     color: rgb(255, 255, 255);
     border: 2px solid rgb(175 45 45 / 0%);
     text-align: center;
@@ -116,9 +116,16 @@ td:not(:first-child) {
     text-align: center;
 }
 
-h2, td tr:first-child {
+.sticky-header {
     position: sticky;
     top: 0;
+    background-color: rgb(53, 64, 113);
+}
+
+.sticky-table th {
+    position: sticky;
+    top: 0;
+    background-color: rgb(53, 64, 113);
 }
 
 tr:hover {background-color: rgb(53, 64, 113);
