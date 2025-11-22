@@ -120,14 +120,15 @@ td:not(:first-child) {
     position: sticky;
     top: 0;
     background-color: rgb(53, 64, 113);
-    z-index: 1000;
+    z-index: 101;
+    padding: 10px 0;
 }
 
 .sticky-table th {
     position: sticky;
     top: 0;
     background-color: rgb(53, 64, 113);
-    z-index: 999;
+    z-index: 100;
 }
 
 tr:hover {background-color: rgb(53, 64, 113);
