@@ -71,7 +71,7 @@ h3 {
 
 /* Submit button style */
 .search-box button {
-    background-color: rgb(53, 64, 113);
+    background-color: rgb(19, 40, 55);
     color: white;
     border: none;
     padding: 8px 15px;
@@ -80,7 +80,7 @@ h3 {
 }
 
 .search-box button:hover {
-    background-color: rgb(53, 64, 113);
+    background-color: rgb(19, 40, 55);
 }
 
 table {
