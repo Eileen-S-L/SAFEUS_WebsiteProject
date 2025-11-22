@@ -8,107 +8,109 @@
     </head>
 
     <body>
-        <h2 class="sticky-header">{{type}} {{subname}} Data</h2>
-        {% if result %}
-    
-        <div class="table container">
-            <table>
-                <tr class="sticky-table">
-                    <th></th>
-                    <th></th>
-                    <th colspan="3">Population Size</th>
-                    {% if sub|lower == 'marijuana' %}
-                    <th colspan="3">Amount of new users in the past year</th>
-                    <th colspan="3">Rate of new users in the past year per 1000 people</th>
-                    <th colspan="3">Amount of users in past month</th>
-                    <th colspan="3">Rate of new users in the past month per 1000 people</th>
-                    <th colspan="3">Amount of users in the past year</th>
-                    <th colspan="3">Rate of users in the past year per 1000 people</th>
-                    {% endif %}
+        <div class="sticky-header">
+            <h2>{{type}} {{subname}} Data</h2>
+            {% if result %}
+        
+            <div class="table container">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th colspan="3">Population Size</th>
+                        {% if sub|lower == 'marijuana' %}
+                        <th colspan="3">Amount of new users in the past year</th>
+                        <th colspan="3">Rate of new users in the past year per 1000 people</th>
+                        <th colspan="3">Amount of users in past month</th>
+                        <th colspan="3">Rate of new users in the past month per 1000 people</th>
+                        <th colspan="3">Amount of users in the past year</th>
+                        <th colspan="3">Rate of users in the past year per 1000 people</th>
+                        {% endif %}
 
-                    {% if sub|lower == 'cocaine' %}
-                    <th colspan="3">Amount of users in the past year</th>
-                    <th colspan="3">Rate of users in the past year per 1000 people</th>
-                    {% endif%}
+                        {% if sub|lower == 'cocaine' %}
+                        <th colspan="3">Amount of users in the past year</th>
+                        <th colspan="3">Rate of users in the past year per 1000 people</th>
+                        {% endif%}
 
-                    {% if sub|lower == 'alcohol' or sub|lower == 'tobacco'%}
-                    <th colspan="3">{{subname}} use disorder in the past year</th>
-                    <th colspan="3">{{subname}} use disorder per 1000 people in the past month</th>
-                    <th colspan="3">{{subname}} use in the past month</th>
-                    <th colspan="3">Rate of {{subname}} use in the past month per 1000 people</th>
-                    {% endif %}
-                </tr>
-                <tr>
-                    {% if sub|lower == 'alcohol' or sub|lower == 'tobacco' %} 
-                        <th>State</th>
-                        <th>Year</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                    {% endif %}
-                </tr>
-                <tr>
-                    {% if sub|lower == 'marijuana' %}
-                        <th>State</th>
-                        <th>Year</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                    {% endif %}
-                </tr>
-                <tr>
-                    {% if sub|lower == 'cocaine' %}
-                        <th>State</th>
-                        <th>Year</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                        <th>12-17</th>
-                        <th>18-25</th>
-                        <th>26+</th>
-                    {% endif %}
-                </tr>     
-                {% for row in result %}
-                <tr>
-                    {% for cell in row %}
-                        <td>{{cell}}</td>
+                        {% if sub|lower == 'alcohol' or sub|lower == 'tobacco'%}
+                        <th colspan="3">{{subname}} use disorder in the past year</th>
+                        <th colspan="3">{{subname}} use disorder per 1000 people in the past month</th>
+                        <th colspan="3">{{subname}} use in the past month</th>
+                        <th colspan="3">Rate of {{subname}} use in the past month per 1000 people</th>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        {% if sub|lower == 'alcohol' or sub|lower == 'tobacco' %} 
+                            <th>State</th>
+                            <th>Year</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        {% if sub|lower == 'marijuana' %}
+                            <th>State</th>
+                            <th>Year</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        {% if sub|lower == 'cocaine' %}
+                            <th>State</th>
+                            <th>Year</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                            <th>12-17</th>
+                            <th>18-25</th>
+                            <th>26+</th>
+                        {% endif %}
+                    </tr>     
+                    {% for row in result %}
+                    <tr>
+                        {% for cell in row %}
+                            <td>{{cell}}</td>
+                        {% endfor %}
+                    </tr>
                     {% endfor %}
-                </tr>
-                {% endfor %}
-            </table>
+                </table>
+            </div>
         </div>
         {% else %}
             <p> We do not have data for {{subname}} in {{type}}. Remember, the years included in this database are from 2002-2018 and only includes states within the United States of America (territories are excluded).</p>
