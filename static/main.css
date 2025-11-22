@@ -119,6 +119,7 @@ td:not(:first-child) {
 .sticky-header {
     position: sticky;
     top: 0;
+    height: 100px;
     background-color: rgb(53, 64, 113);
     margin: 0;
     z-index: 101;
