@@ -139,6 +139,14 @@ thead tr:first-child th {
     z-index: 99;
 }
 
+thead tr:not(:first-child) th {
+    position: sticky;
+    top: 115px; 
+    background-color: rgb(53, 64, 113);
+    color: rgb(201, 201, 201);
+    z-index: 98;
+}
+
 tr:hover {background-color: rgb(53, 64, 113);
 		color:rgb(255, 255, 255)}
 
