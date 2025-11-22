@@ -19,6 +19,9 @@ class TestHomePage(unittest.TestCase):
         self.assertIn("<p>The primary dataset used in this project comes from the", response.get_data(as_text=True))
 
     def test_start_explore_page(self):
+        """Arguments: self
+        Return Value: Start explore page content
+        Purpose: Ensure that the start explore button on the start page works properly"""
         self.app = app.test_client(self)
         response = self.app.get('/start_explore', follow_redirects=True)
         html = response.get_data(as_text=True)
