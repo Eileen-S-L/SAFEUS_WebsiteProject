@@ -132,8 +132,8 @@ td:not(:first-child) {
 }
 
 thead tr {
-    position: relative;
-    top: 60px; 
+    position: sticky;
+    top: relative; 
     background-color: rgb(53, 64, 113);
     color: rgb(201, 201, 201);
     z-index: 99;
