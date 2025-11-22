@@ -130,6 +130,7 @@ td:not(:first-child) {
     position: sticky;
     top: 50px;
     background-color: rgb(53, 64, 113);
+    margin: 0;
     z-index: 100;
 }
 
