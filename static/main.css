@@ -131,7 +131,7 @@ td:not(:first-child) {
     font-size: 2em;
 }
 
-thead tr {
+thead tr:first-child th {
     position: sticky;
     top: 84px; 
     background-color: rgb(53, 64, 113);
