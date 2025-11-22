@@ -8,12 +8,14 @@
     </head>
 
     <body>
+        {% if result %}
         <div class="sticky-header">
-            <h2>{{type}} {{subname}} Data</h2>
-            {% if result %}
-        
-            <div class="sticky-table">
-                <table>
+
+        <h2>{{type}} {{subname}} Data</h2>
+    
+        <div class="table container">
+            <table>
+                <thead>
                     <tr>
                         <th></th>
                         <th></th>
@@ -101,21 +103,23 @@
                             <th>18-25</th>
                             <th>26+</th>
                         {% endif %}
-                    </tr>     
+                    </tr>
+                </thead>
+                <tbody>
                     {% for row in result %}
-                    <tr>
+                    <tr></tr>
                         {% for cell in row %}
                             <td>{{cell}}</td>
                         {% endfor %}
                     </tr>
                     {% endfor %}
-                </table>
-            </div>
-            {% else %}
-                <p> We do not have data for {{subname}} in {{type}}. Remember, the years included in this database are from 2002-2018 and only includes states within the United States of America (territories are excluded).</p>
-                <p>This is the link to get back to the homepage: 
-                <a href="/">homepage</a>
-            {% endif  %}
+                </tbody>
+            </table>
         </div>
+        {% else %}
+            <p> We do not have data for {{subname}} in {{type}}. Remember, the years included in this database are from 2002-2018 and only includes states within the United States of America (territories are excluded).</p>
+            <p>This is the link to get back to the homepage: 
+            <a href="/">homepage</a>
+        {% endif  %}
     </body>
 </html>
