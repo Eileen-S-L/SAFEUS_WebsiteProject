@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+        <title> SAFEUS Start Explore</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='start-explore.css') }}">
+    </head>
+    <body>
+        <section class = "navigation bar">
+            <nav>
+                <ul>
+                    <div class="logo-text"><h1>SAFE<b>US</b></h1></div>
+                    <li class="active"><a href='/'>🏠 Home</a></li>
+                    <li><a href='/state'>🔎 Search by State</a></li>
+                    <li><a href="/year">🔎 Search by Year</a></li>
+                    <li><a href="/about">🗂️ About the Data</a></li>
+                    
+                </ul>
+            </nav>
+        </section>
+        
+        <div class="title">
+            <h1>Search Starts Here!</h1>
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/horizontal4in1.png') }}" alt=" Picture of 4 Substance: alcohol,Cocaine,Marijuana and Tobacco in a row ">
+        </div>
+
+        <section class="grid">
+            <div class="content">
+                <div class="content-left">
+                    <a href="/state">
+                    <button>Search by State</button>
+                    </a>
+                </div>
+                <div class="content-right">
+                    <a href="/year">
+                    <button>Search by Year</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

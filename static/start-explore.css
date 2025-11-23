@@ -1,6 +1,7 @@
-
 body{
     background-color: rgb(162, 206, 97);
+    margin:0;
+    padding:0;
 }
 /* ----Nav bar---- */
 nav{
@@ -116,5 +117,4 @@ img {
     height: 300px;
     display: flex;
     margin:auto;
-
 }

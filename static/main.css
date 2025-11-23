@@ -1,33 +1,21 @@
-/* Page title */
-
 /* Body style */
 body {
-    margin: 5%;
+    margin: 0;
 	font-family: Arial, sans-serif;
-	background-image: linear-gradient(to right, #48d746aa, #eef5ed);
+	background-color: rgb(162, 206, 97);
     min-height: 100vh;
     margin: 0;
-
-
 }
 
-/* h1 {
-	padding-top: 1em;
-	padding-bottom: 1em;
-	background-color: rgb(53, 64, 113);
-	color: rgb(201, 201, 201);
-	border: 2px solid rgb(177, 177, 177);
-	text-align: center;
-}  */
 
 h2 {
-	padding-top: 3em;
-    padding-bottom: 1em;
-    background-color: rgb(29 63 33 / 70%);
+    padding-top: 2em;
+    background-color: rgb(19, 40, 55);
     color: rgb(255, 255, 255);
-    border: 2px solid rgb(177, 177, 177);
+    border: 2px solid rgb(175 45 45 / 0%);
+    padding-bottom: 0px;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.3em;
 }
 
 h3 {
@@ -37,38 +25,18 @@ h3 {
 }
 
 
-/* Navigation bar */
-/* nav ul {
-	border: gray 1px solid;
-	list-style-type: none;
-	margin-top: 0;
-	padding: 0;
-	text-align: center;
-}
-
-nav li {
-	display: inline-block;
-	margin: 0;
-}
-
-nav li a {
-	display: inline-block;
-	color: black;
-	text-decoration: none;
-	text-align: center;
-	padding: 14px 16px;
-}
-
-nav li a:hover {
-	color: rgb(201, 201, 201);
-	background-color: rgb(53, 64, 113);
-} */
-
 /* Search box style */
 .search-box {
-    background-color: rgb(29 63 33 / 70%);
+<<<<<<< HEAD:static/Searchyearstate_Page.css
+    margin-top:700px;
+    background-color: #f0f8ff; /* light blue */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+=======
+    background-color: rgb(242 255 244 / 70%);
     border: 5px solid #ccc;
     border-radius: 30px;
+>>>>>>> 7852dd144ae82130a78e90d92e335e51450e284b:static/main.css
     padding: 20px;
     margin: 30px auto;
     width: 60%;
@@ -111,7 +79,7 @@ nav li a:hover {
 
 /* Submit button style */
 .search-box button {
-    background-color: rgb(53, 64, 113);
+    background-color: rgb(19, 40, 55);
     color: white;
     border: none;
     padding: 8px 15px;
@@ -120,7 +88,7 @@ nav li a:hover {
 }
 
 .search-box button:hover {
-    background-color: rgb(53, 64, 113);
+    background-color: rgb(19, 40, 55);
 }
 
 table {
@@ -128,16 +96,15 @@ table {
 	margin-left: auto;
 	margin-right: auto;
 	border-collapse: collapse;
-	border:1px solid rgb(53, 64, 113);
+	border:1px solid rgb(19, 40, 55);
 }
 
 th {
-	background-color: rgb(53, 64, 113);
-	color: rgb(201, 201, 201);
+	background-color: rgb(19, 40, 55);
+	color: rgb(255, 255, 255);
 	padding: 10px;
+    text-align: center;
 }
-
-
 
 td, tr {
 	padding: 10px;
@@ -145,15 +112,51 @@ td, tr {
 	margin-right: auto;
 }
 
-tr:hover {background-color: rgb(53, 64, 113);
-		color:fuchsia}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+td:first-child {
+    text-align: left;
+}
+
+td:not(:first-child) {
+    text-align: center;
+}
+
+.sticky-header h2{
+    position: sticky;
+    top: 84px;
+    height: 50px;
+    background-color: rgb(19, 40, 55);
+    margin: 0;
+    z-index: 100;
+    padding: 15px 0;
+
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 2em;
+    border: 1px solid black;
+}
+
+thead tr:first-child th {
+    position: sticky;
+    top: 84px; 
+    background-color: rgb(19, 40, 55);
+    color: rgb(255, 255, 255);
+    z-index: 99;
+    border: 1px solid black;
+}
+
+tr:hover {background-color: rgb(19, 40, 55);
+		color:rgb(255, 255, 255)}
 
 .tablecontainer {
 	overflow-x: auto;
 }
 
 /* -------Navigation bars------- */
-
 nav{
     overflow: hidden;
     position: fixed; /* Set the navbar to fixed position */
@@ -179,7 +182,6 @@ nav ul {
 nav li {
 	display: inline-block;
 	margin-right: 30px;
-    /* float: right;*/
 } 
 
 nav li a {
