@@ -8,11 +8,23 @@
     </head>
 
     <body>
+        <section class = "navigation bar">
+            <nav>
+                <ul>
+                    <div class="logo-text"><h1>SAFE<b>US</b></h1></div>
+                    <li class="active"><a href='/'>🏠 Home</a></li>
+                    <li><a href='/state'>🔎 Search by State</a></li>
+                    <li><a href="/year">🔎 Search by Year</a></li>
+                    <li><a href="/about">🗂️ About the Data</a></li>
+                    
+                </ul>
+            </nav>
+            </section>
         {% if result %}
         <div class="sticky-header">
 
         <h2>{{type}} {{subname}} Data</h2>
-    
+    <br><br>
         <div class="table-container">
             <table>
                 <thead>
