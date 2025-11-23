@@ -142,7 +142,7 @@ thead tr:first-child th {
     border: 1px solid black;
 }
 
-tr:hover {background-color: yellowgreen;
+tr:hover {background-color: rgb(19, 40, 55);
 		color:rgb(255, 255, 255)}
 
 .tablecontainer {
