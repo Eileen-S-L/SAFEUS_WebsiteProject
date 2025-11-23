@@ -119,13 +119,13 @@ td:not(:first-child) {
 }
 
 .sticky-header h2{
-    /* position: relative; */
-    /* top: 100spx; */
-    margin-top: 300px;
+    position: relative; 
+    /* top: 100spx;
+     margin-top: 300px; */
     height: 50px;
     background-color: rgb(19, 40, 55);
     margin: 0;
-    /* z-index: 99999; */
+    z-index: 99999;
     padding: 15px 0;
 
     color: rgb(255, 255, 255);
@@ -135,11 +135,11 @@ td:not(:first-child) {
 }
 
 thead tr:first-child th {
-    position: sticky;
+    /* position: sticky; */
     top: 84px; 
     background-color: rgb(19, 40, 55);
     color: rgb(255, 255, 255);
-    z-index: 99;
+    /* z-index: 99; */
     border: 1px solid black;
 }
 
