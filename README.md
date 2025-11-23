@@ -21,7 +21,7 @@ Rachel, Eileen, Ayobami, Emmanuel
 - Command line would return usage statement and an empty list [].
 
 ### Test 
-- if wants to run the test files, (test_cl.py and test_flask_app.py) to test flask_app and command_lines, run
+- if wants to run the test files, (test_cl.py, test_datasource.py and test_flask_app.py) to test flask_app and command_lines, run
     <python3 -m unittest discover Tests/>
 
 ### Scanability
