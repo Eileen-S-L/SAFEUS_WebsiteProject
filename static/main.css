@@ -12,13 +12,20 @@ h3 {
 	font-size: 30px;
 }
 
+h4 {
+	color: rgb(255, 255, 255);
+	text-align: center;
+	font-size: 80px;
+}
+
+
 /* Heading style */
 h2 {
     padding-top: 2em;
     background-color: rgb(19, 40, 55);
     color: rgb(255, 255, 255);
     border: 2px solid rgb(175 45 45 / 0%);
-    padding-bottom: 0px;
+    padding-bottom: 2em;
     text-align: center;
     font-size: 2.3em;
     margin: 20;
@@ -197,5 +204,18 @@ nav ul.active::after{
     display: flex;
     position: relative;
     margin-left: 10px;
+}
+
+.Purpose {
+    margin-left: 50px;
+    font-family: sans-serif;
+}
+.Purpose h3{
+    color:white;
+    font-size: 30px;
+}
+.Purpose h4{
+    font-size: 20px;
+    color:white;
 }
 
