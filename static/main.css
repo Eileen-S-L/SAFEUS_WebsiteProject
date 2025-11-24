@@ -119,28 +119,9 @@ td:not(:first-child) {
     text-align: center;
 }
 
-/* .sticky-header h2{
-    position: relative;  
-
-    margin-top: 300px;
-    height: 50px;
+.spacer {
     background-color: rgb(19, 40, 55);
-    margin: 0;
-    z-index: 99999;
-    padding: 15px 0;
-
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 2em;
-    border: 1px solid black;
-} */
-
-/* thead tr:first-child th {
-    top: 84px; 
-    background-color: rgb(19, 40, 55);
-    color: rgb(255, 255, 255);
-    border: 1px solid black;
-} */
+}
 
 tr:hover {background-color: rgb(19, 40, 55);
 		color:rgb(255, 255, 255)}
