@@ -13,7 +13,6 @@ nav{
 }
 
 nav ul {
-	/* border: gray 1px solid; */
     background:  rgb(19, 40, 55);
 	list-style-type: none;
 	margin-top: 0;
@@ -38,7 +37,6 @@ nav .logo-text b{
 nav li {
 	display: inline-block;
 	margin-right: 30px;
-    /* float: right; */
 }
 
 nav li a {
