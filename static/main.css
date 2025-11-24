@@ -121,7 +121,7 @@ td:not(:first-child) {
 
 .spacer {
     background-color: rgb(19, 40, 55);
-    margin: 30px;
+    margin-top: 70px;
     height: fit-content;
     border: black 1px solid;
 }
