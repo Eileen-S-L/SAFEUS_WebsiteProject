@@ -120,8 +120,7 @@ td:not(:first-child) {
 }
 
 .spacer {
-    background-color: rgb(19, 40, 55);
-    margin-top: 70px;
+    background-color: rgb(240, 240, 240);
     height: fit-content;
     border: black 1px solid;
 }
