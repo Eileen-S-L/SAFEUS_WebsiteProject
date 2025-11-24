@@ -86,4 +86,4 @@ class TestCommandLine(unittest.TestCase):
         stdout, stderr = result.communicate()
         self.assertIn(b'2010,', stdout)
         
-      
+
