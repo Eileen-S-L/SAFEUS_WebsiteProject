@@ -122,7 +122,8 @@ td:not(:first-child) {
 .spacer {
     background-color: rgb(19, 40, 55);
     padding-bottom: 20px;
-    margin-top: 80px;
+    margin-top: 30px;
+    border: black 1px solid;
 }
 
 tr:hover {background-color: rgb(19, 40, 55);
