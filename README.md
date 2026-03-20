@@ -3,13 +3,20 @@ This is a collaboration poject:
 Rachel, Eileen, Ayobami, Emmanuel
 
 
-##Purpose
+## Purpose
 - The platform facilate investigation of substance misuse trends through demographic and regional filtering. By organizing the data to show how drug misuse reflects its influence regionally.
 - This project served as a comprehensive full-stack exercise, allowing our team to master the integration of back-end data architecture with a responsive front-end interface while building a mission-driven tool for public health awareness.
 
-##Dataset
+## Dataset
 This dataset contains detailed information on substance usage, overdose fatalities, and the most affected demographic groups.  
 https://www.cdc.gov/overdose-prevention/data-research/facts-stats/dose-sys-accessible.html https://1drv.ms/x/c/1780d1644addf8f2/EUwK5nKEM_dOvIkdHshL80MBrENPYVZElS8rthGOUpodbA?e=ZWy7eI
+
+## Potential User Interaction
+- Age-Based Filtering: The system allows users to customize their view by specific age groups to compare substance use trends, though the current data structure groups all individuals over 25, which limits granularity for older demographics.
+
+- Location and Substance Search: By utilizing string-based searches for specific regions or drug types, users can access highly relatable and specialized perspectives; however, this functionality is sensitive to input accuracy and requires users to be familiar with specific dataset terminology to avoid invalid results.
+
+- Temporal Data Access: The inclusion of year-based numerical lookups supports data-driven reporting and historical analysis, but because the dataset is static and contains certain year gaps, it may not fully reflect real-time changes or long-term longitudinal trends.
 
 
 ## features in Drug Usage data in US 
@@ -49,4 +56,3 @@ https://www.cdc.gov/overdose-prevention/data-research/facts-stats/dose-sys-acces
 
 
 Template for long-term team projects for CS257 Software Design
-# Drug-Database-Website
